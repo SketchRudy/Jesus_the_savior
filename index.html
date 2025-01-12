@@ -1,4 +1,10 @@
-<!-- Jesus The Savior MBC Website Surprise -->
+<!--
+    Filename: index.html
+    Author: Rudolf Sirbu, Sasha Balan
+    Date: 01-11-2025
+    Description: This website is a digital space for Jesus the Savior MBC.
+    Created as a surprise to celebrate the church's mission.
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,23 +12,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jesus The Savior MBC </title>
     <!-- **FAVICON** Icon won't work if cross is lowercase -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/images/Cross.png">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
 
     <header>
-      <h1 id="logo"></h1>
-      <div class="logo"><h1>Jesus The Savior</h1></div>
+      <div id="logo">
+        <h1>Jesus The Savior</h1>
+      </div>
       <!-- Start of navigation-->
       <nav>
         <a href="#home">Home</a>
-        <a href="#About Us">About Us</a>
-        <a href="#Calendar">Calendar</a>
-      </nav>
+        <a href="#about_us">About Us</a>
+        <a href="#calendar">Calendar</a>
+    </nav>
       <!-- End of navigation-->
        <div class="user-actions">
-        <button>Donate</button>
+        <button class="button-donate" role="button">Donate</button>
        </div>
     </header>
     
@@ -50,18 +60,18 @@
     </details>
     
 
-    Start of the Footer, Contact info.. etc.
+    <!-- Start of the Footer, Contact info.. etc. -->
     <footer>
-      <h1>Logo</h1>
-      <h3>Address:</h3>
-      <p>123 main st</p>
-      <h3 id="contact">Contact Us</h3>
-      <h3>Events</h3>
-      <p>Upcoming Event Highlights</p>
-      <p>Photo / Video Gallery</p>
-      <p>&copy; 2025 Jesus MBC. All rights reserved.</p>
-      <p>Privacy Policy</p>
-      <p>Terms of Service</p>
+      <div class="footer_area">
+        <div class="logo">
+          <h1>Logo</h1>
+          <address>Address: <br> 1234 street </address>
+        <div class="social_media" >
+        <a href="https://www.instagram.com/jesusmbc_youth/" target="_blank">
+          <img src="assets/images/insta.png">
+          </div>
+        </div>
+        </a>
     </footer>
   </body>
 </html>
