@@ -6,6 +6,7 @@ header {
 	padding: 0.5rem 1rem;
 	background-color: #f5f5f5;
 	border-bottom: 2px solid #ddd;
+    z-index: 1000;
 }
 
 nav {
@@ -13,24 +14,27 @@ nav {
 	top: 0;
 	display: flex;
 	gap: 2rem;
-	position: relative;
-	left: -70px;
+	margin-left: -120px;
+    z-index: 1000;
 }
 
 
 .image_container {
     display: flex;
-    justify-content: cente;
+    justify-content: center;
 }
 .worship {
     width: 30%;
     height: auto;
+    box-shadow: 0 0 5px 2px #282a2d;
 }
 nav a {
 	text-decoration: none;
 	font-size: 1rem;
 	color: #555;
-	transition: color 0.3s
+	transition: color 0.3s;
+    text-align: center;
+	
 }
 
 nav a:hover {
@@ -181,6 +185,7 @@ details[open] div {
 	}
 }
 
+
 /* ------------------------------------
 */
 body {
@@ -188,10 +193,51 @@ body {
 	font-family: sans-serif, Arial;
 	margin: 0;
 	padding: 0;
+    overflow: visible;
+}
+
+/* 1. Main container to center and constrain width */
+.services-container {
+	max-width: 800px;
+	margin: 0 auto; /* Adjust as needed */
+	padding: 1rem;  /* Center horizontally*/
+}
+
+/* 2. Light gray box styling */
+.service-box {
+	background-color: lightgray;
+	border-radius: 5px;
+	padding: 1rem; 
+	margin-bottom: 1rem; /* Space out the boxes vertically */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	box-shadow: 0 0 5px 2px #282a2d;
+}
+
+/* 3. Make the Sunday box full width */
+.full-width {
+	width: 96%;
+}
+
+/* 4. Row to display Wednesday and Friday side by side */
+.service-row {
+	display: flex;
+	gap: 1rem;
+}
+
+/* 5. Each box in the row grows/shrinks equally */
+.service-row .service-box {
+	flex: 1;
 }
 
 h1 {
 	color: black;
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+	
 }
 
 .verse {
@@ -205,11 +251,11 @@ p {
 }
 
 footer {
-	border-top: 1px solid black;
-	display:
-		flex;
+	border-top: 2px solid #ddd;
+	display: flex;
 	flex-direction: column;
 	padding: 20px 40px;
+	background-color: #f5f5f5;
 }
 
 .footer_area {
@@ -224,16 +270,16 @@ footer {
 	margin: right;
 	display: inline-block;
 	width: 24px;
-	height:
-		24p
+	height:24px;
 }
 
-.contact,
-.events {
+.contact, .events {
 	font-size: 18px;
 	margin-bottom: 10px;
 }
-
+.container summary {
+	font-size: 20px;
+}
 .events ul {
 	list-style-type: none;
 	padding: 0;

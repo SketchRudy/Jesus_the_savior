@@ -1,98 +1,119 @@
 <!--
     Filename: index.html
-    Author: Rudolf Sirbu, Sasha Balan
+    Author: Rudolf Sirbu, Alex Balan
     Date: 01-11-2025
     Description: This website is a digital space for Jesus the Savior MBC.
     Created as a surprise to celebrate the church's mission.
 -->
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jesus The Savior MBC </title>
     <!-- **FAVICON** Icon won't work if cross is lowercase -->
     <link rel="icon" type="image/png" href="assets/images/Cross.png">
     <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
+  </head>
+  <body>
     <header>
-        <div id="logo">
-            <h1>Jesus The Savior</h1>
-        </div>
-        <!-- Start of navigation-->
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about_us">About Us</a>
-            <a href="#calendar">Calendar</a>
-        </nav>
-        <!-- End of navigation-->
-        <div class="user-actions">
-            <button class="button-donate" role="button">Donate</button>
-        </div>
+      <div id="logo">
+        <h1>Jesus The Savior</h1>
+      </div>
+      <!-- Start of navigation-->
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="calendar.html">Calendar</a>
+      </nav>
+      <!-- End of navigation-->
+      <div class="user-actions">
+        <button class="button-donate" role="button">Donate</button>
+      </div>
     </header>
     <!-- Bible Verse on site -->
     <h1 class="verse">Joshua 1:8</h1>
-    <p>"Keep this Book of the Law always on your lips; meditate on it day and
-        <br>night, so that you may be careful to do everything written in it. Then you
-        <br> will be prosperous and successful."</p>
+    <p>"Keep this Book of the Law always on your lips; meditate on it day and <br>night, so that you may be careful to do everything written in it. Then you <br> will be prosperous and successful." </p>
     <div class="image_container">
-    <img src="assets/images/image0.jpeg" class="worship" alt="Worship">
+      <img src="assets/images/image0.jpeg" class="worship" alt="Worship">
     </div>
+    <h1>Service Times</h1>
+
+<!-- Container for all services -->
+<div class="services-container">
+
+    <!-- Sunday Services (full-width box) -->
+    <div class="service-box full-width">
+      <h4>Sunday Services</h4>
+      <p>10:00 AM - First Service</p>
+      <p>5:00 PM - Second Service</p>
+    </div>
+  
+    <!-- Two side-by-side boxes -->
+    <div class="service-row">
+      <!-- Wednesday Service box -->
+      <div class="service-box">
+        <h4>Wednesday Service</h4>
+        <p>7:00 PM - Bible Study</p>
+      </div>
+  
+      <!-- Friday Youth box -->
+      <div class="service-box">
+        <h4>Friday Evening</h4>
+        <p>7:30 PM - Youth</p>
+      </div>
+    </div>
+  </div>
+
+    
     <!-- FAQ-->
     <div class="container">
-        <h1>FAQ</h1>
-        <details>
-            <summary>1st question</summary>
-            <div> 1st answer </div>
-        </details>
-        <details>
-            <summary>2nd question</summary>
-            <div> second answer </div>
-        </details>
-        <details>
-            <summary>3rd question</summary>
-            <div> third answer </div>
-        </details>
-        <details>
-            <summary>4th question</summary>
-            <div> fourth answer </div>
-        </details>
+      <h1>FAQ</h1>
+      <details>
+        <summary>1st question</summary>
+        <div> 1st answer </div>
+      </details>
+      <details>
+        <summary>2nd question</summary>
+        <div> second answer </div>
+      </details>
+      <details>
+        <summary>3rd question</summary>
+        <div> third answer </div>
+      </details>
+      <details>
+        <summary>4th question</summary>
+        <div> fourth answer </div>
+      </details>
     </div>
-
-
     <!-- Start of the Footer, Contact info.. etc. -->
     <footer>
-        <div class="footer_area">
-            <div class="logos">
-                <h1>Logo</h1>
-                <address>Address: <br>123</br></address>
-                <div class="social_media">
-                    <a href="https://www.instagram.com/jesusmbc_youth/" target="_blank">
-                        <img src="assets/images/insta.png">
-                </div>
-            </div>
-            </a>
-            <div class="contact">
-                <h2>Contact Us</h2>
-            </div>
-            <div class="events">
-                <h3>Events</h3>
-                <ul>
-                    <li>Upcoming Event
-                        <br>Highlights</br>
-                    </li>
-                    <li>Photo / Video
-                        <br>Gallery</br>
-                    </li>
-                </ul>
-                <div class="copyright">
-                    <p>&copy; 2025 Jesus the Savior. All rights reserved.</p>
-                </div>
+      <div class="footer_area">
+        <div class="logos">
+          <h1>Logo</h1>
+          <address>Address: <br>123</br>
+          </address>
+          <div class="social_media">
+            <a href="https://www.instagram.com/jesusmbc_youth/" target="_blank">
+              <img src="assets/images/insta.png">
+          </div>
+        </div>
+        </a>
+        <div class="contact">
+          <h2>Contact Us</h2>
+        </div>
+        <div class="events">
+          <h3>Events</h3>
+          <ul>
+            <li>Upcoming Event <br>Highlights</br>
+            </li>
+            <li>Photo / Video <br>Gallery</br>
+            </li>
+          </ul>
+          <div class="copyright">
+            <p>&copy; 2025 Jesus the Savior | All Rights Reserved</p>
+          </div>
     </footer>
     <script src="script.js" defer></script>
-</body>
-
+  </body>
 </html>
