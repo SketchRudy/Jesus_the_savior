@@ -1,4 +1,4 @@
-
+/* HEADER AND NAV */
 header {
     display: flex;
     justify-content: space-between;
@@ -43,7 +43,7 @@ nav a:hover {
   touch-action: manipulation;
 }
 
-/* --------------------*/
+/* COLORFUL DONATE BUTTON */
 .button-donate:before {
     content: "";
     background: linear-gradient(
@@ -95,19 +95,62 @@ nav a:hover {
     top: 0;
     border-radius: 10px;
   }
-  
-
 /* ----------------------------------- */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.container h1 {
+    color: black; /* To-DO: CHANGE TEXT COLOR  */
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+details {
+    background-color: white;
+    color: black;
+    font-size: 2rem;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+    overflow: hidden; /* Prevent content overflow during animations */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2)
+}
+
+summary {
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600; /* Bold text for questions */
+    transition: background-color 0.3s ease;
+    border: 1px solid transparent;
+    
+summary:hover {
+    background-color: #3a3a3a;
+    border: 1px solid #555;
+}
+}
+
+
+
+/* ------------------------------------ */
 
 body {
 background-color: white;
+font-family: sans-serif, Arial;
+margin: 0;
+padding: 0;
 }
 
 h1 {
 color: black;
 }
- h1 {
-    font-family: 'Playwrite Australia SA', sans-serif;
+.verse {
+    font-family: "Lucida Handwriting", sans-serif;
 }
 p {
 color: black;
@@ -125,8 +168,32 @@ footer {
 }
 
 .social_media img{
-    margin-right;
+    margin: right;
     display: inline-block;
     width: 24px;
     height: 24p
+}
+
+.contact, .events {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.events ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.events li {
+    margin-bottom: 5px;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}
+
+.copyright, a:hover {
+text-decoration: underline;
 }
