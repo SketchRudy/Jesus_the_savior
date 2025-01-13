@@ -23,6 +23,10 @@ nav {
     display: flex;
     justify-content: center;
 }
+.image_container img {
+	height: 600px;
+	width: 900px;
+}
 .worship {
     width: 30%;
     height: auto;
@@ -30,7 +34,7 @@ nav {
 }
 nav a {
 	text-decoration: none;
-	font-size: 1rem;
+	font-size: 1.2em;
 	color: #555;
 	transition: color 0.3s;
     text-align: center;
