@@ -15,6 +15,7 @@ detailsElements.forEach((details) => {
     });
 });
 
+
 var slideIndex = 1;
 showDivs(slideIndex);
 
@@ -27,18 +28,27 @@ function currentDiv(n) {
 }
 
 function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+  const slides = document.getElementsByClassName("slideshow-slide");
+  const dots = document.getElementsByClassName("slide-dot");
+  
+  // Wrap around if out of range
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+
+  // Hide all slides
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-white", "");
+
+  // Remove 'active' (or whichever highlight class) from all dots
+  for (let i = 0; i < dots.length; i++) {
+    // If you created a .active class for the dot, remove it:
+    dots[i].classList.remove("active");
   }
-  x[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " w3-white";
+
+  // Display current slide and highlight the dot
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].classList.add("active"); 
 }
+
 

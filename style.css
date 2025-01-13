@@ -10,6 +10,7 @@ header {
 }
 
 nav {
+	display: flex;
 	position: sticky;
 	top: 0;
 	display: flex;
@@ -24,66 +25,62 @@ nav {
 }
 
 /* FOR THE SLIDESHOW  */
-.image_container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	margin: 0 auto;
-	position: relative;
+.slideshow-container {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 }
 
-.mySlides {
-	display: flex;
-	width: 100%;
-	height: auto;
+.slideshow-slide {
+  width: 100%;
+  height: auto;
+  display: none; /* Only the active one is "block" in JS */
 }
 
 
-.w3-left,
-.w3-right {
+.arrow-left,
+.arrow-right {
 	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	font-size: 24px;
-	color: white;
-	background-color: rgba(0, 0, 0, 0.5);
-	padding: 10px;
-	cursor: pointer;
-	border-radius: 50%;
-	z-index: 2;
-	user-select: none;
-	transition: background-color 0.3s ease;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+  user-select: none;
+  transition: background-color 0.3s ease;
 }
 
 
-.w3-left:hover,
-.w3-right:hover {
+.arrow-left:hover,
+.arrow-right:hover {
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
-.w3-left {
-	left: 480px;
+.arrow-left {
+	left: 300px;
 	/* Position arrow slightly outside the container */
 }
 
-.w3-right {
-	right: 480px;
+.arrow-right {
+	right: 300px;
 	/* Position arrow slightly outside the container */
 }
 
 /* ------------------------------------------------------------------ */
-.image_container img {
+.slideshow-container img {
 	height: 600px;
 	width: 900px;
-}
-
-.worship {
-	width: 30%;
-	height: auto;
 	box-shadow: 0 0 5px 2px #282a2d;
 }
+
+
 
 nav a {
 	text-decoration: none;
@@ -311,6 +308,37 @@ p {
 	text-align: center;
 }
 
+.slideshow-container {
+	position: relative;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  .slideshow-slide {
+	width: 100%;
+	height: auto;
+	display: none; /* Only the active one is displayed in JS */
+	box-shadow: 0 0 5px 2px #282a2d;
+  }
+  
+  /* 
+	 If you want a specific image size:
+	 .slideshow-container img {
+	   width: 900px;
+	   height: 600px;
+	 }
+  */
+  
+  .slideshow-controls {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+  }
+  
+
 footer {
 	border-top: 2px solid #ddd;
 	display: flex;
@@ -365,3 +393,112 @@ footer {
 a:hover {
 	text-decoration: underline;
 }
+
+/* =================================================== */
+/* ===============   MEDIA QUERIES   ================ */
+/* =================================================== */
+
+/* 
+   1) Tablet / small laptop size or below (<= 1024px)
+*/
+@media (max-width: 1024px) {
+	nav {
+	  margin-left: 0; /* Remove the negative margin on smaller screens */
+	  gap: 1rem;
+	}
+  
+	/* Move the slideshow arrows inward */
+	.arrow-left {
+	  left: 30px; 
+	}
+  
+	.arrow-right {
+	  right: 30px;
+	}
+  
+	/* Scale images more responsively */
+	.slideshow-container img {
+	  width: 90%;
+	  max-width: 800px; /* Just a fallback max */
+	  height: auto;
+	}
+  
+	/* Possibly reduce container padding so content fits better */
+	.services-container {
+	  padding: 2rem;
+	}
+  }
+  
+  /* 
+	 2) Tablet / large phone size or below (<= 768px)
+  */
+  @media (max-width: 768px) {
+	/* Stack navigation vertically if you want */
+	nav {
+	  flex-direction: column;
+	  align-items: center;
+	  margin-left: 0;
+	}
+  
+	nav a {
+	  margin: 0.5rem 0;
+	}
+  
+	/* Service-row boxes stack vertically */
+	.service-row {
+	  flex-direction: column;
+	}
+  
+	.service-box {
+	  margin-bottom: 1rem;
+	}
+  
+	/* Slideshow arrows closer for smaller screens */
+	.arrow-left {
+	  left: 15px; 
+	}
+	.arrow-right {
+	  right: 15px;
+	}
+  
+	/* Possibly reduce the text sizes a bit */
+	h1, .container h1 {
+	  font-size: 2rem;
+	}
+  
+	footer {
+	  padding: 10px 20px;
+	}
+  }
+  
+  /* 
+	 3) Very narrow phone screens (<= 480px)
+  */
+  @media (max-width: 480px) {
+	header {
+	  flex-direction: column; 
+	  align-items: flex-start;
+	}
+  
+	/* Navigation again if you need further adjustments */
+	nav {
+	  width: 100%;
+	  justify-content: center;
+	}
+  
+	.arrow-left, .arrow-right {
+	  font-size: 18px; /* slightly smaller arrow icons */
+	  padding: 8px;
+	}
+  
+	/* Make sure the big slideshow image doesn't get too tall */
+	.slideshow-container img {
+	  max-width: 100%;
+	  height: auto;
+	}
+  
+	/* Reduce container padding further */
+	.services-container {
+	  padding: 1rem;
+	}
+  }
