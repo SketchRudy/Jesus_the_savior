@@ -21,6 +21,13 @@ header {
 	position: sticky;
 	top: 0;
 }
+footer, header {
+    width: 100%; /* Ensure it spans the full width of the screen */
+    max-width: 1900px; /* Prevent excessive stretching */
+    margin: 0 auto; /* Center the content */
+    padding: 10px 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
 
 nav {
 	display: flex;
@@ -134,10 +141,18 @@ nav a.active-link {
 	/* could be a hero image background if you prefer */
 	text-align: center;
 	padding: 3rem 1rem;
+	width: 100%; /* Ensure it spans the full width of the screen */
+    max-width: 1900px; /* Prevent excessive stretching */
+    margin: 0 auto; /* Center the content */
+    box-sizing: border-box; /* Include padding in width calculations */
+	border-bottom: 2px solid #ddd;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 .hero-section h1 {
 	font-size: 2.2rem;
+	color: #333;
 	margin-bottom: 1rem;
 }
 

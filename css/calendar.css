@@ -35,7 +35,13 @@ header {
 	top: 0;
 
 }
-
+footer, header {
+    width: 100%; /* Ensure it spans the full width of the screen */
+    max-width: 1900px; /* Prevent excessive stretching */
+    margin: 0 auto; /* Center the content */
+    padding: 10px 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
 
 .isuslogo {
 	width: 400px;
@@ -135,12 +141,16 @@ nav a.active-link {
    your overall site style
 ======================== */
 .calendar-hero {
-	background-color: #fff;
+	background: #fafafa;
 	text-align: center;
-	padding: 4rem 2rem;
+	padding: 3rem 2rem;
 	border-bottom: 2px solid #ddd;
 	/* Subtle separator if you want */
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	width: 100%; /* Ensure it spans the full width of the screen */
+    max-width: 1900px; /* Prevent excessive stretching */
+    margin: 0 auto; /* Center the content */
+    box-sizing: border-box; /* Include padding in width calculations */
 }
 
 .calendar-hero h1 {

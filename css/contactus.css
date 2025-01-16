@@ -22,6 +22,40 @@ header {
 	position: sticky;
 	top: 0;
 }
+footer, header {
+    width: 100%; /* Ensure it spans the full width of the screen */
+    max-width: 1900px; /* Prevent excessive stretching */
+    margin: 0 auto; /* Center the content */
+    padding: 10px 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+.contact-hero {
+	background: #fafafa;
+	text-align: center;
+	padding: 4rem 2rem;
+	/* Subtle separator if you want */
+	width: 100%; /* Ensure it spans the full width of the screen */
+    max-width: 1900px; /* Prevent excessive stretching */
+    margin: 0 auto; /* Center the content */
+    box-sizing: border-box; /* Include padding in width calculations */
+	border-bottom: 2px solid #ddd;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-hero h1 {
+	font-size: 2.2rem;
+	color: #333;
+	margin-bottom: 1rem;
+	font-weight: 600;
+}
+
+.contact-hero p {
+	font-size: 1.1rem;
+	max-width: 600px;
+	margin: 0 auto;
+	color: #555;
+}
 
 nav {
 	display: flex;
