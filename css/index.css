@@ -1,22 +1,43 @@
 /* HEADER AND NAV */
+
+html {
+	scroll-behavior: smooth;
+}
+
 header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0.5rem 1rem;
-	background-color: #f5f5f5;
 	border-bottom: 2px solid #ddd;
 	z-index: 1000;
+	background-color: white;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	position: sticky;
+	top: 0;
 }
 
 nav {
 	display: flex;
-	position: sticky;
-	top: 0;
-	display: flex;
 	gap: 2rem;
-	margin-left: -120px;
+	padding: 30px;
+	margin-left: -225px;
+}
+
+.events h2 {
+	font-size: 20px;
+	position: absolute;
+	margin-top: 10px;
+	margin-left: -115px;
+}
+
+/* needs more work to be done^^^^^^ */
+
+.isuslogo {
+	width: 400px;
 	z-index: 1000;
+	margin-bottom: -90px;
+	margin-left: -30px;
 }
 
 .isus {
@@ -24,77 +45,44 @@ nav {
 	width: 350px;
 }
 
-/* FOR THE SLIDESHOW  */
-.slideshow-container {
-  position: relative;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-.slideshow-slide {
-  width: 100%;
-  height: auto;
-  display: none; /* Only the active one is "block" in JS */
-}
-
-
-.arrow-left,
-.arrow-right {
-	position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 2;
-  user-select: none;
-  transition: background-color 0.3s ease;
-}
-
-
-.arrow-left:hover,
-.arrow-right:hover {
-	background-color: rgba(0, 0, 0, 0.8);
-}
-
-.arrow-left {
-	left: 300px;
-	/* Position arrow slightly outside the container */
-}
-
-.arrow-right {
-	right: 300px;
-	/* Position arrow slightly outside the container */
-}
-
-/* ------------------------------------------------------------------ */
-.slideshow-container img {
-	height: 600px;
-	width: 900px;
+.church_photo {
+	width: 119em;
+	height: 1000px;
+	display: block;
 	box-shadow: 0 0 5px 2px #282a2d;
+
 }
-
-
 
 nav a {
 	text-decoration: none;
-	font-size: 1.2em;
-	color: #555;
-	transition: color 0.3s;
-	text-align: center;
-
+	color: #333;
+	font-size: 1.1rem;
+	padding: 0.3rem 0.6rem;
+	transition: background-color 0.3s;
+	font-family: 'Poppins', sans-serif;
 }
+
+nav a:hover,
+nav a.active-link {
+	background-color: #ddd;
+	border-radius: 4px;
+}
+
 
 nav a:hover {
 	color: #000;
 }
 
+.events a {
+	color: black;
+}
+
+.events a:hover {
+	text-decoration: underline;
+}
+
+/* Below code turns nav black
+.events */
 .button-donate {
 	padding: 0.6em 2em;
 	border: none;
@@ -160,15 +148,22 @@ nav a:hover {
 .container {
 	max-width: 800px;
 	margin: 2rem auto;
-	padding: 1rem;
 }
 
 .container h1 {
-	color: #333;
-	/* Improved contrast */
-	text-align: center;
-	font-size: 2.5rem;
-	margin-bottom: 2rem;
+	padding: 0.6em 1em;
+	border: none;
+	outline: none;
+	color: rgb(255, 255, 255);
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+
 }
 
 details {
@@ -180,7 +175,7 @@ details {
 	overflow: hidden;
 	/* Prevent content overflow during
 animations */
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 summary {
@@ -210,7 +205,7 @@ summary:after {
 }
 
 details[open] summary {
-	background-color: lightgray;
+	background-color: #CBB967;
 	/* Darker background for open state*/
 	border-bottom: 1px solid #665;
 }
@@ -243,12 +238,11 @@ details[open] div {
 
 /* -----------------------------------*/
 body {
-	background-color: white;
 	font-family: sans-serif, Arial;
 	margin: 0;
 	padding: 0;
 	overflow: visible;
-	background-color: rgb(255, 255, 255);
+	background-color: #f0f0f0;
 }
 
 /* 1. Main container to center and constrain width */
@@ -308,37 +302,6 @@ p {
 	text-align: center;
 }
 
-.slideshow-container {
-	position: relative;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-  }
-  
-  .slideshow-slide {
-	width: 100%;
-	height: auto;
-	display: none; /* Only the active one is displayed in JS */
-	box-shadow: 0 0 5px 2px #282a2d;
-  }
-  
-  /* 
-	 If you want a specific image size:
-	 .slideshow-container img {
-	   width: 900px;
-	   height: 600px;
-	 }
-  */
-  
-  .slideshow-controls {
-	position: absolute;
-	bottom: 20px;
-	width: 100%;
-	text-align: center;
-  }
-  
-
 footer {
 	border-top: 2px solid #ddd;
 	display: flex;
@@ -346,6 +309,7 @@ footer {
 	padding: 20px 40px;
 	border-top: 2px solid #ddd;
 	background-color: #f5f5f5;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .footer_area {
@@ -354,13 +318,14 @@ footer {
 	align-items: flex-start;
 	flex-wrap: wrap;
 	margin-bottom: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .social_media img {
 	margin: right;
 	display: inline-block;
-	width: 24px;
-	height: 24px;
+	width: 40px;
+	height: 40px;
 }
 
 .contact,
@@ -384,15 +349,17 @@ footer {
 
 .copyright {
 	text-align: center;
-	margin-top: 20px;
-	color: #777;
-	width: 100%;
+	margin-left: -1100px;
+	margin-top: 180px;
+	position: absolute;
+	font-size: 0.9rem;
+	color: #666;
 }
 
-.copyright,
-a:hover {
-	text-decoration: underline;
+.copyright p {
+	color: rgb(139, 139, 139);
 }
+
 
 /* =================================================== */
 /* ===============   MEDIA QUERIES   ================ */
@@ -403,102 +370,88 @@ a:hover {
 */
 @media (max-width: 1024px) {
 	nav {
-	  margin-left: 0; /* Remove the negative margin on smaller screens */
-	  gap: 1rem;
+		margin-left: 0;
+		/* Remove the negative margin on smaller screens */
+		gap: 1rem;
 	}
-  
-	/* Move the slideshow arrows inward */
-	.arrow-left {
-	  left: 30px; 
-	}
-  
+
 	.arrow-right {
-	  right: 30px;
+		right: 30px;
 	}
-  
-	/* Scale images more responsively */
-	.slideshow-container img {
-	  width: 90%;
-	  max-width: 800px; /* Just a fallback max */
-	  height: auto;
-	}
-  
+
 	/* Possibly reduce container padding so content fits better */
 	.services-container {
-	  padding: 2rem;
+		padding: 2rem;
 	}
-  }
-  
-  /* 
+}
+
+/* 
 	 2) Tablet / large phone size or below (<= 768px)
   */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+
 	/* Stack navigation vertically if you want */
 	nav {
-	  flex-direction: column;
-	  align-items: center;
-	  margin-left: 0;
+		flex-direction: column;
+		align-items: center;
+		margin-left: 0;
 	}
-  
+
 	nav a {
-	  margin: 0.5rem 0;
+		margin: 0.5rem 0;
 	}
-  
+
 	/* Service-row boxes stack vertically */
 	.service-row {
-	  flex-direction: column;
+		flex-direction: column;
 	}
-  
+
 	.service-box {
-	  margin-bottom: 1rem;
+		margin-bottom: 1rem;
 	}
-  
-	/* Slideshow arrows closer for smaller screens */
-	.arrow-left {
-	  left: 15px; 
-	}
+
 	.arrow-right {
-	  right: 15px;
+		right: -50px;
 	}
-  
+
 	/* Possibly reduce the text sizes a bit */
-	h1, .container h1 {
-	  font-size: 2rem;
+	h1,
+	.container h1 {
+		font-size: 2rem;
 	}
-  
+
 	footer {
-	  padding: 10px 20px;
+		padding: 10px 20px;
+		max-width: 100%;
 	}
-  }
-  
-  /* 
+}
+
+/* 
 	 3) Very narrow phone screens (<= 480px)
   */
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
 	header {
-	  flex-direction: column; 
-	  align-items: flex-start;
+		flex-direction: column;
+		align-items: flex-start;
 	}
-  
+
 	/* Navigation again if you need further adjustments */
 	nav {
-	  width: 100%;
-	  justify-content: center;
+		width: 100%;
+		justify-content: center;
 	}
-  
-	.arrow-left, .arrow-right {
-	  font-size: 18px; /* slightly smaller arrow icons */
-	  padding: 8px;
+
+	.arrow-left,
+	.arrow-right {
+		font-size: 18px;
+		/* slightly smaller arrow icons */
+		padding: 5px;
 	}
-  
-	/* Make sure the big slideshow image doesn't get too tall */
-	.slideshow-container img {
-	  max-width: 100%;
-	  height: auto;
-	}
-  
+
 	/* Reduce container padding further */
 	.services-container {
-	  padding: 1rem;
+		padding: 1rem;
 	}
-  }
+
+
+}

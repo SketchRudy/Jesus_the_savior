@@ -1,0 +1,534 @@
+/* HEADER AND NAV */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	border-bottom: 2px solid #ddd;
+	z-index: 1000;
+	background-color: white;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	position: sticky;
+	top: 0;
+}
+
+nav {
+	display: flex;
+	gap: 2rem;
+	padding: 30px;
+	margin-left: -225px;
+}
+
+.events h2 {
+	font-size: 20px;
+	position: absolute;
+	margin-top: -43px;
+	margin-left: -200px;
+}
+
+/* needs more work to be done^^^^^^ */
+
+.isuslogo {
+	width: 400px;
+	z-index: 1000;
+	margin-bottom: -90px;
+	margin-left: -30px;
+}
+
+.isus {
+	height: 150px;
+	width: 350px;
+}
+
+.church_photo {
+	width: 119em;
+	height: 1000px;
+	display: block;
+	box-shadow: 0 0 5px 2px #282a2d;
+
+}
+
+
+nav a {
+	text-decoration: none;
+	color: #333;
+	font-size: 1.1rem;
+	padding: 0.3rem 0.6rem;
+	transition: background-color 0.3s;
+	font-family: 'Poppins', sans-serif;
+}
+
+nav a:hover,
+nav a.active-link {
+	background-color: #ddd;
+	border-radius: 4px;
+}
+
+
+nav a:hover {
+	color: #000;
+}
+
+.events a {
+	color: black;
+}
+
+/* Below code turns nav black
+.events */
+.button-donate {
+	padding: 0.6em 2em;
+	border: none;
+	outline: none;
+	color: rgb(255, 255, 255);
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+/* COLORFUL DONATE BUTTON */
+.button-donate:before {
+	content: "";
+	background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00,
+			#48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing-button-85 20s linear infinite;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+	0% {
+		background-position: 0 0;
+	}
+
+	50% {
+		background-position: 400% 0;
+	}
+
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.button-donate:after {
+	z-index:
+		-1;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #222;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
+/* ----------------------------------- */
+.container {
+	max-width: 800px;
+	margin: 2rem auto;
+}
+
+.container h1 {
+	color: #333;
+	/* Improved contrast */
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+
+}
+
+details {
+	background-color: white;
+	color: black;
+	font-size: 2rem;
+	border-radius: 5px;
+	margin: 0.5rem 0;
+	overflow: hidden;
+	/* Prevent content overflow during
+animations */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+summary {
+	padding: 1rem;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 600;
+	/* Bold text for questions */
+	transition: background-color 0.3s ease;
+	border: 1px solid transparent;
+}
+
+summary:hover {
+	background-color: gray;
+	border: 1px solid #555;
+	/* TO-DO! REMOVE OR KEEP, ADDS BORDER ON FAQ HOVER*/
+}
+
+summary:after {
+	content: "\002b";
+	/* Plus sign for collapsed state */
+	font-size: 1.5rem;
+	transition:
+		transform 0.3s ease;
+}
+
+details[open] summary {
+	background-color: #CBB967;
+	/* Darker background for open state*/
+	border-bottom: 1px solid #665;
+}
+
+details[open] summary:after {
+	content: "\00D7";
+	/* Close (X) sign for expanded state */
+}
+
+details[open] div {
+	padding: 1rem;
+	background-color: lightgray;
+	border-top: 1px solid #444;
+	font-size: 1rem;
+	animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-5px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+/* -----------------------------------*/
+body {
+	font-family: 'Outfit';
+	background: linear-gradient(white, black);
+}
+
+.contact-container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.contact-left {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 20px;
+}
+
+.contact-left-title h2 {
+	font-weight: 600;
+	color: rgb(65, 62, 62);
+	font-size: 40px;
+	margin-bottom: 5px;
+}
+
+.contact-left-title hr {
+	border: none;
+	width: 120px;
+	height: 5px;
+	background-color: #8f8f8f;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+.contact-inputs {
+	width: 400px;
+	height: 50px;
+	border: none;
+	outline: none;
+	padding-left: 25px;
+	font-weight: 500;
+	color: #666;
+	border-radius: 50px;
+}
+
+.contact-left textarea {
+	height: 140px;
+	padding-top: 15px;
+	border-radius: 20px;
+}
+
+.contact-inputs:focus {
+	border: 2px solid #687c72;
+}
+
+.contact-inputs::placeholder {
+	color: #a9a9a9a9;
+}
+
+.contact-left button {
+	display: fkex;
+	align-items: center;
+	padding: 15px 30px;
+	font-size: 16px;
+	color: #fff;
+	gap: 10px;
+	border: none;
+	border-radius: 50px;
+	background: linear-gradient(270deg, #eb7988, #fa6d86);
+	cursor: pointer;
+}
+
+.contact-left button img {
+	height: 15px;
+}
+
+.contact-right img {
+	width: 500px;
+}
+
+@media(max-width:800px) {
+	.contact-inputs {
+		width: 80vw;
+	}
+
+	.contact-right {
+		display: none;
+	}
+}
+
+/* 1. Main container to center and constrain width */
+.services-container {
+	max-width: 800px;
+	margin: 0 auto;
+	/* Adjust as needed */
+	padding: 4rem;
+	/* Center horizontally*/
+}
+
+/* 2. Light gray box styling */
+.service-box {
+	background-color: lightgray;
+	border-radius: 5px;
+	padding: 2rem;
+	margin-bottom: 1rem;
+	/* Space out the boxes vertically */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	box-shadow: 0 0 5px 2px #282a2d;
+}
+
+/* 3. Make the Sunday box full width */
+.full-width {
+	width: 92%;
+}
+
+/* 4. Row to display Wednesday and Friday side by side */
+.service-row {
+	display: flex;
+	gap: 1rem;
+}
+
+/* 5. Each box in the row grows/shrinks equally */
+.service-row .service-box {
+	flex: 1;
+}
+
+h1 {
+	color: black;
+	text-align: center;
+}
+
+h4 {
+	text-align: center;
+
+}
+
+.verse {
+	font-family: sans-serif;
+	text-align: center;
+}
+
+p {
+	color: black;
+	text-align: center;
+}
+
+footer {
+	border-top: 2px solid #ddd;
+	display: flex;
+	flex-direction: column;
+	padding: 20px 40px;
+	border-top: 2px solid #ddd;
+	background-color: #f5f5f5;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer_area {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.social_media img {
+	margin: right;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+}
+
+.contact,
+.events {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.container summary {
+	font-size: 20px;
+}
+
+.events ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.events li {
+	margin-bottom: 5px;
+}
+
+.copyright {
+	text-align: center;
+	margin-left: -1000px;
+	margin-top: -27px;
+	position: absolute;
+}
+
+.copyright p {
+	color: rgb(139, 139, 139);
+}
+
+
+/* =================================================== */
+/* ===============   MEDIA QUERIES   ================ */
+/* =================================================== */
+
+/* 
+   1) Tablet / small laptop size or below (<= 1024px)
+*/
+@media (max-width: 1024px) {
+	nav {
+		margin-left: 0;
+		/* Remove the negative margin on smaller screens */
+		gap: 1rem;
+	}
+
+	.arrow-right {
+		right: 30px;
+	}
+
+	/* Possibly reduce container padding so content fits better */
+	.services-container {
+		padding: 2rem;
+	}
+}
+
+/* 
+	 2) Tablet / large phone size or below (<= 768px)
+  */
+@media (max-width: 768px) {
+
+	/* Stack navigation vertically if you want */
+	nav {
+		flex-direction: column;
+		align-items: center;
+		margin-left: 0;
+	}
+
+	nav a {
+		margin: 0.5rem 0;
+	}
+
+	/* Service-row boxes stack vertically */
+	.service-row {
+		flex-direction: column;
+	}
+
+	.service-box {
+		margin-bottom: 1rem;
+	}
+
+	.arrow-right {
+		right: -50px;
+	}
+
+	/* Possibly reduce the text sizes a bit */
+	h1,
+	.container h1 {
+		font-size: 2rem;
+	}
+
+	footer {
+		padding: 10px 20px;
+		max-width: 100%;
+	}
+}
+
+/* 
+	 3) Very narrow phone screens (<= 480px)
+  */
+@media (max-width: 480px) {
+	header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	/* Navigation again if you need further adjustments */
+	nav {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.arrow-left,
+	.arrow-right {
+		font-size: 18px;
+		/* slightly smaller arrow icons */
+		padding: 5px;
+	}
+
+	/* Reduce container padding further */
+	.services-container {
+		padding: 1rem;
+	}
+
+
+}

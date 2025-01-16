@@ -1,0 +1,400 @@
+/* =========================================================
+   CALENDAR.CSS - Aligned with index.css / aboutus.css styles
+   ========================================================= */
+
+/* Global Reset / Box Sizing */
+* {
+	box-sizing: border-box;
+}
+
+/* Match body style from index.css / aboutus.css */
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif, Arial;
+	background-color: #f0f0f0;
+	color: #333;
+}
+
+/* ========================
+     HEADER & NAV
+   (Consistent with index.css)
+======================== */
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	border-bottom: 2px solid #ddd;
+	z-index: 1000;
+	background-color: white;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	position: sticky;
+	top: 0;
+
+}
+
+
+.isuslogo {
+	width: 400px;
+	z-index: 1000;
+	margin-bottom: -90px;
+	margin-left: -30px;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+    padding: 30px;
+	margin-left: -225px;
+}
+
+nav a {
+	text-decoration: none;
+	color: #333;
+	font-size: 1.1rem;
+	padding: 0.3rem 0.6rem;
+	transition: background-color 0.3s;
+	font-family: 'Poppins', sans-serif;
+}
+
+nav a:hover,
+nav a.active-link {
+	background-color: #ddd;
+	border-radius: 4px;
+}
+
+.button-donate {
+	padding: 0.6em 2em;
+	border: none;
+	outline: none;
+	color: rgb(255, 255, 255);
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+/* COLORFUL DONATE BUTTON */
+.button-donate:before {
+	content: "";
+	background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00,
+			#48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing-button-85 20s linear infinite;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+	0% {
+		background-position: 0 0;
+	}
+
+	50% {
+		background-position: 400% 0;
+	}
+
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.button-donate:after {
+	z-index:
+		-1;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #222;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
+
+/* ----------------------------------- */
+/* ========================
+   HERO SECTION (Calendar)
+   Make it consistent with
+   your overall site style
+======================== */
+.calendar-hero {
+	background-color: #fff;
+	text-align: center;
+	padding: 4rem 2rem;
+	border-bottom: 2px solid #ddd;
+	/* Subtle separator if you want */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-hero h1 {
+	font-size: 2.2rem;
+	color: #333;
+	margin-bottom: 1rem;
+	font-weight: 600;
+}
+
+.calendar-hero p {
+	font-size: 1.1rem;
+	max-width: 600px;
+	margin: 0 auto;
+	color: #555;
+}
+
+/* =============================
+   MAIN CALENDAR WRAPPER
+   Use the same container style
+   (box-shadow, background: #fff)
+============================= */
+.calendar-wrapper {
+	max-width: 1200px;
+	margin: 2rem auto;
+	padding: 0 1rem 2rem;
+	background-color: #fff;
+	border-radius: 6px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Calendar Controls (Previous / Next) 
+   Use the same fonts & spacing approach */
+.calendar-controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+	padding: 1rem;
+}
+
+#monthYear {
+	font-size: 1.8rem;
+	color: #333;
+	margin: 0;
+	font-weight: 600;
+}
+
+/* Month nav buttons 
+   Reuse a border / color scheme consistent with index.css */
+.month-btn {
+	padding: 0.6rem 1.2rem;
+	border: 1px solid #333;
+	background-color: transparent;
+	color: #333;
+	font-weight: 600;
+	cursor: pointer;
+	border-radius: 6px;
+	transition: background-color 0.3s ease;
+}
+
+.month-btn:hover {
+	background-color: #ddd;
+}
+
+/* =============================
+   CALENDAR GRID 
+   Align with your gray/white
+   color scheme, no golds
+============================= */
+#calendar {
+	margin: 0 auto;
+	max-width: 1000px;
+	transition: all 0.3s ease;
+	/* subtle transition for layout changes */
+}
+
+.calendar-grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 1px;
+	margin: 0 1rem;
+	background-color: #ddd;
+	/* Separator lines around cells */
+}
+
+/* Day-of-week headers & day cells 
+   Using white background, gray borders, etc. */
+.calendar-day-name,
+.calendar-day {
+	background-color: #fff;
+	text-align: center;
+	padding: 1rem 0.5rem;
+	min-height: 90px;
+	border: 1px solid #ddd;
+	position: relative;
+	transition: background-color 0.3s ease;
+	font-family: sans-serif, Arial;
+}
+
+/* Day-of-week heading row */
+.calendar-day-name {
+	background-color: #f5f5f5;
+	font-weight: 700;
+	font-size: 1rem;
+	color: #333;
+}
+
+/* Hover effect to unify with index’s box shadows or color transitions */
+.calendar-day:hover {
+	background-color: #f0f0f0;
+}
+
+/* The date number */
+.date-number {
+	display: block;
+	font-weight: 700;
+	margin-bottom: 0.3rem;
+	font-size: 1.1rem;
+	color: #333;
+}
+
+/* Event styling:
+   Keep a subtle highlight, consistent box-shadow approach. */
+.event {
+	font-size: 0.9rem;
+	background-color: #eee;
+	border-radius: 4px;
+	padding: 0.3rem 0.5rem;
+	margin: 0.3rem 0;
+	color: #444;
+	text-align: left;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	animation: fadeIn 0.4s ease forwards;
+}
+
+/* Fade-in animation for the event text */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-3px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ========================
+   FOOTER
+   Reuse your index.css or
+   aboutus.css style
+======================== */
+footer {
+	border-top: 2px solid #ddd;
+	display: flex;
+	flex-direction: column;
+	padding: 20px 40px;
+	border-top: 2px solid #ddd;
+	background-color: #f5f5f5;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.social_media img {
+	margin: right;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+}
+.copyright p {
+	color: rgb(139, 139, 139);
+}
+.events h2 {
+	font-size: 20px;
+	position: absolute;
+	margin-top: 10px;
+	margin-left: -115px;
+}
+
+
+.footer_area {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.copyright {
+	text-align: center;
+	margin-left: -1100px;
+	margin-top: 180px;
+	position: absolute;
+	font-size: 0.9rem;
+	color: #666;
+}
+
+/* ======================
+   RESPONSIVE MEDIA QUERIES
+   (Follow same breakpoints
+    as index.css)
+====================== */
+
+/* Tablet / small laptop (<= 1024px) */
+@media (max-width: 1024px) {
+	.calendar-wrapper {
+		margin: 1rem auto;
+	}
+
+	.calendar-controls {
+		gap: 1rem;
+	}
+}
+
+/* Large phone / tablet (<= 768px) */
+@media (max-width: 768px) {
+
+	/* Possibly reduce the columns to 2 or 3 if you prefer */
+	.calendar-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.calendar-day,
+	.calendar-day-name {
+		min-height: 60px;
+	}
+
+	#monthYear {
+		font-size: 1.5rem;
+	}
+
+	footer {
+		padding: 10px 20px;
+	}
+}
+
+/* Very narrow phone (<= 480px) */
+@media (max-width: 480px) {
+	header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	nav {
+		width: 100%;
+		justify-content: center;
+		padding: 10px;
+	}
+
+	.calendar-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.calendar-day {
+		font-size: 0.95rem;
+	}
+}
+

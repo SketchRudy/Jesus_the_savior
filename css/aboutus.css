@@ -1,0 +1,347 @@
+/* Reset / Global */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	border-bottom: 2px solid #ddd;
+	z-index: 1000;
+	background-color: white;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	position: sticky;
+	top: 0;
+}
+
+nav {
+	display: flex;
+	gap: 2rem;
+	padding: 30px;
+	margin-left: -225px;
+}
+
+.isuslogo {
+	width: 400px;
+	z-index: 1000;
+	margin-bottom: -90px;
+	margin-left: -30px;
+}
+
+.events h2 {
+	font-size: 20px;
+	position: absolute;
+	margin-top: 10px;
+	margin-left: -115px;
+}
+.copyright {
+	text-align: center;
+	margin-left: -1100px;
+	margin-top: 180px;
+	position: absolute;
+	font-size: 0.9rem;
+	color: #666;
+}
+nav a {
+	text-decoration: none;
+	color: #333;
+	font-size: 1.1rem;
+	padding: 0.3rem 0.6rem;
+	transition: background-color 0.3s;
+	font-family: 'Poppins', sans-serif;
+}
+
+nav a:hover,
+nav a.active-link {
+	background-color: #ddd;
+	border-radius: 4px;
+}
+
+.button-donate {
+	padding: 0.6em 2em;
+	border: none;
+	outline: none;
+	color: rgb(255, 255, 255);
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+/* COLORFUL DONATE BUTTON */
+.button-donate:before {
+	content: "";
+	background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00,
+			#48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing-button-85 20s linear infinite;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+	0% {
+		background-position: 0 0;
+	}
+
+	50% {
+		background-position: 400% 0;
+	}
+
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.button-donate:after {
+	z-index:
+		-1;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #222;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
+/*-----------------------------*/
+
+/* Hero Section */
+.hero-section {
+	background: #fafafa;
+	/* could be a hero image background if you prefer */
+	text-align: center;
+	padding: 3rem 1rem;
+}
+
+.hero-section h1 {
+	font-size: 2.2rem;
+	margin-bottom: 1rem;
+}
+
+.hero-section p {
+	font-size: 1.2rem;
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+/* About Content Section */
+.about-content {
+	max-width: 1000px;
+	margin: 2rem auto;
+	padding: 1rem;
+	background-color: #fff;
+	border-radius: 6px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.about-content h2 {
+	margin-top: 1.5rem;
+	font-size: 1.8rem;
+}
+
+.about-content p {
+	line-height: 1.6;
+	margin: 1rem 0;
+}
+
+/* Leadership Cards */
+.leadership {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	margin-top: 1rem;
+}
+
+.leader-card {
+	flex: 1 1 30%;
+	background-color: #f9f9f9;
+	border-radius: 6px;
+	text-align: center;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	padding: 1rem;
+}
+
+.leader-card img {
+	width: 80%;
+	border-radius: 50%;
+	margin-bottom: 0.5rem;
+}
+
+.leader-card h3 {
+	margin: 0.5rem 0;
+}
+
+.leader-card p {
+	margin: 0;
+	font-style: italic;
+}
+
+/* Mission & Vision */
+.mission-vision {
+	max-width: 1000px;
+	margin: 2rem auto;
+	padding: 1rem;
+	background-color: #fff;
+	border-radius: 6px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mission-vision h2 {
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+
+.mv-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+}
+
+.mv-box {
+	flex: 1 1 45%;
+	background-color: #f9f9f9;
+	border-radius: 6px;
+	padding: 1rem;
+}
+
+.mv-box h3 {
+	margin: 0 0 0.5rem 0;
+}
+
+/* Call to Action */
+.call-to-action {
+	text-align: center;
+	margin: 2rem auto;
+	padding: 2rem;
+	max-width: 1000px;
+	background-color: #fff;
+	border-radius: 6px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.call-to-action a {
+	color: #0066cc;
+	text-decoration: underline;
+}
+
+/* Footer */
+footer {
+	border-top: 2px solid #ddd;
+	display: flex;
+	flex-direction: column;
+	padding: 20px 40px;
+	border-top: 2px solid #ddd;
+	background-color: #f5f5f5;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer_area {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.logos {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.contact,
+.events {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.social_media img {
+	margin: right;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+}
+
+
+.contact {
+	margin: 1rem 0;
+}
+.copyright p {
+	color: rgb(139, 139, 139);
+}
+
+/* Copyright */
+.copyright {
+	text-align: center;
+}
+
+/* ===============   Responsive Breakpoints   =============== */
+@media (max-width: 768px) {
+	.hero-section h1 {
+		font-size: 1.8rem;
+	}
+
+	.about-content,
+	.mission-vision,
+	.call-to-action {
+		margin: 1rem;
+	}
+
+	.leadership {
+		flex-direction: column;
+	}
+
+	.leader-card {
+		flex: 1 1 100%;
+	}
+
+	.mv-container {
+		flex-direction: column;
+	}
+
+	.mv-box {
+		flex: 1 1 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.hero-section {
+		padding: 2rem 1rem;
+	}
+
+	.hero-section h1 {
+		font-size: 1.6rem;
+	}
+
+	nav {
+		flex-wrap: wrap;
+	}
+}

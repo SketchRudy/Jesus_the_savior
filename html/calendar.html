@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monthly Church Calendar</title>
+    <!-- Link to the CSS -->
+    <link rel="stylesheet" href="/css/calendar.css" />
+    <!-- (Optional) Google Fonts for a more elegant look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@100;400&display=swap" rel="stylesheet">    
+  </head>
+  <body>
+    <!-- =======================
+       HEADER / NAVIGATION
+  ======================== -->
+    <header>
+      <div id="logo">
+        <img src="/assets/images/noword.png" class="isuslogo">
+      </div>
+      <nav>
+        <a href="/html/index.html">Home</a>
+        <a href="/html/aboutus.html">About Us</a>
+        <a href="/html/calendar.html" class="active-link">Calendar</a>
+        <a href="/html/contactus.html">Contact Us</a>
+        <!-- Add more nav links as needed -->
+      </nav>
+      <div class="user-actions">
+        <button class="button-donate" role="button">Donate</button>
+      </div>
+    </header>
+    <!-- =======================
+         HERO SECTION
+  ======================== -->
+    <section class="calendar-hero">
+      <h1>Monthly Church Calendar</h1>
+      <p>Your guide to all upcoming services, events, and community gatherings.</p>
+    </section>
+    <!-- =======================
+         MAIN CALENDAR
+  ======================== -->
+    <main>
+      <section class="calendar-wrapper">
+        <!-- Month controls -->
+        <div class="calendar-controls">
+          <button onclick="prevMonth()" class="month-btn">Previous</button>
+          <h2 id="monthYear"></h2>
+          <button onclick="nextMonth()" class="month-btn">Next</button>
+        </div>
+        <!-- Calendar container (where JS will inject the grid) -->
+        <div id="calendar"></div>
+      </section>
+    </main>
+    <!-- =======================
+         FOOTER
+  ======================== -->
+  <footer>
+    <div class="footer_area ">
+      <div class="logos ">
+        <div id="logo">
+          <img src="/assets/images/noword.png" class="isuslogo">
+        </div>
+        <!-- <address>Address: <br>1024 Monroe Ave NE
+        <br>Renton, WA 98056</br> -->
+        </address>
+        <div class="social_media ">
+          <a href="https://www.instagram.com/jesusmbc_youth/ " target="_blank ">
+            <img src="/assets/images/insta.png" alt="Instagram">
+            <a href="https://www.youtube.com/@IsusSalvatorulRenton" target="_blank">
+              <img src="/assets/images/hdyoutube.png" alt="Youtube">
+        </div>
+      </div>
+      </a>
+      <div class="contact ">
+        <!-- <h2>Contact Us</h2> -->
+      </div>
+      <div class="events ">
+        <a href="/html/contactus.html">
+        </a>
+        <div class="copyright ">
+          <p>&copy; 2025 Jesus the Savior | All Rights Reserved</p>
+        </div>
+  </footer>
+    <!-- =======================
+         SCRIPTS
+  ======================== -->
+    <!-- Include your calendar.js below -->
+    <script src="/js/script.js"></script>
+  </body>
+</html>
