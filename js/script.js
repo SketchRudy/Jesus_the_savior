@@ -16,6 +16,7 @@ detailsElements.forEach((details) => {
 });
 
 
+
 /***********************************************
  * Current Displayed Month/Year
  ***********************************************/

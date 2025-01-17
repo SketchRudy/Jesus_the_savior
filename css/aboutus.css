@@ -1,13 +1,8 @@
-/* Reset / Global */
-* {
-	box-sizing: border-box;
-}
-
-body {
-	margin: 0;
-	font-family: Arial, sans-serif;
-	background-color: #f0f0f0;
-}
+/* ABOUT US PAGE */
+/* ========================
+     HEADER & NAV
+   (Consistent with index.css)
+======================== */
 
 header {
 	display: flex;
@@ -20,6 +15,7 @@ header {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 	position: sticky;
 	top: 0;
+
 }
 footer, header {
     width: 100%; /* Ensure it spans the full width of the screen */
@@ -29,13 +25,6 @@ footer, header {
     box-sizing: border-box; /* Include padding in width calculations */
 }
 
-nav {
-	display: flex;
-	gap: 2rem;
-	padding: 30px;
-	margin-left: -225px;
-}
-
 .isuslogo {
 	width: 400px;
 	z-index: 1000;
@@ -43,20 +32,13 @@ nav {
 	margin-left: -30px;
 }
 
-.events h2 {
-	font-size: 20px;
-	position: absolute;
-	margin-top: 10px;
-	margin-left: -115px;
+nav {
+    display: flex;
+    gap: 2rem;
+    padding: 30px;
+	margin-left: -225px;
 }
-.copyright {
-	text-align: center;
-	margin-left: -1100px;
-	margin-top: 180px;
-	position: absolute;
-	font-size: 0.9rem;
-	color: #666;
-}
+
 nav a {
 	text-decoration: none;
 	color: #333;
@@ -64,6 +46,7 @@ nav a {
 	padding: 0.3rem 0.6rem;
 	transition: background-color 0.3s;
 	font-family: 'Poppins', sans-serif;
+	
 }
 
 nav a:hover,
@@ -132,231 +115,157 @@ nav a.active-link {
 	top: 0;
 	border-radius: 10px;
 }
-
-/*-----------------------------*/
-
-/* Hero Section */
-.hero-section {
-	background: #fafafa;
-	/* could be a hero image background if you prefer */
+/* ----------------------- 
+ 	Banner changing colors
+   ----------------------*/
+.about-hero {
 	text-align: center;
-	padding: 3rem 1rem;
+	padding: 5rem 2rem;
+	background: linear-gradient(120deg, #6c757d, #495057, #007bff);
+	background-size: 400% 400%;
+	color: white;
+	animation: gradientAnimation 15s ease infinite;
 	width: 100%; /* Ensure it spans the full width of the screen */
     max-width: 1900px; /* Prevent excessive stretching */
     margin: 0 auto; /* Center the content */
+    padding: 10px 20px; /* Add padding for spacing */
     box-sizing: border-box; /* Include padding in width calculations */
-	border-bottom: 2px solid #ddd;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  @keyframes gradientAnimation {
+	0% {
+	  background-position: 0% 50%;
+	}
+	50% {
+	  background-position: 100% 50%;
+	}
+	100% {
+	  background-position: 0% 50%;
+	}
+  }
+  
+/* ----------------------- */
+.about-card {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 300px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5), 0 0 20px rgba(0, 123, 255, 0.7);
+  
 }
 
 
-.hero-section h1 {
-	font-size: 2.2rem;
-	color: #333;
+
+/* ----------------------- */
+  .about-hero h1 {
+	font-size: 2.5rem;
 	margin-bottom: 1rem;
-}
-
-.hero-section p {
+	
+  }
+  
+  .about-hero p {
 	font-size: 1.2rem;
-	margin: 0 auto;
-	max-width: 600px;
-}
 
-/* About Content Section */
-.about-content {
-	max-width: 1000px;
-	margin: 2rem auto;
-	padding: 1rem;
-	background-color: #fff;
-	border-radius: 6px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.about-content h2 {
-	margin-top: 1.5rem;
-	font-size: 1.8rem;
-}
-
-.about-content p {
-	line-height: 1.6;
-	margin: 1rem 0;
-}
-
-/* Leadership Cards */
-.leadership {
+  }
+  
+  .about-section {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1.5rem;
-	margin-top: 1rem;
-}
+	justify-content: center;
+	gap: 2rem;
+	padding: 3rem 2rem;
 
-.leader-card {
-	flex: 1 1 30%;
-	background-color: #f9f9f9;
-	border-radius: 6px;
+  }
+  
+  
+  .about-card {
+	background-color: white;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	max-width: 300px;
+	padding: 1.5rem;
 	text-align: center;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-	padding: 1rem;
-}
-
-.leader-card img {
-	width: 80%;
-	border-radius: 50%;
-	margin-bottom: 0.5rem;
-}
-
-.leader-card h3 {
-	margin: 0.5rem 0;
-}
-
-.leader-card p {
-	margin: 0;
-	font-style: italic;
-}
-
-/* Mission & Vision */
-.mission-vision {
-	max-width: 1000px;
-	margin: 2rem auto;
-	padding: 1rem;
-	background-color: #fff;
-	border-radius: 6px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.mission-vision h2 {
-	font-size: 1.8rem;
+	transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .about-card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5), 0 0 20px rgba(0, 123, 255, 0.7);
+  }
+  
+  
+  .about-card h2 {
+	font-size: 1.5rem;
 	margin-bottom: 1rem;
-}
+  }
+  
+  .about-card p {
+	font-size: 1rem;
+	color: #666;
+  }
+  
 
-.mv-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1.5rem;
-}
-
-.mv-box {
-	flex: 1 1 45%;
-	background-color: #f9f9f9;
-	border-radius: 6px;
-	padding: 1rem;
-}
-
-.mv-box h3 {
-	margin: 0 0 0.5rem 0;
-}
-
-/* Call to Action */
-.call-to-action {
+  
+  .call-to-action {
 	text-align: center;
-	margin: 2rem auto;
-	padding: 2rem;
-	max-width: 1000px;
-	background-color: #fff;
-	border-radius: 6px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.call-to-action a {
-	color: #0066cc;
-	text-decoration: underline;
-}
-
-/* Footer */
-footer {
-	border-top: 2px solid #ddd;
-	display: flex;
-	flex-direction: column;
-	padding: 20px 40px;
-	border-top: 2px solid #ddd;
+	padding: 3rem 2rem;
 	background-color: #f5f5f5;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.footer_area {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	flex-wrap: wrap;
-	margin-bottom: 20px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-.logos {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.contact,
-.events {
-	font-size: 18px;
-	margin-bottom: 10px;
-}
-
-.social_media img {
-	margin: right;
-	display: inline-block;
-	width: 40px;
-	height: 40px;
-}
-
-
-.contact {
-	margin: 1rem 0;
-}
-.copyright p {
-	color: rgb(139, 139, 139);
-}
-
-/* Copyright */
-.copyright {
+	border-top: 2px solid #ddd;
+	width: 100%; /* Ensure it spans the full width of the screen */
+    max-width: 1900px; /* Prevent excessive stretching */
+    margin: 0 auto; /* Center the content */
+    padding: 10px 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in width calculations */
+  }
+  
+  .call-to-action h2 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	
+  }
+  
+  .call-to-action p {
+	font-size: 1.1rem;
+	margin-bottom: 2rem;
+  }
+  
+  .learn-more-button {
+	padding: 0.8rem 2rem;
+	background-color: #414141;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+  }
+  
+  .learn-more-button:hover {
+	background-color: #333;
+  }
+  
+  footer {
+	padding: 2rem;
 	text-align: center;
-}
-
-/* ===============   Responsive Breakpoints   =============== */
-@media (max-width: 768px) {
-	.hero-section h1 {
-		font-size: 1.8rem;
-	}
-
-	.about-content,
-	.mission-vision,
-	.call-to-action {
-		margin: 1rem;
-	}
-
-	.leadership {
-		flex-direction: column;
-	}
-
-	.leader-card {
-		flex: 1 1 100%;
-	}
-
-	.mv-container {
-		flex-direction: column;
-	}
-
-	.mv-box {
-		flex: 1 1 100%;
-	}
-}
-
-@media (max-width: 480px) {
-	header {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	.hero-section {
-		padding: 2rem 1rem;
-	}
-
-	.hero-section h1 {
-		font-size: 1.6rem;
-	}
-
-	nav {
-		flex-wrap: wrap;
-	}
-}
+	background-color: #414141;
+	color: white;
+	margin-top: 2rem;
+  }
+  
+  .social_media img {
+	width: 30px;
+	margin: 0 10px;
+  }
+  
+  footer p {
+	margin-top: 1rem;
+	font-size: 0.9rem;
+  }
+  

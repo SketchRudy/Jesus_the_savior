@@ -45,12 +45,32 @@ nav {
 	width: 350px;
 }
 
-.church_photo {
+
+
+  
+.title {
+	position: absolute;
+	top: 30%; /* Centers vertically */
+	left: 50%; /* Centers horizontally */
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 3rem; /* Adjust text size */
+	font-weight: bold;
+	text-align: center;
+
+	padding: 10px 20px;
+
+}
+
+
+.church_photo{
 	width: 119em;
 	height: 1000px;
 	display: block;
 	box-shadow: 0 0 5px 2px #282a2d;
-
+	display: block;
+	margin: auto;
+	filter: grayscale(100%);
 }
 
 nav a {
@@ -72,7 +92,9 @@ nav a:hover,
 nav a.active-link {
 	background-color: #ddd;
 	border-radius: 4px;
+
 }
+
 
 
 nav a:hover {
@@ -250,44 +272,133 @@ body {
 	overflow: visible;
 	background-color: #f0f0f0;
 }
-
+/* -------------------------------   */
 /* 1. Main container to center and constrain width */
+/* SERVICES CONTAINER */
 .services-container {
-	max-width: 800px;
-	margin: 0 auto;
-	/* Adjust as needed */
-	padding: 4rem;
-	/* Center horizontally*/
-}
-
-/* 2. Light gray box styling */
-.service-box {
-	background-color: lightgray;
-	border-radius: 5px;
-	padding: 2rem;
-	margin-bottom: 1rem;
-	/* Space out the boxes vertically */
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-	text-align: center;
-	box-shadow: 0 0 5px 2px #282a2d;
-}
-
-/* 3. Make the Sunday box full width */
-.full-width {
-	width: 92%;
-}
-
-/* 4. Row to display Wednesday and Friday side by side */
-.service-row {
 	display: flex;
-	gap: 1rem;
-}
-
-/* 5. Each box in the row grows/shrinks equally */
-.service-row .service-box {
-	flex: 1;
-}
-
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem; /* Space between service rows */
+	padding: 4rem 1rem;
+  }
+  
+  /* SERVICE ROW (Holds all boxes) */
+  .service-row {
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem; /* Space between individual boxes */
+	width: 100%; /* Full-width row */
+  }
+  
+  /* SERVICE BOX */
+  .service-box {
+	background: linear-gradient(135deg, #e3e3e3, #f9f9f9); /* Subtle gradient */
+	border-radius: 10px;
+	padding: 1.5rem;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+	position: relative; /* Required for the decorative effect */
+	text-align: center;
+	cursor: pointer;
+	max-width: 500px;
+  }
+  
+  /* UNIQUE WIDTH STYLING */
+  .service-box.full-width {
+	width: 60%; /* Largest box for Sunday */
+  }
+  
+  .service-box:nth-child(1) {
+	width: 60%; /* Largest */
+  }
+  
+  .service-box:nth-child(2) {
+	width: 40%; /* Medium */
+  }
+  
+  .service-box:nth-child(3) {
+	width: 30%; /* Smallest */
+  }
+  
+  /* BOX HOVER EFFECT */
+  .service-box:hover {
+	transform: translateY(-10px) scale(1.02); /* Slightly lift and scale */
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* More intense shadow */
+	background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Lighter on hover */
+  }
+  
+  /* INNER TEXT STYLING */
+  .service-box h4 {
+	font-size: 1.5rem; /* Heading size */
+	font-weight: 600; /* Bold heading */
+	color: #444; /* Neutral text color */
+	margin-bottom: 1rem;
+  }
+  
+  .service-box p {
+	font-size: 1rem;
+	color: #666;
+  }
+  
+  /* DECORATIVE EFFECT: Lines at the top of each box */
+  .service-box::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60%;
+	height: 5px;
+	background-color: #cbb967; /* Gold-like accent to match the theme */
+	border-radius: 5px;
+  }
+  
+  /* ANIMATED FADE-IN APPEARANCE */
+  .service-box {
+	animation: fadeInShrink 0.8s ease forwards;
+	opacity: 0; /* Initially invisible */
+  }
+  
+  .service-box:nth-child(1) {
+	animation-delay: 0.2s;
+  }
+  
+  .service-box:nth-child(2) {
+	animation-delay: 0.4s;
+  }
+  
+  .service-box:nth-child(3) {
+	animation-delay: 0.6s;
+  }
+  
+  /* Keyframes for the fade-in shrink effect */
+  @keyframes fadeInShrink {
+	from {
+	  opacity: 0;
+	  transform: translateY(20px) scale(1.1); /* Start slightly larger and lower */
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0) scale(1); /* End in place */
+	}
+  }
+  
+  /* RESPONSIVENESS */
+  @media (max-width: 768px) {
+	.service-box.full-width {
+	  width: 80%; /* Adjust for smaller screens */
+	}
+	.service-box:nth-child(2) {
+	  width: 60%;
+	}
+	.service-box:nth-child(3) {
+	  width: 50%;
+	}
+  }
+  
+  
+/* ------------------------------------- */
 h1 {
 	color: black;
 	text-align: center;

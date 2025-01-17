@@ -57,6 +57,36 @@ nav {
 	margin-left: -225px;
 }
 
+/* ----------------------- 
+ 	Banner changing colors
+   ----------------------*/
+   .calendar-hero h1{
+	text-align: center;
+	padding: 5rem 2rem;
+	background: linear-gradient(120deg, #6c757d, #495057, #007bff);
+	background-size: 400% 400%;
+	color: white;
+	animation: gradientAnimation 15s ease infinite;
+	font-size: 2.2rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+	
+  }
+  
+  @keyframes gradientAnimation {
+	0% {
+	  background-position: 0% 50%;
+	}
+	50% {
+	  background-position: 100% 50%;
+	}
+	100% {
+	  background-position: 0% 50%;
+	}
+  }
+  
+/* ----------------------- */
+
 nav a {
 	text-decoration: none;
 	color: #333;
@@ -141,30 +171,25 @@ nav a.active-link {
    your overall site style
 ======================== */
 .calendar-hero {
-	background: #fafafa;
 	text-align: center;
-	padding: 3rem 2rem;
-	border-bottom: 2px solid #ddd;
-	/* Subtle separator if you want */
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	padding: 1rem 4rem;
+	background: linear-gradient(120deg, #6c757d, #495057, #007bff);
+	background-size: 400% 400%;
+	color: white;
+	animation: gradientAnimation 15s ease infinite;
 	width: 100%; /* Ensure it spans the full width of the screen */
     max-width: 1900px; /* Prevent excessive stretching */
     margin: 0 auto; /* Center the content */
+    padding: 10px 20px; /* Add padding for spacing */
     box-sizing: border-box; /* Include padding in width calculations */
 }
 
-.calendar-hero h1 {
-	font-size: 2.2rem;
-	color: #333;
-	margin-bottom: 1rem;
-	font-weight: 600;
-}
 
 .calendar-hero p {
 	font-size: 1.1rem;
 	max-width: 600px;
 	margin: 0 auto;
-	color: #555;
+	color: #ffffff;
 }
 
 /* =============================
