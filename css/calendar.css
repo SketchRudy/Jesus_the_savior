@@ -177,11 +177,7 @@ nav a.active-link {
 	background-size: 400% 400%;
 	color: white;
 	animation: gradientAnimation 15s ease infinite;
-	width: 100%; /* Ensure it spans the full width of the screen */
-    max-width: 1900px; /* Prevent excessive stretching */
-    margin: 0 auto; /* Center the content */
-    padding: 10px 20px; /* Add padding for spacing */
-    box-sizing: border-box; /* Include padding in width calculations */
+	
 }
 
 

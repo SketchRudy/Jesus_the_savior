@@ -14,7 +14,7 @@ header {
 	background-color: white;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 	position: sticky;
-	top: 0;
+	top: 0;	
 }
 
 nav {
@@ -30,6 +30,133 @@ nav {
 	margin-top: 10px;
 	margin-left: -115px;
 }
+
+/* -------------------------- */
+.bubble {
+	position: relative;
+	max-width: 900px;
+	margin: 3rem auto;
+	padding: 3rem 4rem;
+	background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+	box-shadow: inset 0 0 0 5px black, 0 10px 20px rgba(0, 0, 0, 0.3);
+	border: 1px solid #cbb967;
+	border-radius: 0; /* Sharp corners for a book look */
+	font-family: 'Merriweather', serif;
+	text-align: center;
+	line-height: 1.8;
+	background-image: radial-gradient(circle, #fefefe, #f5f5f5);
+  }
+  
+  /* Simulate Book Spine */
+  .bubble::before,
+  .bubble::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 20px;
+	background: #cbb967;
+	z-index: -1;
+  }
+  
+  .bubble::before {
+	left: -25px; /* Add spine effect */
+	box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  }
+  
+  .bubble::after {
+	right: -25px; /* Add spine effect */
+	box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  }
+  
+  /* Typography for the Quote */
+  .bubble h1 {
+	font-family: 'Playfair Display', serif;
+	font-size: 2rem;
+	font-weight: 500;
+	color: #333;
+	margin-bottom: 1.5rem;
+	line-height: 1.6;
+  }
+  
+  .bubble p {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.2rem;
+	color: #666;
+	margin: 0.5rem 0;
+  }
+  
+  .bubble p:last-child {
+	margin-top: 1.5rem;
+	font-style: italic;
+	color: #999;
+	font-family: 'Merriweather', serif;
+  }
+  
+  /* Decorative Gold Lines */
+  .bubble span {
+	display: block;
+	margin: 1.5rem auto;
+	width: 50%;
+	height: 2px;
+	background: linear-gradient(to right, #cbb967, transparent, #cbb967);
+  }
+  
+  /* Fade-in Effect */
+  .bubble {
+	animation: fadeInBook 1.5s ease-in-out forwards;
+	opacity: 0;
+  }
+  .script-title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #444;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+	text-align: center;
+	position: relative;
+  }
+  .script-title::after {
+	content: '';
+	position: absolute;
+	bottom: -10px; /* Space between text and underline */
+	margin-right: -100px;
+	text-align: center;
+	left: 38%; /* Adjust the extra space to the left */
+	right: 49%; /* Adjust the extra space to the right */
+	height: 2px; /* Thickness of the underline */
+	background: #444; /* Matches text color */
+	border-radius: 2px; /* Makes the line smoother */
+  }
+  @keyframes fadeInBook {
+	from {
+	  opacity: 0;
+	  transform: scale(0.95);
+	}
+	to {
+	  opacity: 1;
+	  transform: scale(1);
+	}
+  }
+  
+  /* Background Textured for a Book Page */
+  body {
+	background: radial-gradient(circle, #fef9e7, #f4ecd8) no-repeat;
+	background-attachment: fixed;
+  }
+  
+  /* Styling the Edges (Optional for Depth) */
+  .bubble::after,
+  .bubble::before {
+	background: linear-gradient(to bottom, #cbb967, #a68b5e);
+  }
+  
+  
+  
+
+  
+  
+/* -------------------------- /
 
 /* needs more work to be done^^^^^^ */
 
@@ -57,14 +184,13 @@ nav {
 	font-size: 3rem; /* Adjust text size */
 	font-weight: bold;
 	text-align: center;
-
 	padding: 10px 20px;
 
 }
 
 
 .church_photo{
-	width: 119em;
+	width: 118em;
 	height: 1000px;
 	display: block;
 	box-shadow: 0 0 5px 2px #282a2d;
@@ -94,7 +220,13 @@ nav a.active-link {
 	border-radius: 4px;
 
 }
-
+.image_text {
+	z-index: 500;
+	margin-top: -1000px;
+	margin-left: 400px;
+	position: absolute;
+	
+}
 
 
 nav a:hover {
@@ -330,10 +462,7 @@ body {
   
   /* INNER TEXT STYLING */
   .service-box h4 {
-	font-size: 1.5rem; /* Heading size */
-	font-weight: 600; /* Bold heading */
-	color: #444; /* Neutral text color */
-	margin-bottom: 1rem;
+
   }
   
   .service-box p {
@@ -481,24 +610,81 @@ footer {
 /* ===============   MEDIA QUERIES   ================ */
 /* =================================================== */
 
-/* 
-   1) Tablet / small laptop size or below (<= 1024px)
-*/
-@media (max-width: 1024px) {
-	nav {
-		margin-left: 0;
-		/* Remove the negative margin on smaller screens */
-		gap: 1rem;
-	}
+/* High-Resolution Monitors (2560x1440px) */
+@media (min-width: 2560px) and (max-height: 1440px) {
+    body {
+        font-size: 1.2rem;
+        margin: 0 auto;
+        padding: 0 10%; /* Center the content with side padding */
+    }
 
-	.arrow-right {
-		right: 30px;
-	}
+    header {
+        padding: 2rem 10%;
+    }
 
-	/* Possibly reduce container padding so content fits better */
-	.services-container {
-		padding: 2rem;
-	}
+    nav {
+        gap: 3rem;
+    }
+
+    nav a {
+        font-size: 1.2rem; /* Slightly larger nav links */
+    }
+
+    .church_photo {
+        max-width: 70%;
+        height: auto;
+        display: block;
+        margin: 3rem auto;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .image_text {
+        max-width: 60%;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+
+    .verse {
+        font-size: 2.5rem;
+        margin: 2rem 0;
+    }
+
+    .services-container {
+        max-width: 80%;
+        margin: 4rem auto;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .service-box {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .container {
+        max-width: 75%;
+        margin: 4rem auto;
+        font-size: 1.1rem;
+    }
+
+    footer {
+        padding: 3rem 10%;
+        font-size: 1rem;
+    }
+
+    .footer_area .logos img {
+        max-width: 200px;
+    }
 }
 
 /* 

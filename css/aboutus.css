@@ -130,6 +130,7 @@ nav a.active-link {
     margin: 0 auto; /* Center the content */
     padding: 10px 20px; /* Add padding for spacing */
     box-sizing: border-box; /* Include padding in width calculations */
+	
   }
   
   @keyframes gradientAnimation {
@@ -153,6 +154,7 @@ nav a.active-link {
   padding: 1.5rem;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
+  
 }
 
 .about-card:hover {
@@ -183,7 +185,6 @@ nav a.active-link {
 	padding: 3rem 2rem;
 
   }
-  
   
   .about-card {
 	background-color: white;
