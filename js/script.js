@@ -33,12 +33,21 @@ const monthNames = [
  ***********************************************/
 const events = {
   "2025-01-01": "New Year’s Service @ 10:00 AM",
-  "2025-01-04": "Midweek Bible Study @ 7:00 PM",
-  "2025-01-06": "Youth Night @ 7:30 PM",
-  "2025-01-07": "Choir Rehearsal @ 5:00 PM",
-  "2025-01-14": "Church Potluck – After Evening Service",
-  "2025-01-21": "Youth Retreat – Check the sign-up sheet",
-  "2025-01-28": "Community Outreach @ 11:00 AM to 2:00 PM"
+  "2025-01-05": "Sunday Service @ 10:00 AM",
+  "2025-01-12": "Sunday Service @ 10:00 AM",
+  "2025-01-19": "Sunday Service @ 10:00 AM",
+  "2025-01-26": "Sunday Service @ 10:00 AM",
+
+  "2025-01-08": "Bible Study @ 7:00 PM",
+  "2025-01-15": "Bible Study @ 7:00 PM",
+  "2025-01-22": "Bible Study @ 7:00 PM",
+  "2025-01-29": "Bible Study @ 7:00 PM",
+
+  "2025-01-03": "Youth @ 7:30 PM",
+  "2025-01-10": "Youth @ 7:30 PM",
+  "2025-01-17": "Youth @ 7:30 PM",
+  "2025-01-24": "Youth @ 7:30 PM",
+  "2025-01-31": "Youth @ 7:30 PM",
   // Add more as needed...
 };
 

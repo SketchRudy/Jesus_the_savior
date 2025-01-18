@@ -47,7 +47,7 @@ nav {
 	background-image: radial-gradient(circle, #fefefe, #f5f5f5);
   }
   
-  /* Simulate Book Spine */
+  /* Simulate Book  */
   .bubble::before,
   .bubble::after {
 	content: "";
@@ -754,6 +754,8 @@ footer {
 	.services-container {
 		padding: 1rem;
 	}
+
+	
 
 
 }
