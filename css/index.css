@@ -152,11 +152,6 @@ nav {
 	background: linear-gradient(to bottom, #cbb967, #a68b5e);
   }
   
-  
-  
-
-  
-  
 /* -------------------------- /
 
 /* needs more work to be done^^^^^^ */
@@ -190,15 +185,16 @@ nav {
 }
 
 
-.church_photo{
-	width: 118em;
-	height: 1000px;
-	display: block;
-	box-shadow: 0 0 5px 2px #282a2d;
+.church_photo {
+	width: 100%;
+	max-width: 1900px;
+	height: auto;
 	display: block;
 	margin: auto;
+	box-shadow: 0 0 5px 2px #282a2d;
 	filter: grayscale(100%);
-}
+  }
+  
 
 nav a {
 	text-decoration: none;
@@ -224,7 +220,7 @@ nav a.active-link {
 .image_text {
 	z-index: 500;
 	margin-top: -1000px;
-	margin-left: 400px;
+	/* margin-left: 400px; Creates horizontal scroll */
 	position: absolute;
 	
 }
@@ -595,12 +591,14 @@ footer {
 
 .copyright {
 	text-align: center;
-	margin-left: -1100px;
-	margin-top: 180px;
-	position: absolute;
+	/* Remove or override this: margin-left: -1100px; position: absolute; */
+	margin: 0 auto;
+	position: static; /* or relative */
+	margin-top: 20px; /* or whatever positive margin you want */
 	font-size: 0.9rem;
 	color: #666;
-}
+  }
+  
 
 .copyright p {
 	color: rgb(139, 139, 139);
@@ -631,13 +629,13 @@ footer {
         font-size: 1.2rem; /* Slightly larger nav links */
     }
 
-    .church_photo {
+    /* .church_photo {
         max-width: 70%;
         height: auto;
         display: block;
         margin: 3rem auto;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
+    } */
 
     .image_text {
         max-width: 60%;
@@ -689,70 +687,69 @@ footer {
 }
 
 /* 
-	 2) Tablet / large phone size or below (<= 768px)
-  */
+   2) Tablet / large phone size or below (<= 768px)
+*/
 @media (max-width: 768px) {
 
-	/* Stack navigation vertically if you want */
-	nav {
-		flex-direction: column;
-		align-items: center;
-		margin-left: 0;
-	}
+    /* Stack navigation vertically if you want */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
 
-	nav a {
-		margin: 0.5rem 0;
-	}
+    nav a {
+        margin: 0.5rem 0;
+    }
 
-	/* Service-row boxes stack vertically */
-	.service-row {
-		flex-direction: column;
-	}
+    /* Service-row boxes stack vertically */
+    .service-row {
+        flex-direction: column;
+    }
 
-	.service-box {
-		margin-bottom: 1rem;
-	}
+    .service-box {
+        margin-bottom: 1rem;
+    }
 
-	.arrow-right {
-		right: -50px;
-	}
+    .arrow-right {
+        right: -50px;
+    }
 
-	/* Possibly reduce the text sizes a bit */
-	h1,
-	.container h1 {
-		font-size: 2rem;
-	}
+    /* Possibly reduce the text sizes a bit */
+    h1,
+    .container h1 {
+        font-size: 2rem;
+    }
 
-	footer {
-		padding: 10px 20px;
-		max-width: 100%;
-	}
+    footer {
+        padding: 10px 20px;
+        max-width: 100%;
+    }
 }
 
 /* 
-	 3) Very narrow phone screens (<= 480px)
-  */
+   3) Very narrow phone screens (<= 480px)
+*/
 @media (max-width: 480px) {
-	header {
-		flex-direction: column;
-		align-items: flex-start;
-	}
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-	/* Navigation again if you need further adjustments */
-	nav {
-		width: 100%;
-		justify-content: center;
-	}
+    /* Navigation again if you need further adjustments */
+    nav {
+        width: 100%;
+        justify-content: center;
+    }
 
-	.arrow-left,
-	.arrow-right {
-		font-size: 18px;
-		/* slightly smaller arrow icons */
-		padding: 5px;
-	}
+    .arrow-left,
+    .arrow-right {
+        font-size: 18px;  /* slightly smaller arrow icons */
+        padding: 5px;
+    }
 
-	/* Reduce container padding further */
-	.services-container {
-		padding: 1rem;
-	}
+    /* Reduce container padding further */
+    .services-container {
+        padding: 1rem;
+    }
 }
