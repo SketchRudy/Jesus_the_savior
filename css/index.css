@@ -2,20 +2,9 @@
 
 html {
 	scroll-behavior: smooth;
-  }
-  
-  body {
-	font-family: sans-serif, Arial;
-	margin: 0;
-	padding: 0;
-	overflow: visible;
-	background-color: #f0f0f0;
-	/* For radial background or any background image:
-	 * background: radial-gradient(circle, #fef9e7, #f4ecd8) no-repeat fixed;
-	*/
-  }
-  
-  header {
+}
+
+header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -25,170 +14,26 @@ html {
 	background-color: white;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 	position: sticky;
-	top: 0;
-	width: 100%;
-	max-width: 1900px; /* Prevent excessive stretching on very large screens */
-	margin: 0 auto;
-	box-sizing: border-box;
-  }
-  
-  nav {
+	top: 0;	
+	max-width: 1900px;
+}
+
+nav {
 	display: flex;
 	gap: 2rem;
-	/* Removed margin-left: -225px; that caused issues on smaller screens */
 	padding: 30px;
-  }
-  
-  nav a {
-	text-decoration: none;
-	color: #333;
-	font-size: 1.1rem;
-	padding: 0.3rem 0.6rem;
-	transition: background-color 0.3s;
-	font-family: 'Poppins', sans-serif;
-  }
-  
-  nav a:hover,
-  nav a.active-link {
-	background-color: #ddd;
-	border-radius: 4px;
-	color: #000;
-  }
-  
-  
-  /* HEADER LOGO EXAMPLE */
-  
-  .isuslogo {
-	width: 400px;
-	z-index: 1000;
-	/* removed negative margins for better responsiveness */
-	margin-bottom: 0;
-	margin-left: 0;
-  }
-  
-  .isus {
-	height: 150px;
-	width: 350px;
-  }
-  
-  /* TITLE OVERLAYING AN IMAGE (if you need it) */
-  .title {
-	color: white;
-	font-size: 3rem;
-	font-weight: bold;
-	text-align: center;
-	padding: 10px 20px;
-  
-	/* If you want it overlayed absolutely, keep but watch responsiveness */
-	position: absolute;
-	top: 30%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-  }
-  
-  /* Large hero image */
-  .church_photo{
-	display: block;
-	margin: auto;
-	width: 100%;
-	max-width: 1900px;
-	height: auto;
-	box-shadow: 0 0 5px 2px #282a2d;
-	filter: grayscale(100%);
-  }
-  
-  /* If you want text on top of image, best practice is absolute position. 
-	 But for responsiveness, try not to set large negative margins. */
-  .image_text {
-	z-index: 500;
-	position: absolute;
-	top: 0; /* adjust as necessary */
-	left: 0; /* or center with transform or flexbox approach */
-	margin: 1rem;
-	color: #fff;
-  }
-  
-  
-  /* BUTTON (COLORFUL DONATE) */
-  .button-donate {
-	padding: 0.6em 2em;
-	border: none;
-	outline: none;
-	color: rgb(255, 255, 255);
-	background: #111;
-	cursor: pointer;
-	position: relative;
-	z-index: 0;
-	border-radius: 10px;
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
-  }
-  .button-donate:before {
-	content: "";
-	background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00,
-	  #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-	position: absolute;
-	top: -2px;
-	left: -2px;
-	background-size: 400%;
-	z-index: -1;
-	filter: blur(5px);
-	width: calc(100% + 4px);
-	height: calc(100% + 4px);
-	animation: glowing-button-85 20s linear infinite;
-	transition: opacity 0.3s ease-in-out;
-	border-radius: 10px;
-  }
-  @keyframes glowing-button-85 {
-	0%   { background-position: 0 0; }
-	50%  { background-position: 400% 0; }
-	100% { background-position: 0 0; }
-  }
-  .button-donate:after {
-	z-index: -1;
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: #222;
-	left: 0;
-	top: 0;
-	border-radius: 10px;
-  }
-  
-  /* -------------------------------------------------- */
-  /* EVENTS & LINKS */
-  .events {
-	font-size: 18px;
-  }
-  .events h2 {
+	margin-left: -225px;
+}
+
+.events h2 {
 	font-size: 20px;
-	/* position: absolute; 
-	   Try to avoid absolute unless you specifically want it floating. 
-	   margin-left: -115px; 
-	   Instead, let it flow normally or override in media queries.
-	*/
-	margin: 1rem 0;
-  }
-  .events a {
-	color: black;
-	text-decoration: none;
-  }
-  .events a:hover {
-	text-decoration: underline;
-  }
-  .events ul {
-	list-style-type: none;
-	padding: 0;
-  }
-  .events li {
-	margin-bottom: 5px;
-  }
-  
-  /* ---------------------------------------------- */
-  /* QUOTE BUBBLE / BOOK */
-  .bubble {
+	position: absolute;
+	margin-top: 10px;
+	margin-left: -115px;
+}
+
+/* -------------------------- */
+.bubble {
 	position: relative;
 	max-width: 900px;
 	margin: 3rem auto;
@@ -201,9 +46,9 @@ html {
 	text-align: center;
 	line-height: 1.8;
 	background-image: radial-gradient(circle, #fefefe, #f5f5f5);
-	animation: fadeInBook 1.5s ease-in-out forwards;
-	opacity: 0;
   }
+  
+  /* Simulate Book  */
   .bubble::before,
   .bubble::after {
 	content: "";
@@ -211,16 +56,78 @@ html {
 	top: 0;
 	bottom: 0;
 	width: 20px;
-	background: linear-gradient(to bottom, #cbb967, #a68b5e);
+	background: #cbb967;
 	z-index: -1;
   }
+  
   .bubble::before {
-	left: -25px;
-	box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+	left: -25px; /* Add spine effect */
+	box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
   }
+  
   .bubble::after {
-	right: -25px;
-	box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+	right: -25px; /* Add spine effect */
+	box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  }
+  
+  /* Typography for the Quote */
+  .bubble h1 {
+	font-family: 'Playfair Display', serif;
+	font-size: 2rem;
+	font-weight: 500;
+	color: #333;
+	margin-bottom: 1.5rem;
+	line-height: 1.6;
+  }
+  
+  .bubble p {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.2rem;
+	color: #666;
+	margin: 0.5rem 0;
+  }
+  
+  .bubble p:last-child {
+	margin-top: 1.5rem;
+	font-style: italic;
+	color: #999;
+	font-family: 'Merriweather', serif;
+  }
+  
+  /* Decorative Gold Lines */
+  .bubble span {
+	display: block;
+	margin: 1.5rem auto;
+	width: 50%;
+	height: 2px;
+	background: linear-gradient(to right, #cbb967, transparent, #cbb967);
+  }
+  
+  /* Fade-in Effect */
+  .bubble {
+	animation: fadeInBook 1.5s ease-in-out forwards;
+	opacity: 0;
+  }
+  .script-title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #444;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+	text-align: center;
+	position: relative;
+  }
+  .script-title::after {
+	content: '';
+	position: absolute;
+	bottom: -10px; /* Space between text and underline */
+	margin-right: -100px;
+	text-align: center;
+	left: 38%; /* Adjust the extra space to the left */
+	right: 49%; /* Adjust the extra space to the right */
+	height: 2px; /* Thickness of the underline */
+	background: #444; /* Matches text color */
+	border-radius: 2px; /* Makes the line smoother */
   }
   @keyframes fadeInBook {
 	from {
@@ -232,45 +139,183 @@ html {
 	  transform: scale(1);
 	}
   }
-  .bubble h1 {
-	font-family: 'Playfair Display', serif;
-	font-size: 2rem;
-	font-weight: 500;
-	color: #333;
-	margin-bottom: 1.5rem;
-	line-height: 1.6;
-  }
-  .bubble p {
-	font-family: 'Poppins', sans-serif;
-	font-size: 1.2rem;
-	color: #666;
-	margin: 0.5rem 0;
-  }
-  .bubble p:last-child {
-	margin-top: 1.5rem;
-	font-style: italic;
-	color: #999;
-	font-family: 'Merriweather', serif;
-  }
-  .bubble span {
-	display: block;
-	margin: 1.5rem auto;
-	width: 50%;
-	height: 2px;
-	background: linear-gradient(to right, #cbb967, transparent, #cbb967);
+  
+  /* Background Textured for a Book Page */
+  body {
+	background: radial-gradient(circle, #fef9e7, #f4ecd8) no-repeat;
+	background-attachment: fixed;
   }
   
-  /* ---------------------------------------------- */
-  /* FAQ CONTAINER */
-  .container {
+  /* Styling the Edges (Optional for Depth) */
+  .bubble::after,
+  .bubble::before {
+	background: linear-gradient(to bottom, #cbb967, #a68b5e);
+  }
+  
+  
+  
+
+  
+  
+/* -------------------------- /
+
+/* needs more work to be done^^^^^^ */
+
+.isuslogo {
+	width: 400px;
+	z-index: 1000;
+	margin-bottom: -90px;
+	margin-left: -30px;
+}
+
+.isus {
+	height: 150px;
+	width: 350px;
+}
+
+
+
+  
+.title {
+	position: absolute;
+	top: 30%; /* Centers vertically */
+	left: 50%; /* Centers horizontally */
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 3rem; /* Adjust text size */
+	font-weight: bold;
+	text-align: center;
+	padding: 10px 20px;
+
+}
+
+
+.church_photo{
+	width: 118em;
+	height: 1000px;
+	display: block;
+	box-shadow: 0 0 5px 2px #282a2d;
+	display: block;
+	margin: auto;
+	filter: grayscale(100%);
+}
+
+nav a {
+	text-decoration: none;
+	color: #333;
+	font-size: 1.1rem;
+	padding: 0.3rem 0.6rem;
+	transition: background-color 0.3s;
+	font-family: 'Poppins', sans-serif;
+}
+footer, header {
+    width: 100%; /* Ensure it spans the full width of the screen */
+    max-width: 1900px; /* Prevent excessive stretching */
+    margin: 0 auto; /* Center the content */
+    padding: 10px 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+nav a:hover,
+nav a.active-link {
+	background-color: #ddd;
+	border-radius: 4px;
+
+}
+.image_text {
+	z-index: 500;
+	margin-top: -1000px;
+	margin-left: 400px;
+	position: absolute;
+	
+}
+
+
+nav a:hover {
+	color: #000;
+}
+
+.events a {
+	color: black;
+}
+
+.events a:hover {
+	text-decoration: underline;
+}
+
+/* Below code turns nav black
+.events */
+.button-donate {
+	padding: 0.6em 2em;
+	border: none;
+	outline: none;
+	color: rgb(255, 255, 255);
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+/* COLORFUL DONATE BUTTON */
+.button-donate:before {
+	content: "";
+	background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00,
+			#48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing-button-85 20s linear infinite;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+	0% {
+		background-position: 0 0;
+	}
+
+	50% {
+		background-position: 400% 0;
+	}
+
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.button-donate:after {
+	z-index:
+		-1;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #222;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
+/* ----------------------------------- */
+.container {
 	max-width: 800px;
 	margin: 2rem auto;
-  }
-  .container h1 {
+}
+
+.container h1 {
 	padding: 0.6em 1em;
 	border: none;
 	outline: none;
-	color: #fff;
+	color: rgb(255, 255, 255);
 	background: #111;
 	position: relative;
 	z-index: 0;
@@ -278,88 +323,155 @@ html {
 	user-select: none;
 	-webkit-user-select: none;
 	touch-action: manipulation;
-  }
-  details {
+
+}
+
+
+details {
 	background-color: white;
 	color: black;
 	font-size: 2rem;
 	border-radius: 5px;
 	margin: 0.5rem 0;
 	overflow: hidden;
+	/* Prevent content overflow during
+animations */
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  summary {
+}
+
+summary {
 	padding: 1rem;
 	cursor: pointer;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	font-weight: 600;
+	/* Bold text for questions */
 	transition: background-color 0.3s ease;
 	border: 1px solid transparent;
-  }
-  summary:hover {
+}
+
+summary:hover {
 	background-color: rgb(156, 154, 154);
 	border: 1px solid #555;
-  }
-  summary:after {
-	content: "\002b"; /* Plus sign for collapsed */
+	/* TO-DO! REMOVE OR KEEP, ADDS BORDER ON FAQ HOVER*/
+}
+
+summary:after {
+	content: "\002b";
+	/* Plus sign for collapsed state */
 	font-size: 1.5rem;
 	transition:0.3s ease;
-  }
-  details[open] summary {
-	background-color: #414141; /* Darker background for open state*/
+	transform: 0.3s ease;
+}
+
+details[open] summary {
+	background-color: #414141;
+	/* Darker background for open state*/
 	border-bottom: 1px solid #665;
-  }
-  details[open] summary:after {
-	content: "\00D7"; /* Close (X) sign for expanded */
-  }
-  details[open] div {
+}
+
+details[open] summary:after {
+	content: "\00D7";
+	/* Close (X) sign for expanded state */
+}
+
+details[open] div {
 	padding: 1rem;
 	background-color: lightgray;
 	border-top: 1px solid #444;
 	font-size: 1rem;
 	animation: fadeIn 0.3s ease-in-out;
-  }
-  @keyframes fadeIn {
+}
+
+@keyframes fadeIn {
 	from {
-	  opacity: 0;
-	  transform: translateY(-5px);
+		opacity: 0;
+		transform: translateY(-5px);
 	}
+
 	to {
-	  opacity: 1;
-	  transform: translateY(0);
+		opacity: 1;
+		transform: translateY(0);
 	}
-  }
-  
-  /* ---------------------------------------------- */
-  /* SERVICES SECTION */
-  .services-container {
+}
+
+
+/* -----------------------------------*/
+body {
+	font-family: sans-serif, Arial;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	background-color: #f0f0f0;
+}
+/* -------------------------------   */
+/* 1. Main container to center and constrain width */
+/* SERVICES CONTAINER */
+.services-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 2rem;
+	gap: 2rem; /* Space between service rows */
 	padding: 4rem 1rem;
   }
+  
+  /* SERVICE ROW (Holds all boxes) */
   .service-row {
 	display: flex;
 	justify-content: center;
-	gap: 1.5rem;
-	width: 100%;
+	gap: 1.5rem; /* Space between individual boxes */
+	width: 100%; /* Full-width row */
   }
+  
+  /* SERVICE BOX */
   .service-box {
-	background: linear-gradient(135deg, #e3e3e3, #f9f9f9);
+	background: linear-gradient(135deg, #e3e3e3, #f9f9f9); /* Subtle gradient */
 	border-radius: 10px;
 	padding: 1.5rem;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
 	transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
-	position: relative;
+	position: relative; /* Required for the decorative effect */
 	text-align: center;
 	cursor: pointer;
 	max-width: 500px;
-	animation: fadeInShrink 0.8s ease forwards;
-	opacity: 0;
   }
+  
+  /* UNIQUE WIDTH STYLING */
+  .service-box.full-width {
+	width: 60%; /* Largest box for Sunday */
+  }
+  
+  .service-box:nth-child(1) {
+	width: 60%; /* Largest */
+  }
+  
+  .service-box:nth-child(2) {
+	width: 40%; /* Medium */
+  }
+  
+  .service-box:nth-child(3) {
+	width: 30%; /* Smallest */
+  }
+  
+  /* BOX HOVER EFFECT */
+  .service-box:hover {
+	transform: translateY(-10px) scale(1.02); /* Slightly lift and scale */
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* More intense shadow */
+	background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Lighter on hover */
+  }
+  
+  /* INNER TEXT STYLING */
+  .service-box h4 {
+
+  }
+  
+  .service-box p {
+	font-size: 1rem;
+	color: #666;
+  }
+  
+  /* DECORATIVE EFFECT: Lines at the top of each box */
   .service-box::before {
 	content: "";
 	position: absolute;
@@ -368,252 +480,279 @@ html {
 	transform: translateX(-50%);
 	width: 60%;
 	height: 5px;
-	background-color: #cbb967; /* gold accent */
+	background-color: #cbb967; /* Gold-like accent to match the theme */
 	border-radius: 5px;
   }
-  @keyframes fadeInShrink {
-	from {
-	  opacity: 0;
-	  transform: translateY(20px) scale(1.1);
-	}
-	to {
-	  opacity: 1;
-	  transform: translateY(0) scale(1);
-	}
+  
+  /* ANIMATED FADE-IN APPEARANCE */
+  .service-box {
+	animation: fadeInShrink 0.8s ease forwards;
+	opacity: 0; /* Initially invisible */
   }
-  .service-box:hover {
-	transform: translateY(-10px) scale(1.02);
-	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-	background: linear-gradient(135deg, #ffffff, #f0f0f0);
-  }
-  .service-box.full-width {
-	width: 60%;
-  }
+  
   .service-box:nth-child(1) {
-	width: 60%;
 	animation-delay: 0.2s;
   }
+  
   .service-box:nth-child(2) {
-	width: 40%;
 	animation-delay: 0.4s;
   }
+  
   .service-box:nth-child(3) {
-	width: 30%;
 	animation-delay: 0.6s;
   }
   
-  /* ---------------------------------------------- */
-  /* BASIC TEXT */
-  h1 {
-	color: black;
-	text-align: center;
-  }
-  h4 {
-	text-align: center;
-  }
-  p {
-	color: black;
-	text-align: center;
-  }
-  .verse {
-	font-family: sans-serif;
-	text-align: center;
+  /* Keyframes for the fade-in shrink effect */
+  @keyframes fadeInShrink {
+	from {
+	  opacity: 0;
+	  transform: translateY(20px) scale(1.1); /* Start slightly larger and lower */
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0) scale(1); /* End in place */
+	}
   }
   
-  /* ---------------------------------------------- */
-  /* FOOTER */
-  footer {
+  /* RESPONSIVENESS */
+  @media (max-width: 768px) {
+	.service-box.full-width {
+	  width: 80%; /* Adjust for smaller screens */
+	}
+	.service-box:nth-child(2) {
+	  width: 60%;
+	}
+	.service-box:nth-child(3) {
+	  width: 50%;
+	}
+  }
+  
+  
+/* ------------------------------------- */
+h1 {
+	color: black;
+	text-align: center;
+}
+
+h4 {
+	text-align: center;
+
+}
+
+.verse {
+	font-family: sans-serif;
+	text-align: center;
+}
+
+p {
+	color: black;
+	text-align: center;
+}
+
+footer {
+	border-top: 2px solid #ddd;
 	display: flex;
 	flex-direction: column;
 	padding: 20px 40px;
 	background-color: #f5f5f5;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-	border-top: 2px solid #ddd;
-	width: 100%;
-	max-width: 1900px;
-	margin: 0 auto;
-	box-sizing: border-box;
-  }
-  .footer_area {
+}
+
+.footer_area {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
 	flex-wrap: wrap;
 	margin-bottom: 20px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  .social_media img {
+}
+
+.social_media img {
+	margin: right;
+	display: inline-block;
 	width: 40px;
 	height: 40px;
-	display: inline-block;
-  }
-  .contact, .events {
+}
+
+.contact,
+.events {
 	font-size: 18px;
 	margin-bottom: 10px;
-  }
-  .copyright {
+}
+
+.container summary {
+	font-size: 20px;
+}
+
+.events ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.events li {
+	margin-bottom: 5px;
+}
+
+.copyright {
 	text-align: center;
+	margin-left: -1100px;
+	margin-top: 180px;
+	position: absolute;
 	font-size: 0.9rem;
 	color: #666;
-	/* Removed absolute positioning and negative margin for responsiveness */
-	margin-top: 20px;
-  }
-  .copyright p {
+}
+
+.copyright p {
 	color: rgb(139, 139, 139);
-  }
-  
-  /* ================================================ */
-  /* ===============   MEDIA QUERIES   ============== */
-  /* ================================================ */
-  
-  /* 1) High-Resolution Monitors (2560x1440px) */
-  @media (min-width: 2560px) and (max-height: 1440px) {
-	body {
-	  font-size: 1.2rem;
-	  margin: 0 auto;
-	  padding: 0 10%;
-	}
-	header {
-	  padding: 2rem 10%;
-	}
+}
+
+
+/* =================================================== */
+/* ===============   MEDIA QUERIES   ================ */
+/* =================================================== */
+
+/* High-Resolution Monitors (2560x1440px) */
+@media (min-width: 2560px) and (max-height: 1440px) {
+    body {
+        font-size: 1.2rem;
+        margin: 0 auto;
+        padding: 0 10%; /* Center the content with side padding */
+    }
+
+    header {
+        padding: 2rem 10%;
+    }
+
+    nav {
+        gap: 3rem;
+    }
+
+    nav a {
+        font-size: 1.2rem; /* Slightly larger nav links */
+    }
+
+    .church_photo {
+        max-width: 70%;
+        height: auto;
+        display: block;
+        margin: 3rem auto;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .image_text {
+        max-width: 60%;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+
+    .verse {
+        font-size: 2.5rem;
+        margin: 2rem 0;
+    }
+
+    .services-container {
+        max-width: 80%;
+        margin: 4rem auto;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .service-box {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .container {
+        max-width: 75%;
+        margin: 4rem auto;
+        font-size: 1.1rem;
+    }
+
+    footer {
+        padding: 3rem 10%;
+        font-size: 1rem;
+    }
+
+    .footer_area .logos img {
+        max-width: 200px;
+    }
+}
+
+/* 
+	 2) Tablet / large phone size or below (<= 768px)
+  */
+@media (max-width: 768px) {
+
+	/* Stack navigation vertically if you want */
 	nav {
-	  gap: 3rem;
+		flex-direction: column;
+		align-items: center;
+		margin-left: 0;
 	}
+
 	nav a {
-	  font-size: 1.2rem;
+		margin: 0.5rem 0;
 	}
-	.church_photo {
-	  max-width: 70%;
-	  margin: 3rem auto;
-	  height: auto;
-	  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-	}
-	.image_text {
-	  max-width: 60%;
-	  margin: 0 auto;
-	  display: block;
-	  text-align: center;
-	}
-	.verse {
-	  font-size: 2.5rem;
-	  margin: 2rem 0;
-	}
-	.services-container {
-	  max-width: 80%;
-	  margin: 4rem auto;
-	  gap: 3rem;
-	}
-	.service-box {
-	  max-width: 80%;
-	  margin: 0 auto;
-	  padding: 2rem;
-	  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	}
+
+	/* Service-row boxes stack vertically */
 	.service-row {
-	  justify-content: space-between;
-	  gap: 2rem;
+		flex-direction: column;
 	}
-	.container {
-	  max-width: 75%;
-	  margin: 4rem auto;
-	  font-size: 1.1rem;
-	}
-	footer {
-	  padding: 3rem 10%;
-	  font-size: 1rem;
-	}
-	.footer_area .logos img {
-	  max-width: 200px;
-	}
-  }
-  
-  /* 2) Tablet and below (<= 768px) */
-  @media (max-width: 768px) {
-	header {
-	  flex-direction: column;
-	  align-items: flex-start;
-	}
-	nav {
-	  flex-direction: column;
-	  align-items: center;
-	  margin-left: 0;
-	  padding: 0.5rem;
-	}
-	nav a {
-	  margin: 0.5rem 0;
-	}
-  
-	/* Stack service boxes vertically */
-	.service-row {
-	  flex-direction: column;
-	}
+
 	.service-box {
-	  width: 100% !important;
-	  margin-bottom: 1rem;
+		margin-bottom: 1rem;
 	}
-  
-	/* Make images more responsive */
-	.church_photo {
-	  width: 100%;
-	  max-width: 100%;
-	  height: auto;
+
+	.arrow-right {
+		right: -50px;
 	}
-	.isuslogo {
-	  width: 80%;
-	  margin: 0 auto;
-	  display: block;
+
+	/* Possibly reduce the text sizes a bit */
+	h1,
+	.container h1 {
+		font-size: 2rem;
 	}
-  
-	/* Titles can be smaller */
-	h1, .container h1 {
-	  font-size: 2rem;
+
+	footer {
+		padding: 10px 20px;
+		max-width: 100%;
 	}
-  
-	.footer_area {
-	  flex-direction: column;
-	}
-	.copyright {
-	  margin-top: 20px;
-	  position: static;
-	  text-align: center;
-	}
-  }
-  
-  /* 3) Very narrow phone screens (<= 480px) */
-  @media (max-width: 480px) {
+}
+
+/* 
+	 3) Very narrow phone screens (<= 480px)
+  */
+@media (max-width: 480px) {
 	header {
-	  flex-direction: column;
-	  align-items: flex-start;
+		flex-direction: column;
+		align-items: flex-start;
 	}
-	/* Nav refinement */
+
+	/* Navigation again if you need further adjustments */
 	nav {
-	  width: 100%;
-	  justify-content: center;
-	  gap: 1rem;
+		width: 100%;
+		justify-content: center;
 	}
-	nav a {
-	  font-size: 1rem;
+
+	.arrow-left,
+	.arrow-right {
+		font-size: 18px;
+		/* slightly smaller arrow icons */
+		padding: 5px;
 	}
-  
-	/* Title sizing */
-	.title {
-	  font-size: 2rem;
-	  /* If absolutely positioned, watch the top/left values. */
-	  top: 20%;
-	}
-  
-	/* Overall spacing for services */
+
+	/* Reduce container padding further */
 	.services-container {
-	  padding: 1rem;
+		padding: 1rem;
 	}
-	.service-box {
-	  width: 100% !important;
-	}
-  
-	/* Footer spacing */
-	footer {
-	  padding: 10px 20px;
-	  max-width: 100%;
-	}
-  }
-  
+}
