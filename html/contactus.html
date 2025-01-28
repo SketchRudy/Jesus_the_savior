@@ -1,89 +1,101 @@
 <!--
-    Filename: index.html
+    Filename: contactus.html
     Author: Anonymous
     Date: 01-11-2025
     Description: This website is a digital space for Jesus the Savior MBC.
-    Created as a surprise to celebrate the church's mission.
+    Created as a surprise to celebrate the church's mission. Perfect
 -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesus The Savior MBC </title>
-    <!-- **FAVICON** Icon won't work if cross is lowercase -->
+    <title>Contact Us | Jesus The Savior MBC</title>
     <link rel="icon" type="image/png" href="assets/images/Cross.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@100;400&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@100;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/contactus.css">
   </head>
   <body>
     <header>
       <div id="logo">
-        <img src="/assets/images/noword.png" class="isuslogo">
+        <img src="/assets/images/noword.png" class="isuslogo" alt="Jesus The Savior Logo">
       </div>
-      <!-- Start of navigation-->
       <nav>
         <a href="/html/index.html">Home</a>
         <a href="/html/aboutus.html">About Us</a>
         <a href="/html/calendar.html">Calendar</a>
         <a href="/html/contactus.html" class="active-link">Contact Us</a>
       </nav>
-      <!-- End of navigation-->
       <div class="user-actions">
-        <button class="button-donate" role="button">Donate</button>
+        <button class="button-donate">Donate</button>
       </div>
     </header>
-  <!-- =======================
-         HERO SECTION
-  ======================== -->
-  <section class="contact-hero">
-    <h1>Contact Us</h1>
-    <p>We’d Love to Hear From You!</p>
-  </section>
 
+    <!-- HERO SECTION -->
+    <section class="contact-hero">
+      <h1>Contact Us</h1>
+      <p>Have questions or need prayer? We're here for you!</p>
+    </section>
 
-    <!-- start of the contact container. -->
+    <!-- CONTACT FORM SECTION -->
     <div class="contact-container">
-      <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
-        <div class="contact-left-title">
-          <h2>Get in touch!</h2>
-          <hr>
-        </div>
+      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <h2>We'd Love to Hear From You!</h2>
+        <p class="form-description">Send us a message, and we'll get back to you as soon as possible.</p>
+        <hr>
         <input type="hidden" name="access_key" value="835d96a9-4833-4523-bb09-5241f17cac91">
-        <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
-        <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
-        <textarea name="message" placeholder="Your Message" class="contact-inputs"></textarea>
-        <button type="submit">Submit <img src="/assets/images/arrow_icon.png">
+        <div class="input-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" required>
+        </div>
+        <div class="input-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+        </div>
+        <div class="input-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+        </div>
+        <button type="submit" class="submit-button">
+          Submit Message
         </button>
       </form>
-      <div class="contact-right">
 
-        <footer>
-          <div class="footer_area ">
-            <div class="logos ">
-              <div id="logo">
-                <img src="/assets/images/noword.png" class="isuslogo">
-              </div>
-              </address>
-              <div class="social_media ">
-                <a href="https://www.instagram.com/jesusmbc_youth/ " target="_blank ">
-                  <img src="/assets/images/insta.png" alt="Instagram">
-                  <a href="https://www.youtube.com/@IsusSalvatorulRenton" target="_blank">
-                    <img src="/assets/images/hdyoutube.png" alt="Youtube">
-              </div>
-            </div>
-            </a>
-            <div class="contact ">
-              <!-- <h2>Contact Us</h2> -->
-            </div>
-            <div class="events ">
-              </a>
-              <div class="copyright ">
-                <p>&copy; 2025 Jesus the Savior | All Rights Reserved</p>
-              </div>
-        </footer>
-        <script src="/js/script.js" defer></script>
+      <!-- CONTACT INFO -->
+      <div class="contact-info">
+        <h2>Visit Us</h2>
+        <p>📍 1024 Monroe Ave NE, Renton, WA 98056</p>
+        <p>📧 Ourbaptistchurch@gmail.com</p>
+        <p>📞 +1 (206) 698-7022</p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footerContainer">
+        <div class="socialIcons">
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footerNav">
+          <ul>
+              <li><a href="/html/index.html">Home</a></li>
+              <li><a href="/html/aboutus.html">About Us</a></li>
+              <li><a href="/html/calendar.html">Events</a></li>
+              <li><a href="/html/contactus.html">Contact Us</a></li>
+          </ul>
+          
+        </div>
+
+      </div>
+      <div class="footerBottom">
+        <p>&copy; 2025 Jesus the Savior | All Rights Reserved</p>
+      </div>
+    </footer>
   </body>
 </html>

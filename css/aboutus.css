@@ -1,10 +1,14 @@
-/* ABOUT US PAGE */
-/* ========================
-     HEADER & NAV
-   (Consistent with index.css)
-======================== */
+/* ================================
+   NAVBAR & HEADER STYLES
+================================ */
 
-header {
+/* Smooth scroll (optional) */
+html {
+	scroll-behavior: smooth;
+  }
+  
+  /* Header container (includes logo & nav) */
+  header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -13,263 +17,343 @@ header {
 	z-index: 1000;
 	background-color: white;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-	position: sticky;
+	position: sticky; /* Sticks to top on scroll */
 	top: 0;
-}
-
-body {
-	background-color: beige;
-}
-footer, header {
-    width: 100%; /* Ensure it spans the full width of the screen */
-    max-width: 1900px; /* Prevent excessive stretching */
-    margin: 0 auto; /* Center the content */
-    padding: 10px 20px; /* Add padding for spacing */
-    box-sizing: border-box; /* Include padding in width calculations */
-}
-
-.isuslogo {
-	width: 400px;
+	max-width: 1900px;
+	margin: 0 auto; /* Center horizontally if you like */
+  }
+  
+  /* Logo container & image (optional) */
+  #logo .isuslogo {
+	width: 250px;
 	z-index: 1000;
+	/* Adjust or remove these margins if they break layout */
 	margin-bottom: -90px;
 	margin-left: -30px;
-}
-
-nav {
-    display: flex;
-    gap: 2rem;
-    padding: 30px;
-	margin-left: -225px;
-}
-
-nav a {
+  }
+  
+  /* Navigation bar */
+  nav {
+	display: flex;
+	gap: 2rem;
+	padding: 30px;
+	/* If this pushes links off-screen, reduce or remove: */
+	/* margin-left: -225px; */
+  }
+  
+  /* Navigation links (Home, About Us, etc.) */
+  nav a {
 	text-decoration: none;
 	color: #333;
 	font-size: 1.1rem;
 	padding: 0.3rem 0.6rem;
-	transition: background-color 0.3s;
 	font-family: 'Poppins', sans-serif;
-	
-}
-
-nav a:hover,
-nav a.active-link {
+	transition: background-color 0.3s;
+  }
+  
+  /* Hover & active link states */
+  nav a:hover,
+  nav a.active-link {
 	background-color: #ddd;
 	border-radius: 4px;
-}
-
-.button-donate {
-	padding: 0.6em 2em;
+  }
+  nav a:hover {
+	color: #000;
+  }
+  
+  /* ================================
+	 OPTIONAL: DONATE BUTTON STYLES
+  ================================ */
+  .button-donate {
+	padding: 0.6em 1.2em;
 	border: none;
-	outline: none;
-	color: rgb(255, 255, 255);
-	background: #111;
+	background-color: #e67e22; /* Or your preferred color */
+	color: #fff;
+	border-radius: 5px;
 	cursor: pointer;
-	position: relative;
-	z-index: 0;
-	border-radius: 10px;
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
-}
-
-/* COLORFUL DONATE BUTTON */
-.button-donate:before {
-	content: "";
-	background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00,
-			#48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-	position: absolute;
-	top: -2px;
-	left: -2px;
-	background-size: 400%;
-	z-index: -1;
-	filter: blur(5px);
-	-webkit-filter: blur(5px);
-	width: calc(100% + 4px);
-	height: calc(100% + 4px);
-	animation: glowing-button-85 20s linear infinite;
-	transition: opacity 0.3s ease-in-out;
-	border-radius: 10px;
-}
-
-@keyframes glowing-button-85 {
-	0% {
-		background-position: 0 0;
-	}
-
-	50% {
-		background-position: 400% 0;
-	}
-
-	100% {
-		background-position: 0 0;
-	}
-}
-
-.button-donate:after {
-	z-index:
-		-1;
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: #222;
-	left: 0;
-	top: 0;
-	border-radius: 10px;
-}
-/* ----------------------- 
- 	Banner changing colors
-   ----------------------*/
-.about-hero {
-	text-align: center;
-	padding: 5rem 2rem;
-	background: linear-gradient(120deg, #6c757d, #495057, #007bff);
-	background-size: 400% 400%;
-	color: white;
-	animation: gradientAnimation 15s ease infinite;
-	width: 100%; /* Ensure it spans the full width of the screen */
-    max-width: 1900px; /* Prevent excessive stretching */
-    margin: 0 auto; /* Center the content */
-    padding: 10px 20px; /* Add padding for spacing */
-    box-sizing: border-box; /* Include padding in width calculations */
-	
+	font-weight: 600;
+	transition: background-color 0.3s;
   }
-  
-  @keyframes gradientAnimation {
-	0% {
-	  background-position: 0% 50%;
-	}
-	50% {
-	  background-position: 100% 50%;
-	}
-	100% {
-	  background-position: 0% 50%;
-	}
-  }
-  
-/* ----------------------- */
-.about-card {
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  max-width: 300px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  
-}
-
-.about-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5), 0 0 20px rgba(0, 123, 255, 0.7);
-  
-}
-
-
-
-/* ----------------------- */
-  .about-hero h1 {
-	font-size: 2.5rem;
-	margin-bottom: 1rem;
-	
-  }
-  
-  .about-hero p {
-	font-size: 1.2rem;
-
-  }
-  
-  .about-section {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 2rem;
-	padding: 3rem 2rem;
-
-  }
-  
-  .about-card {
-	background-color: white;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	border-radius: 10px;
-	max-width: 300px;
-	padding: 1.5rem;
-	text-align: center;
-	transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .about-card:hover {
-	transform: translateY(-10px);
-	box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5), 0 0 20px rgba(0, 123, 255, 0.7);
+  .button-donate:hover {
+	background-color: #cf6d17;
   }
   
   
-  .about-card h2 {
-	font-size: 1.5rem;
-	margin-bottom: 1rem;
-  }
-  
-  .about-card p {
-	font-size: 1rem;
-	color: #666;
-  }
-  
-
-  
-  .call-to-action {
-	text-align: center;
-	padding: 3rem 2rem;
+  body {
+	font-family: 'Open Sans', sans-serif;
+	color: #333;
 	background-color: #f5f5f5;
-	border-top: 2px solid #ddd;
-	width: 100%; /* Ensure it spans the full width of the screen */
-    max-width: 1900px; /* Prevent excessive stretching */
-    margin: 0 auto; /* Center the content */
-    padding: 10px 20px; /* Add padding for spacing */
-    box-sizing: border-box; /* Include padding in width calculations */
+	line-height: 1.6;
   }
   
-  .call-to-action h2 {
-	font-size: 2rem;
+  /* Navbar */
+  .navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 5%;
+	background-color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-logo img {
+	height: 40px;
+  }
+  
+  .nav-menu {
+	list-style: none;
+	display: flex;
+	gap: 1.5rem;
+  }
+  
+  .nav-menu li a {
+	text-decoration: none;
+	color: #333;
+	font-weight: 600;
+	transition: color 0.3s ease;
+  }
+  
+  .nav-menu li a:hover {
+	color: #e67e22;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+	background: linear-gradient(
+		rgba(0, 0, 0, 0.4),
+		rgba(0, 0, 0, 0.4)
+	  ),
+	  url('https://via.placeholder.com/1200x800?text=Church+Background') center/cover
+		no-repeat;
+	min-height: 80vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	text-align: center;
+  }
+  
+  .hero-content {
+	max-width: 600px;
+	padding: 2rem;
+  }
+  
+  .hero-content h1 {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	font-size: 3rem;
 	margin-bottom: 1rem;
-	
   }
   
-  .call-to-action p {
+  .hero-subtext {
 	font-size: 1.1rem;
 	margin-bottom: 2rem;
   }
   
-  .learn-more-button {
-	padding: 0.8rem 2rem;
-	background-color: #414141;
-	color: white;
-	border: none;
-	border-radius: 5px;
+  .cta-button {
+	background-color: #e67e22;
+	color: #fff;
+	padding: 0.75rem 1.5rem;
 	font-size: 1rem;
-	cursor: pointer;
-	transition: background-color 0.3s;
+	text-decoration: none;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
   }
   
-  .learn-more-button:hover {
-	background-color: #333;
+  .cta-button:hover {
+	background-color: #cf6d17;
   }
   
-  footer {
-	padding: 2rem;
+  /* Cute Animation - Floating Dove */
+  .logo-animation {
+	margin-bottom: 2rem;
+  }
+  
+  .animated-dove {
+	width: 100px;
+	animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+	0% {
+	  transform: translateY(0);
+	}
+	50% {
+	  transform: translateY(-10px);
+	}
+	100% {
+	  transform: translateY(0);
+	}
+  }
+  
+  /* About Section */
+  .about-section {
+	background-color: #fff;
+	padding: 3rem 5%;
 	text-align: center;
-	background-color: #414141;
-	color: white;
-	margin-top: 2rem;
   }
   
-  .social_media img {
-	width: 30px;
-	margin: 0 10px;
+  .about-section h2 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	font-family: 'Poppins', sans-serif;
   }
   
-  footer p {
-	margin-top: 1rem;
-	font-size: 0.9rem;
+  /* Info Section (Mission, Vision, Values) */
+  .info-section {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: space-around;
+	padding: 3rem 5%;
+	background-color: #fefefe;
   }
+  
+  .info-item {
+	background-color: #fff;
+	flex: 1 1 300px;
+	padding: 2rem;
+	border-radius: 6px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .info-item h3 {
+	font-family: 'Poppins', sans-serif;
+	margin-bottom: 0.75rem;
+	font-size: 1.5rem;
+	color: #e67e22;
+  }
+  
+  .info-item ul {
+	margin-top: 0.5rem;
+	list-style: disc inside;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+	padding: 3rem 5%;
+	text-align: center;
+	background-color: #fff;
+  }
+  
+  .contact-section h2 {
+	font-family: 'Poppins', sans-serif;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+  }
+  
+
+
+
+  
+  /* Footer */
+footer {
+	border-top: 2px solid #ddd;
+	display: flex;
+	flex-direction: column;
+	padding: 1px 40px;
+	background-color: #f5f5f5;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.footerContainer {
+	width: 100%;
+}
+.socialIcons {
+	display: flex;
+	justify-content: center;
+	
+}
+.socialIcons a {
+	text-decoration: none;
+	padding: 10px;
+	background-color: #f5f5f5;
+	margin: 10px;
+	border-radius: 10px;
+}
+.socialIcons i {
+	font-size: 2em;
+	color: black;
+	opacity: 0.9;
+	transition: transform 0.3s ease;
+}
+.socialIcons a:hover {
+	transform: translateY(-10px);
+	transition: 0.5s;
+	
+}
+
+.footerNav {
+	margin: 30px 0;
+}
+.footerNav ul {
+	display: flex;
+	justify-content: center;
+	list-style-type: none;
+}
+.footerNav ul li a {
+	color: black;
+	margin: 20px;
+	text-decoration: none;
+	font-size: 1.3em;
+	opacity: 0.7;
+	transition: 0.5s;
+}
+.footerNav ul li a:hover {
+	opacity: 1;
+}
+.footerBottom {
+	color: rgb(248, 247, 247);
+	padding: 20px;
+	text-align: center;
+}
+.footerBottom p {
+	color: #666666;
+}
+
+@media (max-width: 700px) {
+	.footerNav ul {
+		flex-direction: column;
+	}
+	.footerNav ul li {
+		width: 100%;
+		text-align: center;
+		margin: 10px;
+	}
+
+}
+.events h2 {
+	font-size: 20px;
+	position: absolute;
+	margin-top: 10px;
+	margin-left: -115px;
+}
+
+
+.footer_area {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+  /* Responsive */
+  @media (max-width: 768px) {
+	.info-section {
+	  flex-direction: column;
+	  align-items: center;
+	}
+	
+	.info-item {
+	  max-width: 500px;
+	  margin: 1rem 0;
+	}
+	
+	.hero-content h1 {
+	  font-size: 2rem;
+	}
+  }
+  
   
