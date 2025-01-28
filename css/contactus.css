@@ -236,89 +236,6 @@
 }
 
 
-.container {
-	max-width: 800px;
-	margin: 2rem auto;
-}
-
-.container h1 {
-	color: #333;
-	/* Improved contrast */
-	text-align: center;
-	font-size: 2.5rem;
-	margin-bottom: 2rem;
-
-}
-
-details {
-	background-color: white;
-	color: black;
-	font-size: 2rem;
-	border-radius: 5px;
-	margin: 0.5rem 0;
-	overflow: hidden;
-	/* Prevent content overflow during
-animations */
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-summary {
-	padding: 1rem;
-	cursor: pointer;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font-weight: 600;
-	/* Bold text for questions */
-	transition: background-color 0.3s ease;
-	border: 1px solid transparent;
-}
-
-summary:hover {
-	background-color: gray;
-	border: 1px solid #555;
-	/* TO-DO! REMOVE OR KEEP, ADDS BORDER ON FAQ HOVER*/
-}
-
-summary:after {
-	content: "\002b";
-	/* Plus sign for collapsed state */
-	font-size: 1.5rem;
-	transition:
-		transform 0.3s ease;
-}
-
-details[open] summary {
-	background-color: #CBB967;
-	/* Darker background for open state*/
-	border-bottom: 1px solid #665;
-}
-
-details[open] summary:after {
-	content: "\00D7";
-	/* Close (X) sign for expanded state */
-}
-
-details[open] div {
-	padding: 1rem;
-	background-color: lightgray;
-	border-top: 1px solid #444;
-	font-size: 1rem;
-	animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-		transform: translateY(-5px);
-	}
-
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
 
 
 .footerNav {
@@ -442,4 +359,50 @@ details[open] div {
   .footer-links a:hover {
 	text-decoration: underline;
   }
+
+  .contactus-hero {
+	text-align: center;
+	padding: 1rem 4rem;
+	background: linear-gradient(120deg, #6c757d, #495057, #007bff);
+	background-size: 400% 400%;
+	color: white;
+	animation: gradientAnimation 15s ease infinite;
+	
+}
+
+
+.contactus-hero p {
+	font-size: 1.1rem;
+	max-width: 600px;
+	margin: 0 auto;
+	color: #ffffff;
+}
+
+  .contactus-hero h1{
+	text-align: center;
+	padding: 5rem 2rem;
+	background: linear-gradient(120deg, #6c757d, #495057, #007bff);
+	background-size: 400% 400%;
+	color: white;
+	animation: gradientAnimation 15s ease infinite;
+	font-size: 2.2rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+	
+  }
+  
+  @keyframes gradientAnimation {
+	0% {
+	  background-position: 0% 50%;
+	}
+	50% {
+	  background-position: 100% 50%;
+	}
+	100% {
+	  background-position: 0% 50%;
+	}
+  }
+  
+
+  
   
