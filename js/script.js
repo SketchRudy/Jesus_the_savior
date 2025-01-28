@@ -32,7 +32,7 @@ const monthNames = [
  * Example Events Data
  ***********************************************/
 const events = {
-  "2025-01-01": "New Year’s Service @ 10:00 AM",
+  "2025-01-01": "New Year's Service @ 10:00 AM",
   "2025-01-05": "Sunday Service @ 10:00 AM",
   "2025-01-12": "Sunday Service @ 10:00 AM",
   "2025-01-19": "Sunday Service @ 10:00 AM",

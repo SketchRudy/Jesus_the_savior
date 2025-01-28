@@ -1,5 +1,10 @@
 /* HEADER AND NAV */
 
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
 html {
 	scroll-behavior: smooth;
 }
@@ -141,6 +146,7 @@ nav {
   }
   
   /* Background Textured for a Book Page */
+  /* below code makes page beige */
   body {
 	background: radial-gradient(circle, #fef9e7, #f4ecd8) no-repeat;
 	background-attachment: fixed;
@@ -169,8 +175,6 @@ nav {
 }
 
 
-
-  
 .title {
 	position: absolute;
 	top: 30%; /* Centers vertically */
@@ -240,6 +244,7 @@ nav a:hover {
 
 /* Below code turns nav black
 .events */
+/* Change Color of donate button or delete */
 .button-donate {
 	padding: 0.6em 2em;
 	border: none;
@@ -458,9 +463,9 @@ body {
   }
   
   /* INNER TEXT STYLING */
-  .service-box h4 {
+  /* .service-box h4 {
 
-  }
+  } */
   
   .service-box p {
 	font-size: 1rem;
@@ -553,7 +558,64 @@ footer {
 	background-color: #f5f5f5;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+.footerContainer {
+	width: 100%;
+}
+.socialIcons {
+	display: flex;
+	justify-content: center;
+}
+.socialIcons a {
+	text-decoration: none;
+	padding: 10px;
+	background-color: #f5f5f5;
+	margin: 10px;
+	border-radius: 10px;
+}
+.socialIcons i {
+	font-size: 2em;
+	color: black;
+	opacity: 0.9;
+}
+.footerNav {
+	margin: 30px 0;
+}
+.footerNav ul {
+	display: flex;
+	justify-content: center;
+	list-style-type: none;
+}
+.footerNav ul li a {
+	color: black;
+	margin: 20px;
+	text-decoration: none;
+	font-size: 1.3em;
+	opacity: 0.7;
+	transition: 0.5s;
+}
+.footerNav ul li a:hover {
+	opacity: 1;
+}
+.footerBottom {
+	color: rgb(243, 78, 78);
+	padding: 20px;
+	text-align: center;
+}
+.footerBottom p {
+	color: white;
+}
 
+@media (max-width: 700px) {
+	.footerNav ul {
+		flex-direction: column;
+	}
+	.footerNav ul li {
+		width: 100%;
+		text-align: center;
+		margin: 10px;
+	}
+
+}
 .footer_area {
 	display: flex;
 	justify-content: space-between;
