@@ -5,46 +5,98 @@
 	box-sizing: border-box;
   }
   
-  body {
-	font-family: 'Poppins', sans-serif;
-	line-height: 1.6;
-	background-color: #f9f9f9;
-	color: #333;
-  }
-  
-  /* Header */
   header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem 2rem;
-	background-color: #fff;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	position: sticky;
-	top: 0;
+	padding: 0.5rem 1rem;
+	border-bottom: 2px solid #ddd;
 	z-index: 1000;
+	background-color: white;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	position: sticky;
+	top: 0;	
+	max-width: 1900px;
+}
+.isuslogo {
+	width: 250px;
+	z-index: 1000;
+	margin-bottom: -90px;
+	margin-left: -30px;
+}
+.isus {
+	height: 150px;
+	width: 350px;
+}
+
+nav {
+	display: flex;
+	gap: 2rem;
+	padding: 30px;
+	margin-left: -225px;
+}
+
+nav a:hover {
+	color: #000;
+}
+body {
+	font-family: sans-serif, Arial;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	background-color: #f0f0f0;
+}
+  /* ----------------------- 
+ 	Banner changing colors
+   ----------------------*/
+   .contact-hero h1{
+	text-align: center;
+	padding: 5rem 2rem;
+	background: linear-gradient(120deg, #6c757d, #495057, #007bff);
+	background-size: 400% 400%;
+	color: white;
+	animation: gradientAnimation 15s ease infinite;
+	font-size: 2.2rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+	
   }
+  
+  @keyframes gradientAnimation {
+	0% {
+	  background-position: 0% 50%;
+	}
+	50% {
+	  background-position: 100% 50%;
+	}
+	100% {
+	  background-position: 0% 50%;
+	}
+  }
+  
+/* ----------------------- */
+
   
   header #logo img {
 	width: 150px;
   }
   
-  nav {
-	display: flex;
-	gap: 1.5rem;
-  }
   
   nav a {
 	text-decoration: none;
 	color: #333;
-	font-weight: 500;
-	transition: color 0.3s ease;
-  }
+	font-size: 1.1rem;
+	padding: 0.3rem 0.6rem;
+	transition: background-color 0.3s;
+	font-family: 'Poppins', sans-serif;
+}
   
-  nav a:hover,
-  nav a.active-link {
-	color: #007bff;
-  }
+nav a:hover,
+nav a.active-link {
+	background-color: #ddd;
+	border-radius: 4px;
+
+}
   
   .button-donate {
 	padding: 0.5rem 1rem;
@@ -141,6 +193,7 @@
 	border: 1px solid #ddd;
 	border-radius: 8px;
 	font-size: 1rem;
+	resize: none;
   }
   
   .input-group textarea {
@@ -360,7 +413,7 @@
 	text-decoration: underline;
   }
 
-  .contactus-hero {
+  .contact-hero {
 	text-align: center;
 	padding: 1rem 4rem;
 	background: linear-gradient(120deg, #6c757d, #495057, #007bff);
@@ -371,14 +424,14 @@
 }
 
 
-.contactus-hero p {
+.contact-hero p {
 	font-size: 1.1rem;
 	max-width: 600px;
 	margin: 0 auto;
 	color: #ffffff;
 }
 
-  .contactus-hero h1{
+  .contact-hero h1{
 	text-align: center;
 	padding: 5rem 2rem;
 	background: linear-gradient(120deg, #6c757d, #495057, #007bff);
