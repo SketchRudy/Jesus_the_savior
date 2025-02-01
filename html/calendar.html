@@ -3,83 +3,89 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Monthly Church Calendar</title>
-    <!-- Link to the CSS -->
+    <title>Calendar | Jesus The Savior MBC</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/Cross.png" />
+    <!-- Google Fonts & Font Awesome -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/calendar.css" />
-    <!-- (Optional) Google Fonts for a more elegant look -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@100;400&display=swap" rel="stylesheet">    
   </head>
   <body>
-    <!-- =======================
-       HEADER / NAVIGATION
-  ======================== -->
+    <!-- Header & Navigation -->
     <header>
       <div id="logo">
-        <img src="/assets/images/noword.png" class="isuslogo">
+        <img src="/assets/images/noword.png" alt="Church Logo" class="isuslogo" />
       </div>
       <nav>
         <a href="/html/index.html">Home</a>
         <a href="/html/aboutus.html">About Us</a>
         <a href="/html/calendar.html" class="active-link">Calendar</a>
         <a href="/html/contactus.html">Contact Us</a>
-        <!-- Add more nav links as needed -->
       </nav>
       <div class="user-actions">
-        <button class="button-donate" role="button">Donate</button>
+        <a href="/html/donate.html"><button class="button-donate" role="button">Donate</button></a>
       </div>
     </header>
-    <!-- =======================
-         HERO SECTION
-  ======================== -->
-    <section class="calendar-hero">
-      <h1>Monthly Church Calendar</h1>
-      <p>Your guide to all upcoming services, events, and community gatherings.</p>
-    </section>
-    <!-- =======================
-         MAIN CALENDAR
-  ======================== -->
-    <main>
-      <section class="calendar-wrapper">
-        <!-- Month controls -->
-        <div class="calendar-controls">
-          <button onclick="prevMonth()" class="month-btn">Previous</button>
-          <h2 id="monthYear"></h2>
-          <button onclick="nextMonth()" class="month-btn">Next</button>
-        </div>
-        <!-- Calendar container (where JS will inject the grid) -->
-        <div id="calendar"></div>
-      </section>
-    </main>
-    <!-- =======================
-         FOOTER
-  ======================== -->
-   <!-- Start of the Footer, Contact info.. etc. -->
-   <footer>
-    <div class="footerContainer">
-      <div class="socialIcons">
-        <a href=""><i class="fa-brands fa-instagram"></i></a>
-        <a href=""><i class="fa-brands fa-youtube"></i></a>
+
+    <!-- Calendar Hero Section -->
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="fadeInDown">Calendar</h1>
+        <p class="fadeInUp">
+          Stay updated with our events and services. Use the navigation below to
+          browse through the months.
+        </p>
       </div>
-      <div class="footerNav">
-        <ul>
+    </section>
+
+
+    <!-- Calendar Controls -->
+    <section class="calendar-controls">
+      <button class="nav-btn" id="prevMonth">&laquo;</button>
+      <h2 id="monthYear">Month Year</h2>
+      <button class="nav-btn" id="nextMonth">&raquo;</button>
+    </section>
+
+    <!-- Calendar Grid Section -->
+    <section class="calendar-section">
+      <div id="calendar"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footerContainer">
+        <div class="socialIcons">
+          <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footerNav">
+          <ul>
             <li><a href="/html/index.html">Home</a></li>
             <li><a href="/html/aboutus.html">About Us</a></li>
-            <li><a href="/html/calendar.html">Events</a></li>
+            <li><a href="/html/calendar.html">Calendar</a></li>
             <li><a href="/html/contactus.html">Contact Us</a></li>
-        </ul>
-        
+          </ul>
+        </div>
       </div>
+      <div class="footerBottom">
+        <p>&copy; 2025 Jesus The Savior MBC | All Rights Reserved</p>
+      </div>
+    </footer>
 
-    </div>
-    <div class="footerBottom">
-      <p>&copy; 2025 Jesus the Savior | All Rights Reserved</p>
-    </div>
-  </footer>
-  <script src="/js/script.js " defer></script>
-</body>
+    <!-- Custom JavaScript -->
+    <script src="/js/script.js" defer></script>
+  </body>
 </html>

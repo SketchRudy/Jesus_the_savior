@@ -16,108 +16,111 @@ detailsElements.forEach((details) => {
 });
 
 /***********************************************
- * Current Displayed Month/Year
+ * Global Variables & Initial Events Data
  ***********************************************/
-let currentYear = 2025;
-let currentMonth = 0; // 0 = January
-
+let currentYear = new Date().getFullYear();
+let currentMonth = new Date().getMonth(); // 0 = January
 const monthNames = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
 
-/***********************************************
- * Example Events Data
- ***********************************************/
-const events = {
-  "2025-01-01": "New Year's Service @ 10:00 AM",
-  "2025-01-05": "Sunday Service @ 10:00 AM",
-  "2025-01-12": "Sunday Service @ 10:00 AM",
-  "2025-01-19": "Sunday Service @ 10:00 AM",
-  "2025-01-26": "Sunday Service @ 10:00 AM",
-
-  "2025-01-08": "Bible Study @ 7:00 PM",
-  "2025-01-15": "Bible Study @ 7:00 PM",
-  "2025-01-22": "Bible Study @ 7:00 PM",
-  "2025-01-29": "Bible Study @ 7:00 PM",
-
-  "2025-01-03": "Youth @ 7:30 PM",
-  "2025-01-10": "Youth @ 7:30 PM",
-  "2025-01-17": "Youth @ 7:30 PM",
-  "2025-01-24": "Youth @ 7:30 PM",
-  "2025-01-31": "Youth @ 7:30 PM",
-  // Add more as needed...
+// Define events as key-value pairs (date in "YYYY-MM-DD" format)
+let events = {
+  "2025-02-02": "Sunday Service @ 10:00 AM",
+  "2025-02-09": "Sunday Service @ 10:00 AM",
+  "2025-02-16": "Sunday Service @ 10:00 AM",
+  "2025-02-23": "Sunday Service @ 10:00 AM",
+  "2025-02-05": "Bible Study @ 7:00 PM",
+  "2025-02-12": "Bible Study @ 7:00 PM",
+  "2025-02-19": "Bible Study @ 7:00 PM",
+  "2025-02-26": "Bible Study @ 7:00 PM",
+  "2025-02-07": "Youth Night @ 7:30 PM",
+  "2025-02-14": "Youth Night @ 7:30 PM",
+  "2025-02-21": "Youth Night @ 7:30 PM",
+  "2025-02-28": "Youth Night @ 7:30 PM",
+  // Add or remove events here as needed.
 };
 
 /***********************************************
  * buildCalendar(year, month)
  ***********************************************/
 function buildCalendar(year, month) {
-  // 1) Update the <h2 id="monthYear"> text
+  // Update the header with the current month and year.
   const monthYearTitle = document.getElementById("monthYear");
   monthYearTitle.textContent = `${monthNames[month]} ${year}`;
 
-  // 2) Clear the #calendar container
+  // Clear any previous calendar content.
   const calendarContainer = document.getElementById("calendar");
   calendarContainer.innerHTML = "";
 
-  // 3) Create a .calendar-grid to hold days
+  // Create the calendar grid container.
   const calendarGrid = document.createElement("div");
   calendarGrid.classList.add("calendar-grid");
 
-  // 4) Add day-of-week headers (Sun to Sat)
+  // Add day-of-week headers.
   const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   dayNames.forEach((dn) => {
-    const dnDiv = document.createElement("div");
-    dnDiv.classList.add("calendar-day-name");
-    dnDiv.textContent = dn;
-    calendarGrid.appendChild(dnDiv);
+    const headerCell = document.createElement("div");
+    headerCell.classList.add("calendar-day-name");
+    headerCell.textContent = dn;
+    calendarGrid.appendChild(headerCell);
   });
 
-  // 5) Figure out the first day + days in month
+  // Calculate the first day of the month and total days in the month.
   const firstDay = new Date(year, month, 1);
   const daysInMonth = new Date(year, month + 1, 0).getDate();
-  
-  // 6) Add blank cells for days before the 1st
-  const startWeekday = firstDay.getDay(); // Sun=0, Mon=1, etc.
+
+  // For shading the current day, get today's date values.
+  const today = new Date();
+  const todayYear = today.getFullYear();
+  const todayMonth = today.getMonth(); // 0-based
+  const todayDate = today.getDate();
+
+  // Add blank cells for days before the 1st of the month.
+  const startWeekday = firstDay.getDay(); // 0 = Sunday, 1 = Monday, etc.
   for (let i = 0; i < startWeekday; i++) {
     const blankCell = document.createElement("div");
     blankCell.classList.add("calendar-day");
     calendarGrid.appendChild(blankCell);
   }
 
-  // 7) Loop through all days of the month
+  // Create cells for each day of the month.
   for (let day = 1; day <= daysInMonth; day++) {
-    const dayDiv = document.createElement("div");
-    dayDiv.classList.add("calendar-day");
+    const dayCell = document.createElement("div");
+    dayCell.classList.add("calendar-day");
 
+    // Check if this day is today.
+    if (year === todayYear && month === todayMonth && day === todayDate) {
+      dayCell.classList.add("today");
+    }
+
+    // Add the day number.
     const dateSpan = document.createElement("span");
     dateSpan.classList.add("date-number");
     dateSpan.textContent = day;
-    dayDiv.appendChild(dateSpan);
+    dayCell.appendChild(dateSpan);
 
-    // Build dateKey 'YYYY-MM-DD' to check if there's an event
+    // Format date key as "YYYY-MM-DD"
     const dateKey = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+
+    // If an event is defined for this day, add it to the cell.
     if (events[dateKey]) {
       const eventDiv = document.createElement("div");
       eventDiv.classList.add("event");
       eventDiv.textContent = events[dateKey];
-      dayDiv.appendChild(eventDiv);
+      dayCell.appendChild(eventDiv);
     }
 
-    calendarGrid.appendChild(dayDiv);
+    calendarGrid.appendChild(dayCell);
   }
 
-  // 8) Append the grid to the container
+  // Append the calendar grid to the container.
   calendarContainer.appendChild(calendarGrid);
-  
 }
-document.addEventListener("DOMContentLoaded", () => {
-  buildCalendar(currentYear, currentMonth);
-});
 
 /***********************************************
- * Next / Previous Month Functions
+ * Month Navigation Functions
  ***********************************************/
 function nextMonth() {
   currentMonth++;
@@ -136,6 +139,16 @@ function prevMonth() {
   }
   buildCalendar(currentYear, currentMonth);
 }
+
+/***********************************************
+ * Initial Setup & Event Listeners
+ ***********************************************/
+document.addEventListener("DOMContentLoaded", () => {
+  buildCalendar(currentYear, currentMonth);
+  document.getElementById("prevMonth").addEventListener("click", prevMonth);
+  document.getElementById("nextMonth").addEventListener("click", nextMonth);
+});
+
 
 
 
