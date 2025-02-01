@@ -143,6 +143,8 @@
 	left: 50%;
 	transform: translateX(-50%);
   }
+
+  
   
   /* Scripture Bubble */
   .bubble {
@@ -150,22 +152,17 @@
 	max-width: 900px;
 	margin: 3rem auto;
 	padding: 3rem 4rem;
-	background: radial-gradient(circle, #fefefe, #f5f5f5);
-	box-shadow: inset 0 0 0 5px black, 0 10px 20px rgba(0,0,0,0.3);
+	background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+	box-shadow: inset 0 0 0 5px black, 0 10px 20px rgba(0, 0, 0, 0.3);
 	border: 1px solid #cbb967;
+	border-radius: 0; /* Sharp corners for a book look */
+	font-family: 'Merriweather', serif;
 	text-align: center;
 	line-height: 1.8;
-	font-family: 'Merriweather', serif;
-	animation: fadeInBook 1.5s ease-in-out forwards;
-	opacity: 0;
+	background-image: radial-gradient(circle, #fefefe, #f5f5f5);
   }
   
-  @keyframes fadeInBook {
-	from { opacity: 0; transform: scale(0.95); }
-	to { opacity: 1; transform: scale(1); }
-  }
-  
-  /* Decorative Bubble Edges */
+  /* Simulate Book Spine */
   .bubble::before,
   .bubble::after {
 	content: "";
@@ -173,39 +170,100 @@
 	top: 0;
 	bottom: 0;
 	width: 20px;
-	background: linear-gradient(to bottom, #cbb967, #a68b5e);
+	background: #cbb967;
 	z-index: -1;
   }
   
   .bubble::before {
-	left: -25px;
-	box-shadow: -5px 0 10px rgba(0,0,0,0.2);
+	left: -25px; /* Add spine effect */
+	box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
   }
   
   .bubble::after {
-	right: -25px;
-	box-shadow: 5px 0 10px rgba(0,0,0,0.2);
+	right: -25px; /* Add spine effect */
+	box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
   }
   
+  /* Typography for the Quote */
+  .bubble h1 {
+	font-family: 'Playfair Display', serif;
+	font-size: 2rem;
+	font-weight: 500;
+	color: #333;
+	margin-bottom: 1.5rem;
+	line-height: 1.6;
+  }
+  
+  .bubble p {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.2rem;
+	color: #666;
+	margin: 0.5rem 0;
+  }
+  
+  .bubble p:last-child {
+	margin-top: 1.5rem;
+	font-style: italic;
+	color: #999;
+	font-family: 'Merriweather', serif;
+  }
+  
+  /* Decorative Gold Lines */
+  .bubble span {
+	display: block;
+	margin: 1.5rem auto;
+	width: 50%;
+	height: 2px;
+	background: linear-gradient(to right, #cbb967, transparent, #cbb967);
+  }
+  
+  /* Fade-in Effect */
+  .bubble {
+	animation: fadeInBook 1.5s ease-in-out forwards;
+	opacity: 0;
+  }
   .script-title {
 	font-size: 1.5rem;
 	font-weight: bold;
 	color: #444;
 	text-transform: uppercase;
 	margin-bottom: 1rem;
-	position: relative;
 	text-align: center;
+	position: relative;
   }
-  
   .script-title::after {
 	content: '';
 	position: absolute;
-	bottom: -10px;
-	left: 38%;
-	right: 49%;
-	height: 2px;
-	background: #444;
-	border-radius: 2px;
+	bottom: -10px; /* Space between text and underline */
+	margin-right: -100px;
+	text-align: center;
+	left: 38%; /* Adjust the extra space to the left */
+	right: 49%; /* Adjust the extra space to the right */
+	height: 2px; /* Thickness of the underline */
+	background: #444; /* Matches text color */
+	border-radius: 2px; /* Makes the line smoother */
+  }
+  @keyframes fadeInBook {
+	from {
+	  opacity: 0;
+	  transform: scale(0.95);
+	}
+	to {
+	  opacity: 1;
+	  transform: scale(1);
+	}
+  }
+  
+  /* Background Textured for a Book Page */
+  body {
+	background: radial-gradient(circle, #fef9e7, #f4ecd8) no-repeat;
+	background-attachment: fixed;
+  }
+  
+  /* Styling the Edges (Optional for Depth) */
+  .bubble::after,
+  .bubble::before {
+	background: linear-gradient(to bottom, #cbb967, #a68b5e);
   }
   
   /* ==================================
@@ -223,7 +281,7 @@
 	display: flex;
 	justify-content: center;
 	gap: 1.5rem;
-	width: 100%;
+	width: 10%;
   }
   
   .service-box {
@@ -238,9 +296,25 @@
 	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
   }
   
-  .service-box.full-width {
-	width: 60%;
+/* Sunday Services Box: full width */
+.service-box.full-width {
+	width: 100%;
   }
+
+  /* Service Row for side-by-side boxes */
+.service-row {
+	display: flex;
+	gap: 1.5rem;
+	width: 100%;
+	justify-content: center;
+  }
+  
+  /* Each box in the service row takes 50% of the width */
+  .service-row .service-box {
+	width: 50%;
+	box-sizing: border-box;
+  }
+ 
   
   .service-box:hover {
 	transform: translateY(-10px) scale(1.02);
@@ -263,73 +337,128 @@
   /* ==================================
 	 FAQ Section
   ================================== */
-  .container {
+/* Enhanced FAQ Section Styles */
+.faq-section {
 	max-width: 800px;
-	margin: 2rem auto;
-	padding: 0 1rem;
-  }
-  
-  .container h1 {
-	background: #111;
-	color: #fff;
-	padding: 0.6em 1em;
-	text-align: center;
+	margin: 3rem auto;
+	padding: 1rem 2rem;
+	background: #ffffff;
 	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	font-family: 'Poppins', sans-serif;
   }
   
-  details {
-	background: #fff;
-	color: #000;
-	font-size: 1.5rem;
-	border-radius: 5px;
-	margin: 0.5rem 0;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-	overflow: hidden;
+  .faq-section h1 {
+	text-align: center;
+	color: #111;
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
   }
   
-  summary {
-	padding: 1rem;
+  .faq-intro {
+	text-align: center;
+	color: #555;
+	font-size: 1.1rem;
+	margin-bottom: 2rem;
+  }
+  
+  .faq-item {
+	margin-bottom: 1rem;
+	border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .faq-item:last-of-type {
+	border-bottom: none;
+  }
+  
+  .faq-item details {
 	cursor: pointer;
+	position: relative;
+	padding: 0.5rem 0;
+  }
+  
+  .faq-item summary {
+	list-style: none;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	font-weight: 600;
-	transition: background 0.3s;
-	border: 1px solid transparent;
+	font-size: 1.3rem;
+	color: #333;
+	padding: 0.5rem;
+	transition: background 0.3s ease;
+	border-radius: 5px;
   }
   
-  summary:hover {
-	background: rgb(156,154,154);
-	border: 1px solid #555;
+  .faq-item summary:hover {
+	background: #f4f4f4;
   }
   
-  summary::after {
-	content: "\002b";
+  .faq-icon {
+	width: 40px;
+	text-align: center;
+	margin-right: 1rem;
+	color: #cbb967;
 	font-size: 1.5rem;
+  }
+  
+  .faq-answer {
+	padding: 0.5rem 2.5rem;
+	animation: fadeIn 0.4s ease-in-out;
+	color: #444;
+	font-size: 1.1rem;
+	line-height: 1.6;
+  }
+  
+  .faq-answer p {
+	margin: 0.5rem 0;
+  }
+  
+  /* Custom open/close icon using pseudo-element */
+  .faq-item summary::-webkit-details-marker {
+	display: none;
+  }
+  
+  .faq-item summary::after {
+	content: "\002B"; /* Plus sign */
+	font-size: 1.5rem;
+	color: #cbb967;
+	margin-left: auto;
 	transition: transform 0.3s ease;
   }
   
-  details[open] summary {
-	background: #414141;
-	border-bottom: 1px solid #665;
+  .faq-item details[open] summary::after {
+	content: "\2212"; /* Minus sign */
   }
   
-  details[open] summary::after {
-	content: "\00D7";
-  }
-  
-  details[open] div {
-	padding: 1rem;
-	background: lightgray;
-	border-top: 1px solid #444;
-	font-size: 1rem;
-	animation: fadeIn 0.3s ease-in-out;
-  }
-  
+  /* Fade-in animation */
   @keyframes fadeIn {
-	from { opacity: 0; transform: translateY(-5px); }
-	to { opacity: 1; transform: translateY(0); }
+	from {
+	  opacity: 0;
+	  transform: translateY(-5px);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
   }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+	.faq-section {
+	  padding: 1rem;
+	}
+	.faq-section h1 {
+	  font-size: 2rem;
+	}
+	.faq-item summary {
+	  font-size: 1.1rem;
+	}
+	.faq-icon {
+	  width: 30px;
+	  font-size: 1.3rem;
+	  margin-right: 0.5rem;
+	}
+  }
+  
   
   /* ==================================
 	 Footer

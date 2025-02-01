@@ -285,7 +285,7 @@ nav a.active-link {
 	color: #333;
 }
 
-/* Hover effect to unify with index’s box shadows or color transitions */
+/* Hover effect to unify with index's box shadows or color transitions */
 .calendar-day:hover {
 	background-color: #f0f0f0;
 }
