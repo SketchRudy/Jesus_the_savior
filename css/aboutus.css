@@ -484,16 +484,15 @@ footer {
 	@media (max-width: 480px) {
 		nav a {
 		  font-size: 1rem;           /* Adjust text size for very small devices */
-		  padding: 0.5rem;           /* Reduce padding slightly on extra-small screens */
+		  padding: 0.5rem; 
+         /* Reduce padding slightly on extra-small screens */
 		}
 	  }
 	
 	.hero-content h1 {
 	  font-size: 2.5rem;
 	}
-	.header {
-		position: static;
-	}
+
 	
 	.hero-content p {
 	  font-size: 1.1rem;
