@@ -644,18 +644,18 @@ footer {
 	}
   }
 
-  /* For larger screens (e.g., laptops and above) */
-@media (min-width: 1024px) {
-	.hero {
-	  /* Add extra space above the hero section */
-	  padding-top: 4rem; /* Adjust this value as needed */
+  /* For larger screens (e.g., laptops) */
+  @media (min-width: 1024px) and (max-width: 1440px) {
+	/* Laptop-specific styles go here */
+	.image_text {
+	  margin-top: -800px; /* Adjust this value as needed for laptop screens */
 	}
 	
-	/* If the header is sticky and overlaps the hero, you may also add extra top margin
-	   to the hero content to ensure it sits well below the header */
-	.hero-content {
-	  margin-top: 4rem;
+	header {
+	  margin-bottom: 20px;
 	}
+	
+	/* Add any other adjustments for laptops here */
   }
   
 
