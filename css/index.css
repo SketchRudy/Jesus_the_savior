@@ -595,58 +595,54 @@ footer {
 	 Responsive Styles
   ================================== */
 
-/* High-Resolution Monitors */
+/* High-Resolution Monitors (e.g. 2560 x 1440) */
 @media (min-width: 2560px) and (max-height: 1440px) {
 	body {
-		font-size: 1.2rem;
-		padding: 0 10%;
+	  font-size: 1.2rem;
+	  padding: 0 10%;
 	}
-
+	
 	header {
-		padding: 2rem 10%;
+	  padding: 2rem 10%;
 	}
-
+	
 	nav {
-		gap: 3rem;
+	  gap: 3rem;
 	}
-
+	
 	nav a {
-		font-size: 1.2rem;
+	  font-size: 1.2rem;
 	}
-
-	.image_text {
-		max-width: 60%;
-		margin: 0 auto;
-		text-align: center;
+	
+	.hero-content h1 {
+	  font-size: 4rem;
 	}
-
-	.services-container {
-		max-width: 80%;
-		margin: 4rem auto;
-		gap: 3rem;
+	
+	.hero-content p {
+	  font-size: 1.5rem;
 	}
-
-	.service-box {
-		max-width: 80%;
-		margin: 0 auto;
-		padding: 2rem;
+	
+	.contact-container {
+	  max-width: 80%;
+	  margin: 4rem auto;
 	}
-
-	.service-row {
-		gap: 2rem;
+	
+	.contact-form,
+	.contact-info {
+	  padding: 2.5rem;
+	  font-size: 1.1rem;
 	}
-
-	.container {
-		max-width: 75%;
-		margin: 4rem auto;
-		font-size: 1.1rem;
+	
+	.submit-button {
+	  padding: 1rem;
+	  font-size: 1.2rem;
 	}
-
+	
 	footer {
-		padding: 3rem 10%;
-		font-size: 1rem;
+	  padding: 3rem 10%;
+	  font-size: 1.1rem;
 	}
-}
+  }
 
 /* ==================================
    RESPONSIVE STYLES
