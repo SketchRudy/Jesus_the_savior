@@ -175,10 +175,13 @@ nav a.active-link {
 .image_text {
 	z-index: 500;
 	margin-top: -500px;
-	left: 400px;
+	left: 50%;
+	transform: translateX(-50%);
 	position: absolute;
 	filter: grayscale(100%) brightness(1000%);
+	max-width: 100%; /* Ensure it doesn’t exceed the viewport */
 }
+
 
 
 /* Scripture Bubble */
