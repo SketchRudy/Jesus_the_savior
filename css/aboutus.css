@@ -1,141 +1,138 @@
-/* ================================
-   NAVBAR & HEADER STYLES
-================================ */
-
-/* Smooth scroll (optional) */
+/* ==================================
+   Global & Reset Styles
+================================== */
 html {
 	scroll-behavior: smooth;
   }
-  
-  /* Header container (includes logo & nav) */
-  header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0.5rem 1rem;
-	border-bottom: 2px solid #ddd;
-	z-index: 1000;
-	background-color: white;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-	position: sticky; /* Sticks to top on scroll */
-	top: 0;
-	max-width: 1900px;
-	margin: 0 auto; /* Center horizontally if you like */
-  }
-  
-  /* Logo container & image (optional) */
-  #logo .isuslogo {
-	width: 250px;
-	z-index: 1000;
-	/* Adjust or remove these margins if they break layout */
-	margin-bottom: -90px;
-	margin-left: -30px;
-  }
-  
-  /* Navigation bar */
-  nav {
-	display: flex;
-	gap: 2rem;
-	padding: 30px;
-	/* If this pushes links off-screen, reduce or remove: */
-	/* margin-left: -225px; */
-  }
-  
-  /* Navigation links (Home, About Us, etc.) */
-  nav a {
-	text-decoration: none;
-	color: #333;
-	font-size: 1.1rem;
-	padding: 0.3rem 0.6rem;
-	font-family: 'Poppins', sans-serif;
-	transition: background-color 0.3s;
-  }
-  
-  /* Hover & active link states */
-  nav a:hover,
-  nav a.active-link {
-	background-color: #ddd;
-	border-radius: 4px;
-  }
-  nav a:hover {
-	color: #000;
-  }
-  
-  /* ================================
-	 OPTIONAL: DONATE BUTTON STYLES
-  ================================ */
-  .button-donate {
-	padding: 0.6em 1.2em;
-	border: none;
-	background-color: #e67e22; /* Or your preferred color */
-	color: #fff;
-	border-radius: 5px;
-	cursor: pointer;
-	font-weight: 600;
-	transition: background-color 0.3s;
-  }
-  .button-donate:hover {
-	background-color: #cf6d17;
-  }
-  
   
   body {
 	font-family: 'Open Sans', sans-serif;
 	color: #333;
 	background-color: #f5f5f5;
 	line-height: 1.6;
+	margin: 0;
+	padding: 0;
   }
   
-  /* Navbar */
-  .navbar {
+  /* ==================================
+	 Header & Navigation
+  ================================== */
+  header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem 5%;
+	padding: 0.5rem 1rem;
+	border-bottom: 2px solid #ddd;
 	background-color: #fff;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	max-width: 1900px;
+	margin: 0 auto;
   }
   
-  .nav-logo img {
-	height: 40px;
+  /* Logo Styling */
+  .isuslogo {
+	width: 250px;
+	z-index: 1000;
+	margin-bottom: -90px;
+	margin-left: -30px;
   }
   
-  .nav-menu {
-	list-style: none;
+  /* Navigation Styling */
+  nav {
 	display: flex;
-	gap: 1.5rem;
+	gap: 2rem;
+	padding: 30px;
+	margin-left: -225px;  /* Matches the Calendar page */
   }
   
-  .nav-menu li a {
+  nav a {
 	text-decoration: none;
 	color: #333;
-	font-weight: 600;
-	transition: color 0.3s ease;
+	font-size: 1.1rem;
+	padding: 0.3rem 0.6rem;
+	transition: background-color 0.3s;
+	font-family: 'Poppins', sans-serif;
   }
   
-  .nav-menu li a:hover {
-	color: #e67e22;
+  nav a:hover,
+  nav a.active-link {
+	background-color: #ddd;
+	border-radius: 4px;
+	color: #000;
   }
   
-  /* Hero Section */
-  .hero-section {
-	background: linear-gradient(
-		rgba(0, 0, 0, 0.4),
-		rgba(0, 0, 0, 0.4)
-	  ),
-	  url('https://via.placeholder.com/1200x800?text=Church+Background') center/cover
-		no-repeat;
-	min-height: 80vh;
+  /* User Actions (Donate Button Container) */
+  .user-actions {
+	margin-right: 0;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	align-items: center;
+  }
+  
+  /* Donate Button Styling */
+  .button-donate {
+	padding: 0.6em 2em;
+	border: none;
+	outline: none;
 	color: #fff;
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+  }
+  
+  .button-donate:before {
+	content: "";
+	background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing-button 20s linear infinite;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+  }
+  
+  @keyframes glowing-button {
+	0% { background-position: 0 0; }
+	50% { background-position: 400% 0; }
+	100% { background-position: 0 0; }
+  }
+  
+  .button-donate:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #222;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+	z-index: -1;
+  }
+  
+  /* ==================================
+	 Hero Section
+  ================================== */
+  .about-section {
+	background-color: #fff;
+	padding: 3rem 5%;
 	text-align: center;
   }
   
   .hero-content {
 	max-width: 600px;
+	margin: 0 auto 2rem;
 	padding: 2rem;
   }
   
@@ -165,7 +162,7 @@ html {
 	background-color: #cf6d17;
   }
   
-  /* Cute Animation - Floating Dove */
+  /* Floating Dove Animation */
   .logo-animation {
 	margin-bottom: 2rem;
   }
@@ -176,31 +173,20 @@ html {
   }
   
   @keyframes float {
-	0% {
-	  transform: translateY(0);
-	}
-	50% {
-	  transform: translateY(-10px);
-	}
-	100% {
-	  transform: translateY(0);
-	}
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-10px); }
   }
   
-  /* About Section */
-  .about-section {
-	background-color: #fff;
-	padding: 3rem 5%;
-	text-align: center;
-  }
-  
-  .about-section h2 {
+  /* Additional About Text */
+  .about-text h2 {
 	font-size: 2rem;
 	margin-bottom: 1rem;
 	font-family: 'Poppins', sans-serif;
   }
   
-  /* Info Section (Mission, Vision, Values) */
+  /* ==================================
+	 Info Section (Mission, Vision, Values)
+  ================================== */
   .info-section {
 	display: flex;
 	flex-wrap: wrap;
@@ -216,21 +202,59 @@ html {
 	padding: 2rem;
 	border-radius: 6px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	position: relative;
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .info-item h3 {
-	font-family: 'Poppins', sans-serif;
-	margin-bottom: 0.75rem;
-	font-size: 1.5rem;
-	color: #e67e22;
+  .info-item:hover {
+	transform: scale(1.05) translateY(-5px);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
   
-  .info-item ul {
-	margin-top: 0.5rem;
-	list-style: disc inside;
+  .info-item::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border: 2px solid transparent;
+	border-radius: 6px;
+	transition: border-color 0.3s ease, transform 0.3s ease;
+	transform: scale(0.9);
   }
   
-  /* Contact Section */
+  .info-item:hover::after {
+	border-color: #e67e22;
+	transform: scale(1);
+  }
+  
+  .info-item::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(135deg, rgba(230,126,34,0.2), rgba(230,126,34,0));
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	z-index: 0;
+  }
+  
+  .info-item:hover::before {
+	opacity: 1;
+  }
+  
+  .info-item * {
+	position: relative;
+	z-index: 1;
+  }
+  
+  /* ==================================
+	 Contact Section
+  ================================== */
   .contact-section {
 	padding: 3rem 5%;
 	text-align: center;
@@ -243,117 +267,188 @@ html {
 	margin-bottom: 1rem;
   }
   
-
-
-
-  
-  /* Footer */
-footer {
+  /* ==================================
+	 Footer
+  ================================== */
+  footer {
 	border-top: 2px solid #ddd;
-	display: flex;
-	flex-direction: column;
-	padding: 1px 40px;
 	background-color: #f5f5f5;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-.footerContainer {
-	width: 100%;
-}
-.socialIcons {
+	padding: 1rem 40px;
+  }
+  
+  .footerContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  .socialIcons {
 	display: flex;
 	justify-content: center;
-	
-}
-.socialIcons a {
+	margin-bottom: 1rem;
+  }
+  
+  .socialIcons a {
 	text-decoration: none;
 	padding: 10px;
 	background-color: #f5f5f5;
 	margin: 10px;
 	border-radius: 10px;
-}
-.socialIcons i {
+  }
+  
+  .socialIcons i {
 	font-size: 2em;
-	color: black;
+	color: #000;
 	opacity: 0.9;
 	transition: transform 0.3s ease;
-}
-.socialIcons a:hover {
+  }
+  
+  .socialIcons a:hover {
 	transform: translateY(-10px);
-	transition: 0.5s;
-	
-}
-
-.footerNav {
+  }
+  
+  .footerNav {
 	margin: 30px 0;
-}
-.footerNav ul {
+  }
+  
+  .footerNav ul {
 	display: flex;
 	justify-content: center;
-	list-style-type: none;
-}
-.footerNav ul li a {
-	color: black;
-	margin: 20px;
+	list-style: none;
+	padding: 0;
+  }
+  
+  .footerNav ul li a {
+	color: #000;
+	margin: 0 20px;
 	text-decoration: none;
 	font-size: 1.3em;
 	opacity: 0.7;
-	transition: 0.5s;
-}
-.footerNav ul li a:hover {
+	transition: opacity 0.5s;
+  }
+  
+  .footerNav ul li a:hover {
 	opacity: 1;
-}
-.footerBottom {
-	color: rgb(248, 247, 247);
-	padding: 20px;
+  }
+  
+  .footerBottom {
 	text-align: center;
-}
-.footerBottom p {
-	color: #666666;
-}
-
-@media (max-width: 700px) {
-	.footerNav ul {
-		flex-direction: column;
-	}
-	.footerNav ul li {
-		width: 100%;
-		text-align: center;
-		margin: 10px;
-	}
-
-}
-.events h2 {
-	font-size: 20px;
-	position: absolute;
-	margin-top: 10px;
-	margin-left: -115px;
-}
-
-
-.footer_area {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	flex-wrap: wrap;
-	margin-bottom: 20px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-  /* Responsive */
+	padding: 20px;
+  }
+  
+  .footerBottom p {
+	color: #666;
+  }
+  
+  /* ==================================
+	 Responsive Styles
+  ================================== */
+  
+  /* For screens up to 768px (tablets) */
   @media (max-width: 768px) {
-	.info-section {
-	  flex-direction: column;
-	  align-items: center;
+	/* Adjust header: remove extra negative margin from nav */
+	header {
+	  flex-wrap: wrap;
+	  padding: 0.5rem;
+	}
+	nav {
+	  margin-left: 0;
+	  gap: 1.5rem;
+	  padding: 10px;
+	  justify-content: center;
+	}
+	nav a {
+	  font-size: 1rem;
+	  padding: 0.3rem 0.5rem;
 	}
 	
-	.info-item {
-	  max-width: 500px;
-	  margin: 1rem 0;
+	/* Reduce logo size and center it */
+	.isuslogo {
+	  width: 200px;
+	  margin-left: 0;
+	  margin-bottom: 0;
+	  display: block;
+	  margin: 0 auto;
 	}
 	
+	/* Stack header items if needed */
+	.user-actions {
+	  margin-top: 0.5rem;
+	  justify-content: center;
+	  width: 100%;
+	}
+	
+	/* Hero section adjustments */
 	.hero-content h1 {
 	  font-size: 2rem;
 	}
+	.hero-subtext {
+	  font-size: 1rem;
+	}
+	.cta-button {
+	  padding: 0.5rem 1rem;
+	  font-size: 0.9rem;
+	}
+	
+	/* Info Section: stack cards vertically */
+	.info-section {
+	  flex-direction: column;
+	  align-items: center;
+	  padding: 2rem 5%;
+	}
+	.info-item {
+	  max-width: 500px;
+	  width: 90%;
+	  margin: 1rem 0;
+	  padding: 1.5rem;
+	}
   }
   
+  /* For screens up to 480px (mobile phones) */
+  @media (max-width: 480px) {
+	header {
+	  flex-direction: column;
+	  align-items: center;
+	  text-align: center;
+	}
+	nav {
+	  flex-direction: column;
+	  gap: 0.5rem;
+	  padding: 10px 0;
+	}
+	nav a {
+	  font-size: 0.9rem;
+	  padding: 0.2rem 0.4rem;
+	}
+	.user-actions {
+	  width: 100%;
+	  justify-content: center;
+	}
+	.button-donate {
+	  padding: 0.5em 1.2em;
+	  font-size: 0.85rem;
+	}
+	
+	/* Hero Section further scaled */
+	.hero-content h1 {
+	  font-size: 1.8rem;
+	}
+	.hero-subtext {
+	  font-size: 0.9rem;
+	}
+	.cta-button {
+	  padding: 0.4rem 0.8rem;
+	  font-size: 0.85rem;
+	}
+	
+	/* Footer nav stacks vertically */
+	.footerNav ul {
+	  flex-direction: column;
+	  align-items: center;
+	}
+	.footerNav ul li {
+	  margin: 10px 0;
+	}
+  }
   

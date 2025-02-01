@@ -5,38 +5,38 @@
   <meta name="description" content="About Us - ChurchName" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | ChurchName</title>
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="/css/aboutus.css" />
-  <!-- Optional: Google Fonts -->
+  <!-- Google Fonts and Font Awesome -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
-  integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet" />
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+        <!-- External CSS -->
+  <link rel="stylesheet" href="/css/aboutus.css" />
+
 </head>
 <body>
-  <!-- Hero Section -->
+  <!-- Header / Navigation -->
   <header>
     <div id="logo">
-      <img src="/assets/images/noword.png" class="isuslogo">
+      <img src="/assets/images/noword.png" class="isuslogo" alt="ChurchName Logo">
     </div>
-    <!-- Start of navigation-->
-    <nav>
-      <a href="/html/index.html" class="active-link">Home</a>
-      <a href="/html/aboutus.html">About Us</a>
+    <nav aria-label="Main Navigation">
+      <a href="/html/index.html">Home</a>
+      <a href="/html/aboutus.html" class="active-link">About Us</a>
       <a href="/html/calendar.html">Calendar</a>
       <a href="/html/contactus.html">Contact Us</a>
     </nav>
-
-    
+    <div class="user-actions">
+      <button class="button-donate" role="button">Donate</button>
+    </div>
   </header>
 
-  <!-- About Section -->
-   
+  <!-- Hero Section -->
   <section id="about" class="about-section">
     <div class="hero-content">
       <div class="logo-animation">
-        <!-- Replace 'dove.png' with your own dove or relevant icon image -->
+        <!-- Dove Icon -->
         <img src="/assets/images/dove0.png" alt="Dove Icon" class="animated-dove" />
       </div>
       <h1>Welcome to ChurchName</h1>
@@ -45,31 +45,33 @@
       </p>
       <a href="#about" class="cta-button">Learn More</a>
     </div>
-    <h2>Who We Are</h2>
-    <p>
-      ChurchName is a diverse family of individuals who come together to worship,
-      learn, and support one another. Our doors are open to everyone, and our mission
-      is to make the world a better place through faith, compassion, and service.
-    </p>
+    <div class="about-text">
+      <h2>Who We Are</h2>
+      <p>
+        ChurchName is a diverse family of individuals who come together to worship,
+        learn, and support one another. Our doors are open to everyone, and our mission
+        is to make the world a better place through faith, compassion, and service.
+      </p>
+    </div>
   </section>
 
-  <!-- Mission, Vision, Values -->
+  <!-- Mission, Vision, Values Section -->
   <section class="info-section">
-    <div class="info-item" id="mission">
+    <article class="info-item" id="mission">
       <h3>Our Mission</h3>
       <p>
         To spread the message of hope, love, and unity through acts of kindness, worship,
         and community outreach.
       </p>
-    </div>
-    <div class="info-item" id="vision">
+    </article>
+    <article class="info-item" id="vision">
       <h3>Our Vision</h3>
       <p>
         To create an inclusive environment where individuals from all walks of life can
         flourish and grow in faith together.
       </p>
-    </div>
-    <div class="info-item" id="values">
+    </article>
+    <article class="info-item" id="values">
       <h3>Our Values</h3>
       <ul>
         <li>Faith &amp; Spiritual Growth</li>
@@ -77,37 +79,35 @@
         <li>Unity &amp; Fellowship</li>
         <li>Integrity &amp; Respect</li>
       </ul>
-    </div>
+    </article>
   </section>
 
-  <!-- Contact or Additional Info -->
+  <!-- Contact Section -->
   <section id="contact" class="contact-section">
     <h2>Get In Touch</h2>
     <p>
       We would love to connect with you! Whether you have questions, need prayer, or
       would like to participate in our ministries, please reach out at:
     </p>
-    <p><strong>Email:</strong> contact@churchname.org</p>
-    <p><strong>Phone:</strong> (123) 456-7890</p>
+    <p><strong>Email:</strong> <a href="mailto:contact@churchname.org">contact@churchname.org</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+11234567890">(123) 456-7890</a></p>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="footerContainer">
       <div class="socialIcons">
-        <a href=""><i class="fa-brands fa-instagram"></i></a>
-        <a href=""><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
       </div>
-      <div class="footerNav">
+      <nav class="footerNav" aria-label="Footer Navigation">
         <ul>
-            <li><a href="/html/index.html">Home</a></li>
-            <li><a href="/html/aboutus.html">About Us</a></li>
-            <li><a href="/html/calendar.html">Events</a></li>
-            <li><a href="/html/contactus.html">Contact Us</a></li>
+          <li><a href="/html/index.html">Home</a></li>
+          <li><a href="/html/aboutus.html">About Us</a></li>
+          <li><a href="/html/calendar.html">Events</a></li>
+          <li><a href="/html/contactus.html">Contact Us</a></li>
         </ul>
-        
-      </div>
-
+      </nav>
     </div>
     <div class="footerBottom">
       <p>&copy; 2025 Jesus the Savior | All Rights Reserved</p>
