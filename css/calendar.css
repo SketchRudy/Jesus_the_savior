@@ -1,3 +1,10 @@
+/* 
+    Filename: calendar.css
+    Author: Anonymous
+    Date: 01-11-2025
+    Description: This website is a digital space for Jesus the Savior MBC.
+    Created as a surprise to celebrate the church's mission. */
+
 /* ==================================
    General Reset & Base Styles
 ================================== */
@@ -5,18 +12,19 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-  }
-  body {
+}
+
+body {
 	font-family: 'Poppins', sans-serif;
 	background: radial-gradient(circle, #fef9e7, #f4ecd8);
 	color: #333;
 	line-height: 1.6;
-  }
-  
-  /* ==================================
+}
+
+/* ==================================
 	 Header & Navigation
   ================================== */
-  header {
+header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -26,38 +34,43 @@
 	position: sticky;
 	top: 0;
 	z-index: 1000;
-  }
-  header #logo img {
+}
+
+header #logo img {
 	width: 200px;
-  }
-  nav {
+}
+
+nav {
 	display: flex;
 	gap: 2rem;
-  }
-  nav a {
+}
+
+nav a {
 	text-decoration: none;
 	color: #333;
 	font-weight: 500;
 	transition: color 0.3s;
-  }
-  nav a:hover,
-  nav a.active-link {
+}
+
+nav a:hover,
+nav a.active-link {
 	color: #cbb967;
-  }
-  .user-actions .button-donate {
+}
+
+.user-actions .button-donate {
 	padding: 0.6em 1.5em;
 	border: none;
 	background: #111;
 	color: #fff;
 	border-radius: 10px;
 	cursor: pointer;
-  }
-  
-  /* ==================================
+}
+
+/* ==================================
 	 Calendar Hero Section
   ================================== */
-  /* HERO SECTION */
-  .hero {
+/* HERO SECTION */
+.hero {
 	position: relative;
 	height: 60vh;
 	background: url('/assets/images/hero_about.jpg') no-repeat center center/cover;
@@ -65,38 +78,42 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	
-  }
-  .hero-overlay {
+
+}
+
+.hero-overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.5);
-  }
-  .hero-content {
+}
+
+.hero-content {
 	position: relative;
 	text-align: center;
 	color: #fff;
 	z-index: 1;
-	
-  }
-  .hero-content h1 {
+
+}
+
+.hero-content h1 {
 	font-family: 'Playfair Display', serif;
 	font-size: 3.5rem;
 	margin-bottom: 0.5rem;
 	animation: fadeInDown 1s ease-out;
-  }
-  .hero-content p {
+}
+
+.hero-content p {
 	font-size: 1.3rem;
 	animation: fadeInUp 1s ease-out;
-  }
-  
-  /* ==================================
+}
+
+/* ==================================
 	 Calendar Controls
   ================================== */
-  .calendar-controls {
+.calendar-controls {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -104,12 +121,14 @@
 	padding: 1rem 2rem;
 	background: #fff;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  .calendar-controls h2 {
+}
+
+.calendar-controls h2 {
 	font-size: 2rem;
 	color: #333;
-  }
-  .nav-btn {
+}
+
+.nav-btn {
 	background: #cbb967;
 	color: #fff;
 	border: none;
@@ -118,54 +137,61 @@
 	border-radius: 5px;
 	cursor: pointer;
 	transition: background 0.3s;
-  }
-  .nav-btn:hover {
+}
+
+.nav-btn:hover {
 	background: #b09b68;
-  }
-  
-  /* ==================================
+}
+
+/* ==================================
 	 Calendar Grid Section
   ================================== */
-  .calendar-section {
+.calendar-section {
 	padding: 2rem;
-  }
-  
-  #calendar {
+}
+
+#calendar {
 	max-width: 900px;
 	margin: 0 auto;
-  }
+}
 
-  .calendar-day.today {
-	background: #e0e0e0; /* A light gray background */
-	border: 2px solid #cbb967; /* Optional: a contrasting border */
-  }
-  
-  .calendar-grid {
+.calendar-day.today {
+	background: #e0e0e0;
+	/* A light gray background */
+	border: 2px solid #cbb967;
+	/* Optional: a contrasting border */
+}
+
+.calendar-grid {
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
 	gap: 1px;
 	background: #ddd;
-  }
-  .calendar-grid .calendar-day,
-  .calendar-grid .calendar-day-name {
+}
+
+.calendar-grid .calendar-day,
+.calendar-grid .calendar-day-name {
 	background: #fff;
 	padding: 0.75rem;
 	text-align: center;
 	min-height: 80px;
 	position: relative;
-  }
-  .calendar-grid .calendar-day-name {
+}
+
+.calendar-grid .calendar-day-name {
 	background: #f4f4f4;
 	font-weight: 600;
 	color: #555;
-  }
-  .calendar-day .date-number {
+}
+
+.calendar-day .date-number {
 	position: absolute;
 	top: 5px;
 	left: 5px;
 	font-weight: 600;
-  }
-  .calendar-day .event {
+}
+
+.calendar-day .event {
 	background: #cbb967;
 	color: #fff;
 	font-size: 0.75rem;
@@ -177,15 +203,16 @@
 	width: calc(100% - 10px);
 	text-align: left;
 	transition: background 0.3s;
-  }
-  .calendar-day .event:hover {
+}
+
+.calendar-day .event:hover {
 	background: #b09b68;
-  }
-  
-  /* ==================================
+}
+
+/* ==================================
 	 Footer
   ================================== */
-  footer {
+footer {
 	border-top: 2px solid #ddd;
 	background: #f5f5f5;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -194,67 +221,171 @@
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-  }
-  .footerContainer {
+}
+
+.footerContainer {
 	width: 100%;
-  }
-  .socialIcons {
+}
+
+.socialIcons {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 1rem;
-  }
-  .socialIcons a {
+}
+
+.socialIcons a {
 	text-decoration: none;
 	padding: 10px;
 	background: #f5f5f5;
 	margin: 10px;
 	border-radius: 10px;
 	transition: transform 0.3s ease;
-  }
-  .socialIcons i {
+}
+
+.socialIcons i {
 	font-size: 2em;
 	color: #000;
 	opacity: 0.9;
-  }
-  .socialIcons a:hover {
+}
+
+.socialIcons a:hover {
 	transform: translateY(-10px);
-  }
-  .footerNav {
+}
+
+.footerNav {
 	margin: 30px 0;
-  }
-  .footerNav ul {
+}
+
+.footerNav ul {
 	display: flex;
 	justify-content: center;
 	list-style: none;
-  }
-  .footerNav ul li a {
+}
+
+.footerNav ul li a {
 	color: #000;
 	margin: 20px;
 	text-decoration: none;
 	font-size: 1.3em;
 	opacity: 0.7;
 	transition: opacity 0.5s;
-  }
-  .footerNav ul li a:hover {
+}
+
+.footerNav ul li a:hover {
 	opacity: 1;
-  }
-  .footerBottom {
+}
+
+.footerBottom {
 	text-align: center;
 	padding: 20px;
-  }
-  .footerBottom p {
+}
+
+.footerBottom p {
 	color: #666;
-  }
-  
-  /* ==================================
+}
+
+/* ==================================
 	 Animations
   ================================== */
-  @keyframes fadeInDown {
-	from { opacity: 0; transform: translateY(-30px); }
-	to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInUp {
-	from { opacity: 0; transform: translateY(30px); }
-	to { opacity: 1; transform: translateY(0); }
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ==================================
+   RESPONSIVE STYLES
+================================== */
+
+/* For tablets and small screens */
+@media (max-width: 768px) {
+	header {
+	  flex-direction: column;
+	  padding: 0.5rem;
+	}
+	
+	nav {
+	  flex-direction: column;
+	  align-items: center;
+	  gap: 0.5rem;
+	  margin-top: 0.5rem;
+	}
+	
+	nav a {
+	  font-size: 1.1rem;
+	  padding: 0.5rem 1rem;
+	  width: 100%;
+	  text-align: center;
+	  border-bottom: 1px solid #ddd;
+	}
+	
+	nav a:last-child {
+	  border-bottom: none;
+	}
+	
+	.calendar-controls {
+	  flex-direction: column;
+	  gap: 0.5rem;
+	  padding: 1rem;
+	}
+	
+	.calendar-controls h2 {
+	  font-size: 1.8rem;
+	}
+	
+	.calendar-section {
+	  padding: 1.5rem;
+	}
+	
+	footer {
+	  padding: 1rem 20px;
+	}
   }
   
+  /* For very small devices (phones) */
+  @media (max-width: 480px) {
+	header .logo img {
+	  width: 150px;
+	}
+	
+	nav a {
+	  font-size: 1rem;
+	  padding: 0.4rem 0.8rem;
+	}
+	
+	.hero-content h1 {
+	  font-size: 2.5rem;
+	}
+	
+	.hero-content p {
+	  font-size: 1.1rem;
+	  padding: 0 1rem;
+	}
+	
+	.calendar-controls h2 {
+	  font-size: 1.6rem;
+	}
+	
+	.footerNav ul li a {
+	  font-size: 1rem;
+	  margin: 10px;
+	}
+  }

@@ -1,3 +1,10 @@
+/* 
+    Filename: index.css
+    Author: Anonymous
+    Date: 01-11-2025
+    Description: This website is a digital space for Jesus the Savior MBC.
+    Created as a surprise to celebrate the church's mission. */
+
 /* ==================================
    Global & Reset Styles
 ================================== */
@@ -5,20 +12,21 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-  }
-  body {
+}
+
+body {
 	font-family: 'Poppins', sans-serif;
 	background: radial-gradient(circle, #fef9e7, #f4ecd8);
 	color: #333;
 	line-height: 1.6;
-  }
-  
-  
-  /* ==================================
+}
+
+
+/* ==================================
 	 Header & Navigation
   ================================== */
-   /* HEADER (reuse existing styles if applicable) */
-   header {
+/* HEADER (reuse existing styles if applicable) */
+header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -28,81 +36,86 @@
 	position: sticky;
 	top: 0;
 	z-index: 1000;
-	max-width: 2000px; /* Adjust as needed */
-    width: 100%;
-    margin: 0 auto; /* Centers the navbar */
-  }
-
-  
-  .footerContainer {
+	max-width: 2000px;
+	/* Adjust as needed */
 	width: 100%;
-  }
-  
-  .socialIcons {
+	margin: 0 auto;
+	/* Centers the navbar */
+}
+
+
+.footerContainer {
+	width: 100%;
+}
+
+.socialIcons {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 1rem;
-  }
-  
-  .socialIcons a {
+}
+
+.socialIcons a {
 	text-decoration: none;
 	padding: 10px;
 	background: #f5f5f5;
 	margin: 10px;
 	border-radius: 10px;
-  }
-  
-  .socialIcons i {
+}
+
+.socialIcons i {
 	font-size: 2em;
 	color: #000;
 	opacity: 0.9;
 	transition: transform 0.3s ease;
-  }
-  
-  .socialIcons a:hover {
+}
+
+.socialIcons a:hover {
 	transform: translateY(-10px);
-  }
-  
-  header .logo img {
+}
+
+header .logo img {
 	width: 200px;
-  }
-  nav {
+} 
+
+nav {
 	display: flex;
 	gap: 2rem;
 	max-width: 1200px;
-  }
+}
 
-  
-  nav a {
+
+nav a {
 	text-decoration: none;
 	color: #333;
 	font-weight: 500;
 	transition: color 0.3s;
-	
-  }
-  nav a:hover,
-  nav a.active-link {
+
+}
+
+nav a:hover,
+nav a.active-link {
 	color: #cbb967;
-  }
-  .user-actions .button-donate {
+}
+
+.user-actions .button-donate {
 	padding: 0.6em 1.5em;
 	border: none;
 	background: #111;
 	color: #fff;
 	border-radius: 10px;
 	cursor: pointer;
-  }
-  
+}
 
-    /* Logo */
-	#logo .isuslogo {
-		width: 250px;
-		margin-bottom: -90px;
-		margin-left: -30px;
-	  }
-  
 
-	  /* ==================================
+/* Logo */
+#logo .isuslogo {
+	width: 250px;
+	margin-bottom: -90px;
+	margin-left: -30px;
+}
+
+
+/* ==================================
    Contact Hero Section
 ================================== */
 .hero {
@@ -113,38 +126,42 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-  }
-  .hero-overlay {
+}
+
+.hero-overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.5);
-  }
-  .hero-content {
+}
+
+.hero-content {
 	position: relative;
 	text-align: center;
 	color: #fff;
 	z-index: 1;
-  }
-  .hero-content h1 {
+}
+
+.hero-content h1 {
 	font-family: 'Playfair Display', serif;
 	font-size: 3.5rem;
 	margin-bottom: 0.5rem;
 	animation: fadeInDown 1s ease-out;
-  }
-  .hero-content p {
+}
+
+.hero-content p {
 	font-size: 1.3rem;
 	animation: fadeInUp 1s ease-out;
-  }
-  
-  /* ==================================
+}
+
+/* ==================================
 	 Main Content
   ================================== */
-  
-  /* Church Photo */
-  .church_photo {
+
+/* Church Photo */
+.church_photo {
 	width: 100%;
 	max-width: 1900px;
 	height: auto;
@@ -152,21 +169,20 @@
 	margin: auto;
 	box-shadow: 0 0 5px 2px #282a2d;
 	filter: grayscale(100%);
-  }
-  
-  /* Image Text Overlay */
-  .image_text {
+}
+
+/* Image Text Overlay */
+.image_text {
 	z-index: 500;
 	margin-top: -500px;
 	left: 400px;
 	position: absolute;
 	filter: grayscale(100%) brightness(1000%);
-  }
+}
 
-  
-  
-  /* Scripture Bubble */
-  .bubble {
+
+/* Scripture Bubble */
+.bubble {
 	position: relative;
 	max-width: 900px;
 	margin: 3rem auto;
@@ -174,16 +190,17 @@
 	background: linear-gradient(to bottom, #ffffff, #f9f9f9);
 	box-shadow: inset 0 0 0 5px black, 0 10px 20px rgba(0, 0, 0, 0.3);
 	border: 1px solid #cbb967;
-	border-radius: 0; /* Sharp corners for a book look */
+	border-radius: 0;
+	/* Sharp corners for a book look */
 	font-family: 'Merriweather', serif;
 	text-align: center;
 	line-height: 1.8;
 	background-image: radial-gradient(circle, #fefefe, #f5f5f5);
-  }
-  
-  /* Simulate Book Spine */
-  .bubble::before,
-  .bubble::after {
+}
+
+/* Simulate Book Spine */
+.bubble::before,
+.bubble::after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -191,57 +208,62 @@
 	width: 20px;
 	background: #cbb967;
 	z-index: -1;
-  }
-  
-  .bubble::before {
-	left: -25px; /* Add spine effect */
-	box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  }
-  
-  .bubble::after {
-	right: -25px; /* Add spine effect */
-	box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  }
-  
-  /* Typography for the Quote */
-  .bubble h1 {
+}
+
+.bubble::before {
+	left: -25px;
+	/* Add spine effect */
+	box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+	/* Shadow for depth */
+}
+
+.bubble::after {
+	right: -25px;
+	/* Add spine effect */
+	box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+	/* Shadow for depth */
+}
+
+/* Typography for the Quote */
+.bubble h1 {
 	font-family: 'Playfair Display', serif;
 	font-size: 2rem;
 	font-weight: 500;
 	color: #333;
 	margin-bottom: 1.5rem;
 	line-height: 1.6;
-  }
-  
-  .bubble p {
+}
+
+.bubble p {
 	font-family: 'Poppins', sans-serif;
 	font-size: 1.2rem;
 	color: #666;
 	margin: 0.5rem 0;
-  }
-  
-  .bubble p:last-child {
+}
+
+.bubble p:last-child {
 	margin-top: 1.5rem;
 	font-style: italic;
 	color: #999;
 	font-family: 'Merriweather', serif;
-  }
-  
-  /* Decorative Gold Lines */
-  .bubble span {
+}
+
+/* Decorative Gold Lines */
+.bubble span {
 	display: block;
 	margin: 1.5rem auto;
 	width: 50%;
 	height: 2px;
 	background: linear-gradient(to right, #cbb967, transparent, #cbb967);
-  }
-  
-  /* Fade-in Effect */
-  .bubble {
+}
+
+/* Fade-in Effect */
+.bubble {
 	animation: fadeInBook 1.5s ease-in-out forwards;
 	opacity: 0;
-  }
-  .script-title {
+}
+
+.script-title {
 	font-size: 1.5rem;
 	font-weight: bold;
 	color: #444;
@@ -249,99 +271,108 @@
 	margin-bottom: 1rem;
 	text-align: center;
 	position: relative;
-  }
-  .script-title::after {
+}
+
+.script-title::after {
 	content: '';
 	position: absolute;
-	bottom: -10px; /* Space between text and underline */
+	bottom: -10px;
+	/* Space between text and underline */
 	margin-right: -100px;
 	text-align: center;
-	left: 38%; /* Adjust the extra space to the left */
-	right: 49%; /* Adjust the extra space to the right */
-	height: 2px; /* Thickness of the underline */
-	background: #444; /* Matches text color */
-	border-radius: 2px; /* Makes the line smoother */
-  }
-  @keyframes fadeInBook {
+	left: 38%;
+	/* Adjust the extra space to the left */
+	right: 49%;
+	/* Adjust the extra space to the right */
+	height: 2px;
+	/* Thickness of the underline */
+	background: #444;
+	/* Matches text color */
+	border-radius: 2px;
+	/* Makes the line smoother */
+}
+
+@keyframes fadeInBook {
 	from {
-	  opacity: 0;
-	  transform: scale(0.95);
+		opacity: 0;
+		transform: scale(0.95);
 	}
+
 	to {
-	  opacity: 1;
-	  transform: scale(1);
+		opacity: 1;
+		transform: scale(1);
 	}
-  }
-  
-  /* Background Textured for a Book Page */
-  body {
+}
+
+/* Background Textured for a Book Page */
+body {
 	background: radial-gradient(circle, #fef9e7, #f4ecd8) no-repeat;
 	background-attachment: fixed;
-  }
-  
-  /* Styling the Edges (Optional for Depth) */
-  .bubble::after,
-  .bubble::before {
+}
+
+/* Styling the Edges (Optional for Depth) */
+.bubble::after,
+.bubble::before {
 	background: linear-gradient(to bottom, #cbb967, #a68b5e);
-  }
-  
-  /* ==================================
+}
+
+/* ==================================
 	 Services Section
   ================================== */
-  .services-container {
+.services-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 2rem;
 	padding: 4rem 1rem;
-  }
-  
-  .service-row {
+}
+
+.service-row {
 	display: flex;
 	justify-content: center;
 	gap: 1.5rem;
 	width: 10%;
-  }
-  
-  .service-box {
+}
+
+.service-box {
 	background: linear-gradient(135deg, #e3e3e3, #f9f9f9);
 	border-radius: 10px;
 	padding: 1.5rem;
-	box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 	text-align: center;
 	cursor: pointer;
 	max-width: 500px;
 	position: relative;
 	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
-  }
-  
+}
+
 /* Sunday Services Box: full width */
 .service-box.full-width {
 	width: 100%;
-  }
+}
 
-  /* Service Row for side-by-side boxes */
+/* Service Row for side-by-side boxes */
 .service-row {
 	display: flex;
 	gap: 1.5rem;
 	width: 100%;
 	justify-content: center;
-  }
-  
-  /* Each box in the service row takes 50% of the width */
-  .service-row .service-box {
+}
+
+/* Each box in the service row takes 50% of the width */
+.service-row .service-box {
 	width: 50%;
 	box-sizing: border-box;
-  }
- 
-  
-  .service-box:hover {
+}
+
+
+.service-box:hover {
 	transform: translateY(-10px) scale(1.02);
-	box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 	background: linear-gradient(135deg, #ffffff, #f0f0f0);
-  }
-  
-  .service-box::before {
+}
+
+.service-box::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -351,9 +382,9 @@
 	height: 5px;
 	background-color: #cbb967;
 	border-radius: 5px;
-  }
-  
-  /* ==================================
+}
+
+/* ==================================
 	 FAQ Section
   ================================== */
 /* Enhanced FAQ Section Styles */
@@ -365,38 +396,38 @@
 	border-radius: 10px;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 	font-family: 'Poppins', sans-serif;
-  }
-  
-  .faq-section h1 {
+}
+
+.faq-section h1 {
 	text-align: center;
 	color: #111;
 	font-size: 2.5rem;
 	margin-bottom: 0.5rem;
-  }
-  
-  .faq-intro {
+}
+
+.faq-intro {
 	text-align: center;
 	color: #555;
 	font-size: 1.1rem;
 	margin-bottom: 2rem;
-  }
-  
-  .faq-item {
+}
+
+.faq-item {
 	margin-bottom: 1rem;
 	border-bottom: 1px solid #e0e0e0;
-  }
-  
-  .faq-item:last-of-type {
+}
+
+.faq-item:last-of-type {
 	border-bottom: none;
-  }
-  
-  .faq-item details {
+}
+
+.faq-item details {
 	cursor: pointer;
 	position: relative;
 	padding: 0.5rem 0;
-  }
-  
-  .faq-item summary {
+}
+
+.faq-item summary {
 	list-style: none;
 	display: flex;
 	align-items: center;
@@ -405,210 +436,290 @@
 	padding: 0.5rem;
 	transition: background 0.3s ease;
 	border-radius: 5px;
-  }
-  
-  .faq-item summary:hover {
+}
+
+.faq-item summary:hover {
 	background: #f4f4f4;
-  }
-  
-  .faq-icon {
+}
+
+.faq-icon {
 	width: 40px;
 	text-align: center;
 	margin-right: 1rem;
 	color: #cbb967;
 	font-size: 1.5rem;
-  }
-  
-  .faq-answer {
+}
+
+.faq-answer {
 	padding: 0.5rem 2.5rem;
 	animation: fadeIn 0.4s ease-in-out;
 	color: #444;
 	font-size: 1.1rem;
 	line-height: 1.6;
-  }
-  
-  .faq-answer p {
+}
+
+.faq-answer p {
 	margin: 0.5rem 0;
-  }
-  
-  /* Custom open/close icon using pseudo-element */
-  .faq-item summary::-webkit-details-marker {
+}
+
+/* Custom open/close icon using pseudo-element */
+.faq-item summary::-webkit-details-marker {
 	display: none;
-  }
-  
-  .faq-item summary::after {
-	content: "\002B"; /* Plus sign */
+}
+
+.faq-item summary::after {
+	content: "\002B";
+	/* Plus sign */
 	font-size: 1.5rem;
 	color: #cbb967;
 	margin-left: auto;
 	transition: transform 0.3s ease;
-  }
-  
-  .faq-item details[open] summary::after {
-	content: "\2212"; /* Minus sign */
-  }
-  
-  /* Fade-in animation */
-  @keyframes fadeIn {
+}
+
+.faq-item details[open] summary::after {
+	content: "\2212";
+	/* Minus sign */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
 	from {
-	  opacity: 0;
-	  transform: translateY(-5px);
+		opacity: 0;
+		transform: translateY(-5px);
 	}
+
 	to {
-	  opacity: 1;
-	  transform: translateY(0);
+		opacity: 1;
+		transform: translateY(0);
 	}
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 480px) {
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
 	.faq-section {
-	  padding: 1rem;
+		padding: 1rem;
 	}
+
 	.faq-section h1 {
-	  font-size: 2rem;
+		font-size: 2rem;
 	}
+
 	.faq-item summary {
-	  font-size: 1.1rem;
+		font-size: 1.1rem;
 	}
+
 	.faq-icon {
-	  width: 30px;
-	  font-size: 1.3rem;
-	  margin-right: 0.5rem;
+		width: 30px;
+		font-size: 1.3rem;
+		margin-right: 0.5rem;
 	}
-  }
-  
-  
-  /* ==================================
+}
+
+
+/* ==================================
 	 Footer
   ================================== */
-  footer {
+footer {
 	border-top: 2px solid #ddd;
 	background: #f5f5f5;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 	padding: 1rem 40px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-  }
-  
-  .footerContainer {
+}
+
+.footerContainer {
 	width: 100%;
-  }
-  
-  .socialIcons {
+}
+
+.socialIcons {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 1rem;
-  }
-  
-  .socialIcons a {
+}
+
+.socialIcons a {
 	text-decoration: none;
 	padding: 10px;
 	background: #f5f5f5;
 	margin: 10px;
 	border-radius: 10px;
-  }
-  
-  .socialIcons i {
+}
+
+.socialIcons i {
 	font-size: 2em;
 	color: #000;
 	opacity: 0.9;
 	transition: transform 0.3s ease;
-  }
-  
-  .socialIcons a:hover {
+}
+
+.socialIcons a:hover {
 	transform: translateY(-10px);
-  }
-  
-  .footerNav ul {
+}
+
+.footerNav ul {
 	display: flex;
 	justify-content: center;
 	list-style: none;
 	padding: 0;
-  }
-  
-  .footerNav ul li a {
+}
+
+.footerNav ul li a {
 	color: #000;
 	margin: 0 20px;
 	text-decoration: none;
 	font-size: 1.3em;
 	opacity: 0.7;
 	transition: opacity 0.5s;
-  }
-  
-  .footerNav ul li a:hover {
+}
+
+.footerNav ul li a:hover {
 	opacity: 1;
-  }
-  
-  .footerBottom {
+}
+
+.footerBottom {
 	text-align: center;
 	padding: 20px;
-  }
-  
-  .footerBottom p {
+}
+
+.footerBottom p {
 	color: #666;
-  }
-  
-  /* ==================================
+}
+
+/* ==================================
 	 Responsive Styles
   ================================== */
-  
-  /* High-Resolution Monitors */
-  @media (min-width: 2560px) and (max-height: 1440px) {
-	body { font-size: 1.2rem; padding: 0 10%; }
-	header { padding: 2rem 10%; }
-	nav { gap: 3rem; }
-	nav a { font-size: 1.2rem; }
-	.image_text { max-width: 60%; margin: 0 auto; text-align: center; }
-	.services-container { max-width: 80%; margin: 4rem auto; gap: 3rem; }
-	.service-box { max-width: 80%; margin: 0 auto; padding: 2rem; }
-	.service-row { gap: 2rem; }
-	.container { max-width: 75%; margin: 4rem auto; font-size: 1.1rem; }
-	footer { padding: 3rem 10%; font-size: 1rem; }
-  }
-  
-  /* Tablet / Large Phones (<=768px) */
-  @media (max-width: 768px) {
-	header { flex-wrap: wrap; padding: 0.5rem; }
+
+/* High-Resolution Monitors */
+@media (min-width: 2560px) and (max-height: 1440px) {
+	body {
+		font-size: 1.2rem;
+		padding: 0 10%;
+	}
+
+	header {
+		padding: 2rem 10%;
+	}
+
+	nav {
+		gap: 3rem;
+	}
+
+	nav a {
+		font-size: 1.2rem;
+	}
+
+	.image_text {
+		max-width: 60%;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.services-container {
+		max-width: 80%;
+		margin: 4rem auto;
+		gap: 3rem;
+	}
+
+	.service-box {
+		max-width: 80%;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+
+	.service-row {
+		gap: 2rem;
+	}
+
+	.container {
+		max-width: 75%;
+		margin: 4rem auto;
+		font-size: 1.1rem;
+	}
+
+	footer {
+		padding: 3rem 10%;
+		font-size: 1rem;
+	}
+}
+
+/* ==================================
+   RESPONSIVE STYLES
+================================== */
+
+/* For tablets and small screens */
+@media (max-width: 768px) {
+	header {
+	  flex-direction: column;
+	  padding: 0.5rem;
+	}
+	
 	nav {
 	  flex-direction: column;
 	  align-items: center;
-	  margin-left: 0;
-	  gap: 1.5rem;
-	  padding: 10px;
+	  gap: 0.5rem;
+	  margin-top: 0.5rem;
 	}
-	nav a { font-size: 1rem; padding: 0.3rem 0.5rem; }
-	#logo .isuslogo {
-	  width: 200px;
-	  margin: 0 auto;
-	  display: block;
+	
+	nav a {
+	  font-size: 1.1rem;
+	  padding: 0.5rem 1rem;
+	  width: 100%;
+	  text-align: center;
+	  border-bottom: 1px solid #ddd;
 	}
-	.user-actions { margin-top: 0.5rem; justify-content: center; width: 100%; }
-	.button-donate { padding: 0.5em 1.5em; font-size: 0.9rem; }
-	.church_photo { box-shadow: none; }
-	.image_text { margin-top: -800px; }
-	.bubble { margin: 2rem auto; padding: 2rem; }
-	.services-container { padding: 2rem 1rem; }
-	.service-row { flex-direction: column; }
-	.service-box { margin-bottom: 1rem; }
-	h1, .container h1 { font-size: 2rem; }
-	footer { padding: 10px 20px; }
+	
+	nav a:last-child {
+	  border-bottom: none;
+	}
+	
+	.calendar-controls {
+	  flex-direction: column;
+	  gap: 0.5rem;
+	  padding: 1rem;
+	}
+	
+	.calendar-controls h2 {
+	  font-size: 1.8rem;
+	}
+	
+	.calendar-section {
+	  padding: 1.5rem;
+	}
+	
+	footer {
+	  padding: 1rem 20px;
+	}
   }
   
-  /* Very Narrow Phones (<=480px) */
+  /* For very small devices (phones) */
   @media (max-width: 480px) {
-	header { flex-direction: column; align-items: center; text-align: center; }
-	nav { flex-direction: column; gap: 0.5rem; width: 100%; justify-content: center; }
-	nav a { font-size: 0.9rem; padding: 0.2rem 0.4rem; }
-	.user-actions { width: 100%; justify-content: center; }
-	.button-donate { padding: 0.5em 1.2em; font-size: 0.85rem; }
-	.church_photo { width: 100%; height: auto; }
-	.bubble { margin: 1rem auto; padding: 1.5rem; }
-	.services-container { padding: 1rem; }
-	footer { padding: 10px 10px; }
-	.footerNav ul { flex-direction: column; }
-	.footerNav ul li { margin: 10px 0; }
+	header .logo img {
+	  width: 150px;
+	}
+	
+	nav a {
+	  font-size: 1rem;
+	  padding: 0.4rem 0.8rem;
+	}
+	
+	.hero-content h1 {
+	  font-size: 2.5rem;
+	}
+	
+	.hero-content p {
+	  font-size: 1.1rem;
+	  padding: 0 1rem;
+	}
+	
+	.calendar-controls h2 {
+	  font-size: 1.6rem;
+	}
+	
+	.footerNav ul li a {
+	  font-size: 1rem;
+	  margin: 10px;
+	}
   }
-  

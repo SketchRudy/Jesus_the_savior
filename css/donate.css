@@ -1,19 +1,147 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f8f9fa;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+/* 
+    Filename: donate.css
+    Author: Anonymous
+    Date: 01-11-2025
+    Description: This website is a digital space for Jesus the Savior MBC.
+    Created as a surprise to celebrate the church's mission. */
 
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+/* ==================================
+   Basic Reset & Base Styles
+================================== */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+  
+  body {
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(135deg, #fef9e7, #f4ecd8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	color: #333;
+  }
+  
+  /* ==================================
+	 Container
+  ================================== */
+  .container {
+	text-align: center;
+	padding: 2rem;
+	border: 2px solid #cbb967;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	max-width: 600px;
+	margin: 2rem;
+  }
+  
+  /* ==================================
+	 Headings & Construction Section
+  ================================== */
+  h1 {
+	font-size: 2.8rem;
+	margin-bottom: 1rem;
+  }
+  
+  .construction {
+	margin: 1rem 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+  }
+  
+  .construction i {
+	font-size: 2rem;
+	color: #cbb967;
+  }
+  
+  .under-construction {
+	font-size: 1.8rem;
+	font-weight: 600;
+	color: #cbb967;
+  }
+  
+  /* ==================================
+	 Message Paragraph
+  ================================== */
+  .message {
+	font-size: 1.2rem;
+	margin: 1.5rem 0;
+	line-height: 1.5;
+  }
+  
+  /* ==================================
+	 Go Back Button
+  ================================== */
+  .go-back {
+	margin-top: 2rem;
+  }
+  
+  .go-back button {
+	background: #007bff;
+	color: #fff;
+	border: none;
+	padding: 0.8rem 1.5rem;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.3s ease;
+  }
+  
+  .go-back button:hover {
+	background: #0056b3;
+  }
+  
+  /* ==================================
+	 Responsive Styles
+  ================================== */
+  
+  /* For tablets and small screens */
+  @media (max-width: 768px) {
+	.container {
+	  max-width: 90%;
+	  padding: 1.5rem;
+	  margin: 1rem;
+	}
+  
+	h1 {
+	  font-size: 2.4rem;
+	}
+  
+	.under-construction {
+	  font-size: 1.5rem;
+	}
+  
+	.message {
+	  font-size: 1.1rem;
+	}
+  }
+  
+  /* For very small devices (phones) */
+  @media (max-width: 480px) {
+	h1 {
+	  font-size: 2rem;
+	}
+  
+	.construction i {
+	  font-size: 1.8rem;
+	}
+  
+	.under-construction {
+	  font-size: 1.3rem;
+	}
+  
+	.message {
+	  font-size: 1rem;
+	}
+  
+	.go-back button {
+	  padding: 0.6rem 1.2rem;
+	  font-size: 0.9rem;
+	}
+  }
+  

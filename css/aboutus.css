@@ -1,18 +1,26 @@
+/* 
+    Filename: aboutus.css
+    Author: Anonymous
+    Date: 01-11-2025
+    Description: This website is a digital space for Jesus the Savior MBC.
+    Created as a surprise to celebrate the church's mission. */
+
 /* Global Reset & Fonts */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-  }
-  body {
+}
+
+body {
 	font-family: 'Poppins', sans-serif;
 	background: #fef9e7;
 	color: #333;
 	line-height: 1.6;
-  }
-  
-  /* HEADER (reuse existing styles if applicable) */
-  header {
+}
+
+/* HEADER (reuse existing styles if applicable) */
+header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -22,142 +30,146 @@
 	position: sticky;
 	top: 0;
 	z-index: 1000;
-	max-width: 2000px; /* Adjust as needed */
-    width: 100%;
-    margin: 0 auto; /* Centers the navbar */
-  }
-
-  
-  .footerContainer {
+	max-width: 2000px;
+	/* Adjust as needed */
 	width: 100%;
-  }
-  
-  .socialIcons {
+	margin: 0 auto;
+	/* Centers the navbar */
+}
+
+
+.footerContainer {
+	width: 100%;
+}
+
+.socialIcons {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 1rem;
-  }
-  
-  .socialIcons a {
+}
+
+.socialIcons a {
 	text-decoration: none;
 	padding: 10px;
 	background: #f5f5f5;
 	margin: 10px;
 	border-radius: 10px;
-  }
-  
-  .socialIcons i {
+}
+
+.socialIcons i {
 	font-size: 2em;
 	color: #000;
 	opacity: 0.9;
 	transition: transform 0.3s ease;
-  }
-  
-  .socialIcons a:hover {
+}
+
+.socialIcons a:hover {
 	transform: translateY(-10px);
-  }
-  
-  header .logo img {
+}
+
+header .logo img {
 	width: 200px;
-  }
-  nav {
+}
+
+nav {
 	display: flex;
 	gap: 2rem;
-  }
+}
 
-  
-  nav a {
+
+nav a {
 	text-decoration: none;
 	color: #333;
 	font-weight: 500;
 	transition: color 0.3s;
-  }
-  nav a:hover,
-  nav a.active-link {
+}
+
+nav a:hover,
+nav a.active-link {
 	color: #cbb967;
-  }
-  .user-actions .button-donate {
+}
+
+.user-actions .button-donate {
 	padding: 0.6em 1.5em;
 	border: none;
 	background: #111;
 	color: #fff;
 	border-radius: 10px;
 	cursor: pointer;
-  }
-  
+}
 
 
-  footer {
+footer {
 	border-top: 2px solid #ddd;
 	background: #f5f5f5;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 	padding: 1rem 40px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-  }
-  
-  .footerContainer {
+}
+
+.footerContainer {
 	width: 100%;
-  }
-  
-  .socialIcons {
+}
+
+.socialIcons {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 1rem;
-  }
-  
-  .socialIcons a {
+}
+
+.socialIcons a {
 	text-decoration: none;
 	padding: 10px;
 	background: #f5f5f5;
 	margin: 10px;
 	border-radius: 10px;
-  }
-  
-  .socialIcons i {
+}
+
+.socialIcons i {
 	font-size: 2em;
 	color: #000;
 	opacity: 0.9;
 	transition: transform 0.3s ease;
-  }
-  
-  .socialIcons a:hover {
+}
+
+.socialIcons a:hover {
 	transform: translateY(-10px);
-  }
-  
-  .footerNav ul {
+}
+
+.footerNav ul {
 	display: flex;
 	justify-content: center;
 	list-style: none;
 	padding: 0;
-  }
-  
-  .footerNav ul li a {
+}
+
+.footerNav ul li a {
 	color: #000;
 	margin: 0 20px;
 	text-decoration: none;
 	font-size: 1.3em;
 	opacity: 0.7;
 	transition: opacity 0.5s;
-  }
-  
-  .footerNav ul li a:hover {
+}
+
+.footerNav ul li a:hover {
 	opacity: 1;
-  }
-  
-  .footerBottom {
+}
+
+.footerBottom {
 	text-align: center;
 	padding: 20px;
-  }
-  
-  .footerBottom p {
+}
+
+.footerBottom p {
 	color: #666;
-  }
-  
-  /* HERO SECTION */
-  .hero {
+}
+
+/* HERO SECTION */
+.hero {
 	position: relative;
 	height: 60vh;
 	background: url('/assets/images/hero_about.jpg') no-repeat center center/cover;
@@ -165,80 +177,92 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	
-  }
-  .hero-overlay {
+
+}
+
+.hero-overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.5);
-  }
-  .hero-content {
+}
+
+.hero-content {
 	position: relative;
 	text-align: center;
 	color: #fff;
 	z-index: 1;
-	
-  }
-  .hero-content h1 {
+
+}
+
+.hero-content h1 {
 	font-family: 'Playfair Display', serif;
 	font-size: 3.5rem;
 	margin-bottom: 0.5rem;
 	animation: fadeInDown 1s ease-out;
-  }
-  .hero-content p {
+}
+
+.hero-content p {
 	font-size: 1.3rem;
 	animation: fadeInUp 1s ease-out;
-  }
-  
-  /* ABOUT CONTENT SECTION */
-  .about-content {
+}
+
+/* ABOUT CONTENT SECTION */
+.about-content {
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	padding: 3rem 2rem;
 	flex-wrap: wrap;
-  }
-  .about-text {
+}
+
+.about-text {
 	flex: 1;
 	max-width: 500px;
 	margin: 1rem;
-  }
-  .about-text h2 {
+}
+
+.about-text h2 {
 	font-size: 2.5rem;
 	color: #111;
 	margin-bottom: 1rem;
-  }
-  .about-text p {
+}
+
+.about-text p {
 	font-size: 1.1rem;
 	margin-bottom: 1rem;
-  }
-  .about-image {
+}
+
+.about-image {
 	flex: 1;
 	max-width: 500px;
 	margin: 1rem;
-  }
-  .about-image img {
+}
+
+.about-image img {
 	width: 100%;
 	border-radius: 10px;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 	border: 3px solid #7F7C74;
 
-  }
-  /* Gradient Text Effect */
-.zoomIn.delay {
-    background: linear-gradient(to right, rgb(0, 0, 0), rgb(114, 113, 113));
-    -webkit-background-clip: text;  /* for Chrome, Safari, and Opera */
-	background-clip: text; 			/* Standard syntax for modern browsers*/
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
 }
 
-  
-  /* MISSION & VISION SECTION */
-  .mission-vision {
+/* Gradient Text Effect */
+.zoomIn.delay {
+	background: linear-gradient(to right, rgb(0, 0, 0), rgb(114, 113, 113));
+	-webkit-background-clip: text;
+	/* for Chrome, Safari, and Opera */
+	background-clip: text;
+	/* Standard syntax for modern browsers*/
+	-webkit-text-fill-color: transparent;
+	display: inline-block;
+}
+
+
+/* MISSION & VISION SECTION */
+.mission-vision {
 	display: flex;
 	justify-content: space-around;
 	padding: 3rem 2rem;
@@ -246,53 +270,60 @@
 	margin: 2rem auto;
 	max-width: 1000px;
 	border-radius: 10px;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 	flex-wrap: wrap;
 	gap: 2rem;
-  }
-  .mission-vision > div {
+}
+
+.mission-vision>div {
 	flex: 1;
 	text-align: center;
 	max-width: 400px;
 	padding: 1rem;
-  }
-  .mission-vision i {
+}
+
+.mission-vision i {
 	font-size: 3rem;
 	color: #cbb967;
 	margin-bottom: 1rem;
-  }
-  .mission-vision h3 {
+}
+
+.mission-vision h3 {
 	font-size: 1.8rem;
 	margin-bottom: 0.5rem;
 	font-family: 'Playfair Display', serif;
-  }
-  .mission-vision p {
+}
+
+.mission-vision p {
 	font-size: 1rem;
 	color: #555;
-  }
-  
-  /* CALL TO ACTION SECTION */
-  .cta {
+}
+
+/* CALL TO ACTION SECTION */
+.cta {
 	background: linear-gradient(135deg, #cbb967, #f4ecd8);
 	padding: 3rem 2rem;
 	text-align: center;
 	border-radius: 10px;
 	margin: 2rem auto;
 	max-width: 1000px;
-  }
-  .cta-content h2 {
+}
+
+.cta-content h2 {
 	font-size: 2.5rem;
 	color: #fff;
 	margin-bottom: 1rem;
 	animation: zoomIn 1s ease;
-  }
-  .cta-content p {
+}
+
+.cta-content p {
 	font-size: 1.2rem;
 	color: #fff;
 	margin-bottom: 1.5rem;
 	animation: zoomIn 1s ease 0.3s;
-  }
-  .cta-button {
+}
+
+.cta-button {
 	display: inline-block;
 	background: #111;
 	color: #fff;
@@ -302,79 +333,193 @@
 	font-size: 1.1rem;
 	transition: background 0.3s ease;
 	animation: zoomIn 1s ease 0.5s;
-  }
-  .cta-button:hover {
+}
+
+.cta-button:hover {
 	background: #333;
-  }
-  
-  /* ANIMATIONS */
-  @keyframes fadeInDown {
+}
+
+/* ANIMATIONS */
+@keyframes fadeInDown {
 	from {
-	  opacity: 0;
-	  transform: translateY(-30px);
+		opacity: 0;
+		transform: translateY(-30px);
 	}
+
 	to {
-	  opacity: 1;
-	  transform: translateY(0);
+		opacity: 1;
+		transform: translateY(0);
 	}
-  }
-  @keyframes fadeInUp {
+}
+
+@keyframes fadeInUp {
 	from {
-	  opacity: 0;
-	  transform: translateY(30px);
+		opacity: 0;
+		transform: translateY(30px);
 	}
+
 	to {
-	  opacity: 1;
-	  transform: translateY(0);
+		opacity: 1;
+		transform: translateY(0);
 	}
-  }
-  @keyframes slideInLeft {
+}
+
+@keyframes slideInLeft {
 	from {
-	  opacity: 0;
-	  transform: translateX(-50px);
+		opacity: 0;
+		transform: translateX(-50px);
 	}
+
 	to {
-	  opacity: 1;
-	  transform: translateX(0);
+		opacity: 1;
+		transform: translateX(0);
 	}
-  }
-  @keyframes slideInRight {
+}
+
+@keyframes slideInRight {
 	from {
-	  opacity: 0;
-	  transform: translateX(50px);
+		opacity: 0;
+		transform: translateX(50px);
 	}
+
 	to {
-	  opacity: 1;
-	  transform: translateX(0);
+		opacity: 1;
+		transform: translateX(0);
 	}
-  }
-  @keyframes zoomIn {
+}
+
+@keyframes zoomIn {
 	from {
-	  opacity: 0;
-	  transform: scale(0.95);
+		opacity: 0;
+		transform: scale(0.95);
 	}
+
 	to {
-	  opacity: 1;
-	  transform: scale(1);
+		opacity: 1;
+		transform: scale(1);
 	}
-  }
-  
-  /* Utility classes for delays (customize as needed) */
-  .delay {
+}
+
+/* Utility classes for delays (customize as needed) */
+.delay {
 	animation-delay: 0.3s;
-  }
-  .delay2 {
+}
+
+.delay2 {
 	animation-delay: 0.5s;
-  }
-  
-  /* RESPONSIVE STYLES */
-  @media (max-width: 768px) {
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+	.about-content {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.mission-vision {
+		flex-direction: column;
+	}
+}
+
+/* ==================================
+   RESPONSIVE STYLES
+================================== */
+
+/* For tablets and small screens */
+@media (max-width: 768px) {
+	header {
+	  flex-direction: column;
+	  padding: 0.5rem;
+	}
+	
+	nav {
+		flex-direction: column;   /* Stack links vertically */
+		align-items: center;        /* Center the links */
+		gap: 0.5rem;                /* Reduce gap for mobile */
+		margin-top: 0.5rem;
+	  }
+
+	  nav a {
+		font-size: 1.1rem;         /* Increase tap area with slightly larger text */
+		padding: 0.5rem 1rem;       /* Add some padding for easier tapping */
+		width: 100%;                /* Let the links take full available width */
+		text-align: center;         /* Center the text within each link */
+		border-bottom: 1px solid #ddd; /* Optional: add a subtle divider */
+	  }
+
+	  nav a:last-child {
+		border-bottom: none;        /* Remove divider for the last link */
+	  }
+	
 	.about-content {
 	  flex-direction: column;
 	  text-align: center;
 	}
+	
 	.mission-vision {
 	  flex-direction: column;
+	  max-width: 90%;
+	}
+	
+	.cta {
+	  padding: 2rem 1rem;
+	  max-width: 90%;
+	}
+	
+	.cta-content h2 {
+	  font-size: 2rem;
+	}
+	
+	.cta-content p {
+	  font-size: 1rem;
 	}
   }
+  
+  /* For very small devices (phones) */
+  @media (max-width: 480px) {
+	header .logo img {
+	  width: 150px;
+	}
+	
+	@media (max-width: 480px) {
+		nav a {
+		  font-size: 1rem;           /* Adjust text size for very small devices */
+		  padding: 0.5rem;           /* Reduce padding slightly on extra-small screens */
+		}
+	  }
+	
+	.hero-content h1 {
+	  font-size: 2.5rem;
+	}
+	.header {
+		position: static;
+	}
+	
+	.hero-content p {
+	  font-size: 1.1rem;
+	  padding: 0 1rem;
+	}
+	
+	.about-text h2 {
+	  font-size: 2rem;
+	}
+	
+	.about-text p {
+	  font-size: 1rem;
+	}
+	
+	.cta-content h2 {
+	  font-size: 1.8rem;
+	}
+	
+	.cta-content p {
+	  font-size: 0.9rem;
+	}
+	
+	.footerNav ul li a {
+	  font-size: 1rem;
+	  margin: 10px;
+	}
+  }
+
   
