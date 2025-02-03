@@ -181,21 +181,27 @@ footer {
 }
 
 .hero-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 50%; /* Start from the center */
+    transform: translateX(-50%); /* Center it horizontally */
+    width: 100%; /* Full width of the parent */
+    max-width: 2000px; /* Optional: restrict maximum width */
+    height: 30em;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
-	position: relative;
-	text-align: center;
-	color: #fff;
-	z-index: 1;
-
+    position: absolute;       /* Fixes the element relative to the viewport */
+    top: 0;                /* Positions it at the top of the screen (adjust if needed) */
+    left: 50%;             /* Centers it horizontally */
+    transform: translateX(-50%); /* Adjusts for horizontal centering */
+    text-align: center;
+    color: #fff;
+    z-index: 1000;         /* Ensure it stays on top of other content */
+	margin-top: 160px;
 }
+
 
 .hero-content h1 {
 	font-family: 'Playfair Display', serif;
