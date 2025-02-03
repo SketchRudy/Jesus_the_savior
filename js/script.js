@@ -149,6 +149,3 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("nextMonth").addEventListener("click", nextMonth);
 });
 
-
-
-
