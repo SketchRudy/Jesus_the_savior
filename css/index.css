@@ -129,13 +129,17 @@ nav a.active-link {
 }
 
 .hero-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 50%; /* Start from the center */
+    transform: translateX(-50%); /* Center it horizontally */
+    width: 100%; /* Full width of the parent */
+    max-width: 2000px; /* Optional: restrict maximum width */
+    height: 30em;
+    background: rgba(0, 0, 0, 0.5);
 }
+
+
 
 .hero-content {
 	position: relative;
