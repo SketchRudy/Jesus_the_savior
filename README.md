@@ -7,12 +7,7 @@ Welcome to the digital home of **Jesus the Savior MBC** – a responsive, modern
 - [Overview](#overview)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Installation & Setup](#installation--setup)
-- [Folder Structure](#folder-structure)
-- [Customization](#customization)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+
 
 ## Overview
 
