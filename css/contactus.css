@@ -3,230 +3,317 @@
     Author: Anonymous
     Date: 01-11-2025
     Description: This website is a digital space for Jesus the Savior MBC.
-    Created as a surprise to celebrate the church's mission. */
+                 Created as a surprise to celebrate the church's mission.
+*/
 
 /* ==================================
-   General Reset & Fonts
+   Global Reset & Fonts
 ================================== */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
 	font-family: 'Poppins', sans-serif;
 	background: radial-gradient(circle, #fef9e7, #f4ecd8);
 	color: #333;
 	line-height: 1.6;
-}
-
-/* ==================================
-   Header & Navigation
-================================== */
-/* HEADER (reuse existing styles if applicable) */
-header {
+  }
+  
+  /* ==================================
+	 Header & Navigation
+  ================================== */
+  header {
+	height: 135px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0.5rem 1rem;
 	background: #fff;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 	position: sticky;
 	top: 0;
-	z-index: 1000;
-
-	max-width: 2000px;
-	/* Adjust as needed */
+	z-index: 900000;
 	width: 100%;
 	margin: 0 auto;
-	/* Centers the navbar */
-}
-
-
-.footerContainer {
-	width: 100%;
-}
-
-.socialIcons {
+  }
+  
+  header .logo {
+	position: relative;
+	left: -100px;
+	top: 46px;
+  }
+  
+  header .logo img {
+	max-height: 250px;
+	width: auto;
+	transition: transform 0.3s ease;
+  }
+  
+  header nav {
+	flex: 1;
 	display: flex;
 	justify-content: center;
-	margin-bottom: 1rem;
-}
-
-.socialIcons a {
-	text-decoration: none;
-	padding: 10px;
-	background: #f5f5f5;
-	margin: 10px;
-	border-radius: 10px;
-}
-
-.socialIcons i {
-	font-size: 2em;
-	color: #000;
-	opacity: 0.9;
-	transition: transform 0.3s ease;
-}
-
-.socialIcons a:hover {
-	transform: translateY(-10px);
-}
-
-header .logo img {
-	width: 200px;
-}
-
-nav {
+	gap: 35px;
+	margin-left: -300px;
+  }
+  
+  nav {
 	display: flex;
 	gap: 2rem;
-}
-
-
-nav a {
+	max-width: 1200px;
+  }
+  
+  nav a {
 	text-decoration: none;
 	color: #333;
 	font-weight: 500;
 	transition: color 0.3s;
-}
-
-nav a:hover,
-nav a.active-link {
+  }
+  
+  nav a:hover,
+  nav a.active-link {
 	color: #cbb967;
-}
-
-.user-actions .button-donate {
+  }
+  
+  .user-actions {
+	position: relative;
+	right: 0;
+  }
+  
+  .user-actions .button-donate {
 	padding: 0.6em 1.5em;
 	border: none;
 	background: #111;
 	color: #fff;
 	border-radius: 10px;
 	cursor: pointer;
-}
-
-/* ==================================
-   Contact Hero Section
-================================== */
-.hero {
+  }
+  
+  /* ==================================
+	 Contact Hero Section
+  ================================== */
+  .hero {
 	position: relative;
 	height: 60vh;
-	background: url('/assets/images/hero_about.jpg') no-repeat center center/cover;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-}
-
-.hero-overlay {
+  }
+  
+  .hero-overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.5);
-
-
-}
-
-.hero-content {
+	background: rgba(0,0,0,0.5);
+  }
+  
+  .hero-content {
 	position: relative;
 	text-align: center;
 	color: #fff;
 	z-index: 1;
-}
-
-.hero-content h1 {
+  }
+  
+  .hero-content h1 {
 	font-family: 'Playfair Display', serif;
 	font-size: 3.5rem;
 	margin-bottom: 0.5rem;
 	animation: fadeInDown 1s ease-out;
-}
-
-.hero-content p {
+  }
+  
+  .hero-content p {
 	font-size: 1.3rem;
 	animation: fadeInUp 1s ease-out;
-}
+  }
+  
 
+
+  /* ==================================
+	 Form Successful Message Sent Code
+  ================================== */
+  .form-popup {
+	margin-top: 15px;
+	background: #4CAF50; /* Green for success */
+	color: white;
+	padding: 12px 15px;
+	border-radius: 5px;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	text-align: center;
+	width: fit-content;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+	animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 3.5s forwards;
+  }
+  
+  .form-popup.error-message {
+	background: #D32F2F; /* Red for errors */
+  }
+  
+  .form-popup i {
+	font-size: 18px;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+	from {
+	  opacity: 0;
+	  transform: translateY(-5px);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
+  @keyframes fadeOut {
+	from {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+	to {
+	  opacity: 0;
+	  transform: translateY(-5px);
+	}
+  }
+  
+  .message-popup {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	background: #4CAF50; /* Green for success */
+	color: white;
+	padding: 15px 20px;
+	border-radius: 8px;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+	animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 3.5s forwards;
+  }
+  
+  .message-popup.error-message {
+	background: #D32F2F; /* Red for errors */
+  }
+  
+  .message-popup i {
+	font-size: 20px;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+	from {
+	  opacity: 0;
+	  transform: translateY(-10px);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
+  @keyframes fadeOut {
+	from {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+	to {
+	  opacity: 0;
+	  transform: translateY(-10px);
+	}
+  }
 /* ==================================
-   Contact Section (Form & Info)
 ================================== */
-.contact-section {
+
+
+  /* ==================================
+	 Contact Form & Info Section
+  ================================== */
+  .contact-section {
 	padding: 4rem 2rem;
 	background: transparent;
-}
-
-.contact-container {
+  }
+  
+  .contact-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 3rem;
 	align-items: flex-start;
-}
-
-.contact-form,
-.contact-info {
+  }
+  
+  .contact-form,
+  .contact-info {
 	background: #fff;
 	padding: 2rem;
 	border-radius: 10px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 	width: 100%;
 	max-width: 450px;
-}
-
-.contact-form h2,
-.contact-info h2 {
+  }
+  
+  .contact-form h2,
+  .contact-info h2 {
 	text-align: center;
 	margin-bottom: 1rem;
 	color: #333;
-}
-
-.form-description {
+  }
+  
+  .form-description {
 	text-align: center;
 	font-size: 1rem;
 	color: #555;
 	margin-bottom: 1rem;
-}
-
-.contact-form hr {
+  }
+  
+  .contact-form hr {
 	border: none;
 	height: 2px;
 	background-color: #cbb967;
 	margin-bottom: 1.5rem;
-}
-
-.input-group {
+  }
+  
+  .input-group {
 	margin-bottom: 1.5rem;
-}
-
-.input-group label {
+  }
+  
+  .input-group label {
 	display: block;
 	font-size: 0.9rem;
 	margin-bottom: 0.5rem;
 	color: #555;
-}
-
-.input-group input,
-.input-group textarea {
+  }
+  
+  .input-group input,
+  .input-group textarea {
 	width: 100%;
 	padding: 0.8rem;
 	border: 1px solid #ddd;
 	border-radius: 8px;
 	font-size: 1rem;
 	resize: none;
-}
-
-.input-group textarea {
+  }
+  
+  .input-group textarea {
 	height: 120px;
-}
-
-.input-group input:focus,
-.input-group textarea:focus {
+  }
+  
+  /* .input-group input:focus,
+  .input-group textarea:focus {
 	border-color: #007bff;
 	outline: none;
-	box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-}
-
-.submit-button {
+	box-shadow: 0 0 8px rgba(0,123,255,0.5);
+  }
+   */
+  .submit-button {
 	display: block;
 	width: 100%;
 	padding: 0.8rem;
@@ -238,273 +325,363 @@ nav a.active-link {
 	font-weight: 600;
 	cursor: pointer;
 	transition: background 0.3s ease;
-}
-
-.submit-button:hover {
+  }
+  
+  /* .submit-button:hover {
 	background: #0056b3;
-}
-
-/* Contact Info Styles */
-.contact-info p {
+  } */
+  
+  .contact-info p {
 	font-size: 1rem;
 	margin-bottom: 1rem;
 	color: #555;
-}
-
-.contact-info p i {
+  }
+  
+  .contact-info p i {
 	color: #cbb967;
 	margin-right: 0.5rem;
-}
-
-.social-links {
-	text-align: center;
-	margin-top: 1.5rem;
-}
-
-.social-links a {
-	color: #333;
-	font-size: 1.8rem;
-	margin: 0 10px;
-	transition: transform 0.3s;
-}
-
-.social-links a:hover {
-	transform: scale(1.2);
-}
-
-/* ==================================
-   Footer
-================================== */
-footer {
+  }
+  
+  .social-links {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1rem;
+  }
+  
+  .social-links a {
+	text-decoration: none;
+	padding: 10px;
+	background: #ffffff;
+	margin: 10px;
+	border-radius: 10px;
+	transition: transform 0.3s ease;
+  }
+  
+  .social-links i {
+	font-size: 2em;
+	color: #000;
+	opacity: 0.9;
+  }
+  
+  .social-links a:hover {
+	transform: translateY(-10px);
+  }
+  /* ==================================
+	 Footer
+  ================================== */
+  footer {
 	border-top: 2px solid #ddd;
 	background: #f5f5f5;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 	padding: 1rem 40px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-}
-
-.footerContainer {
+  }
+  
+  .footerContainer {
 	width: 100%;
-}
-
-.socialIcons {
+  }
+  
+  .socialIcons {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 1rem;
-}
-
-.socialIcons a {
+  }
+  
+  .socialIcons a {
 	text-decoration: none;
 	padding: 10px;
 	background: #f5f5f5;
 	margin: 10px;
 	border-radius: 10px;
 	transition: transform 0.3s ease;
-}
-
-.socialIcons i {
+  }
+  
+  .socialIcons i {
 	font-size: 2em;
 	color: #000;
 	opacity: 0.9;
-}
-
-.socialIcons a:hover {
+  }
+  
+  .socialIcons a:hover {
 	transform: translateY(-10px);
-}
-
-.footerNav {
-	margin: 30px 0;
-}
-
-.footerNav ul {
+  }
+  
+  .footerNav ul {
 	display: flex;
 	justify-content: center;
 	list-style: none;
-}
-
-.footerNav ul li a {
+	padding: 0;
+  }
+  
+  .footerNav ul li a {
 	color: #000;
 	margin: 20px;
 	text-decoration: none;
 	font-size: 1.3em;
 	opacity: 0.7;
 	transition: opacity 0.5s;
-}
-
-.footerNav ul li a:hover {
+  }
+  
+  .footerNav ul li a:hover {
 	opacity: 1;
-}
-
-.footerBottom {
+  }
+  
+  .footerBottom {
 	text-align: center;
 	padding: 20px;
-}
-
-.footerBottom p {
+  }
+  
+  .footerBottom p {
 	color: #666;
-}
-
-/* ==================================
-   Animations
-================================== */
-@keyframes fadeInDown {
+  }
+  
+  
+  /* ==================================
+	 Animations & Keyframes
+  ================================== */
+  @keyframes fadeInDown {
 	from {
-		opacity: 0;
-		transform: translateY(-30px);
+	  opacity: 0;
+	  transform: translateY(-30px);
 	}
-
 	to {
-		opacity: 1;
-		transform: translateY(0);
+	  opacity: 1;
+	  transform: translateY(0);
 	}
-}
-
-@keyframes fadeInUp {
+  }
+  
+  @keyframes fadeInUp {
 	from {
-		opacity: 0;
-		transform: translateY(30px);
+	  opacity: 0;
+	  transform: translateY(30px);
 	}
-
 	to {
-		opacity: 1;
-		transform: translateY(0);
+	  opacity: 1;
+	  transform: translateY(0);
 	}
-}
-
-@keyframes slideInLeft {
+  }
+  
+  @keyframes slideInLeft {
 	from {
-		opacity: 0;
-		transform: translateX(-50px);
+	  opacity: 0;
+	  transform: translateX(-50px);
 	}
-
 	to {
-		opacity: 1;
-		transform: translateX(0);
+	  opacity: 1;
+	  transform: translateX(0);
 	}
-}
-
-@keyframes slideInRight {
+  }
+  
+  @keyframes slideInRight {
 	from {
-		opacity: 0;
-		transform: translateX(50px);
+	  opacity: 0;
+	  transform: translateX(50px);
 	}
-
 	to {
-		opacity: 1;
-		transform: translateX(0);
+	  opacity: 1;
+	  transform: translateX(0);
 	}
-}
-
-.animate-slideInLeft {
+  }
+  
+  .animate-slideInLeft {
 	animation: slideInLeft 1s ease forwards;
-}
-
-.animate-slideInRight {
+  }
+  
+  .animate-slideInRight {
 	animation: slideInRight 1s ease forwards;
-}
-
-/* ==================================
-   RESPONSIVE STYLES
-================================== */
-
-/* For tablets and small screens */
-@media (max-width: 768px) {
-	/* Header adjustments */
+  }
+  
+  /* ==================================
+	 Responsive Styles
+  ================================== */
+  
+  /* High-Resolution Monitors (e.g., 2560 x 1440) */
+  @media (min-width: 2560px) and (max-height: 1440px) {
+	header {
+	  padding: 2rem 10%;
+	}
+	.user-actions {
+	  position: relative;
+	  right: -230px;
+	}
+	header .logo {
+	  left: -335px;
+	  top: 50px;
+	}
+	nav {
+	  gap: 3rem;
+	}
+	nav a {
+	  font-size: 1.2rem;
+	}
+	.hero-content h1 {
+	  font-size: 4rem;
+	}
+	.hero-content p {
+	  font-size: 1.5rem;
+	}
+	.contact-container {
+	  max-width: 80%;
+	  margin: 4rem auto;
+	}
+	.contact-form,
+	.contact-info {
+	  padding: 2.5rem;
+	  font-size: 1.1rem;
+	}
+	.submit-button {
+	  padding: 1rem;
+	  font-size: 1.2rem;
+	}
+	footer {
+	  padding: 3rem 10%;
+	  font-size: 1.1rem;
+	}
+  }
+  
+  /* For tablets and small screens (max-width: 768px) */
+  @media (max-width: 768px) {
 	header {
 	  flex-direction: column;
 	  padding: 0.5rem;
+	  height: auto;
+	  position: static;
 	}
-	
-	nav {
+	header .logo {
+	  position: static;
+	  margin-bottom: 0.5rem;
+	}
+	header nav {
 	  flex-direction: column;
 	  align-items: center;
-	  gap: 0.5rem;
-	  margin-top: 0.5rem;
+	  gap: 10px;
+	  margin-left: 0;
+	  width: 100%;
 	}
-	
-	nav a {
-	  font-size: 1.1rem;
+	header nav a {
+	  font-size: 1rem;
 	  padding: 0.5rem 1rem;
 	  width: 100%;
 	  text-align: center;
 	  border-bottom: 1px solid #ddd;
 	}
-	
-	nav a:last-child {
+	header nav a:last-child {
 	  border-bottom: none;
 	}
-	
-	/* Contact Container adjustments */
+	.user-actions {
+	  margin-top: 0.5rem;
+	}
 	.contact-container {
 	  flex-direction: column;
 	  align-items: center;
+	  gap: 2rem;
 	}
-	
 	.contact-form,
 	.contact-info {
 	  max-width: 90%;
+	  width: 100%;
 	}
-	
-	/* Hero Section adjustments */
-	.hero-content h1 {
-	  font-size: 3rem;
-	}
-	
-	.hero-content p {
-	  font-size: 1.2rem;
-	  padding: 0 1rem;
-	}
-	
-	/* Footer adjustments */
-	footer {
-	  padding: 1rem 20px;
-	}
-  }
-  
-  /* For very small devices (phones) */
-  @media (max-width: 480px) {
-	header .logo img {
-	  width: 150px;
-	}
-	
-	nav a {
-	  font-size: 1rem;
-	  padding: 0.4rem 0.8rem;
-	}
-	
-	.hero-content h1 {
-	  font-size: 2.5rem;
-	}
-	
-	.hero-content p {
-	  font-size: 1.1rem;
-	}
-	
 	.contact-form h2,
 	.contact-info h2 {
 	  font-size: 1.8rem;
 	}
-	
+	.form-description,
 	.input-group label {
-	  font-size: 0.85rem;
+	  font-size: 1rem;
 	}
-	
 	.input-group input,
 	.input-group textarea {
-	  font-size: 0.95rem;
-	  padding: 0.6rem;
-	}
-	
-	.submit-button {
-	  font-size: 0.9rem;
-	  padding: 0.7rem;
-	}
-	
-	.footerNav ul li a {
 	  font-size: 1rem;
-	  margin: 10px;
+	  padding: 0.8rem;
+	}
+	.submit-button {
+	  font-size: 1rem;
+	  padding: 0.8rem;
 	}
   }
+  
+/* Responsive Media Query for Footer on Small Devices */
+@media (max-width: 480px) {
+	footer {
+	  padding: 1rem; /* Adjust padding for smaller screens */
+	}
+  
+	.socialIcons {
+	  display: flex; /* Ensure icons are side by side */
+	  justify-content: center; /* Center-align the icons */
+	  gap: 15px; /* Add spacing between icons */
+	  margin-bottom: 1rem; /* Ensure spacing from the navigation links */
+	}
+  	.socialIcons i {
+	font-size: 1.2em;
+  }
+	.socialIcons a {
+	  padding: 5px; /* Adjust padding for smaller buttons */
+	  text-align: center;
+	  font-size: 1.5rem; /* Ensure icons are visually clear */
+	}
+  
+	.footerNav ul {
+		flex-direction: column; /* Stack links vertically */
+		align-items: center; /* Center-align the links */
+		gap: 10px; /* Add space between stacked links */
+	  }
+  
+	.footerNav ul li a {
+	  font-size: 1.2rem; /* Adjust font size for smaller screens */
+	  text-decoration: none; /* Ensure links look clean */
+	  color: #000; /* Consistent text color */
+	  transition: color 0.3s ease; /* Add hover effect */
+	}
+  
+	.footerNav ul li a:hover {
+	  color: #cbb967; /* Highlight color on hover */
+	}
+  
+	.footerBottom {
+	  margin-top: 1rem; /* Add spacing above the copyright */
+	  text-align: center; /* Ensure text is centered */
+	  font-size: 0.7rem; /* Adjust font size for better readability */
+	}
+  }
+
+  /* Additional tweaks for very small devices (max-width: 480px) */
+  @media (max-width: 480px) {
+	header {
+	  flex-direction: column;
+	  align-items: center;
+	  padding: 0.1rem;
+	  height: auto;
+	  position: relative;
+	}
+	header .logo {
+	  margin-bottom: -75px;
+	  left: 0;
+	  top: 0;
+	}
+	header .logo img {
+	  max-height: 200px;
+	  display: block;
+	  margin: 0 auto;
+	}
+	header nav {
+	  margin-top: -10px;
+	  flex-direction: column;
+	  align-items: center;
+	  width: 100%;
+	}
+	header nav a {
+	  font-size: 0.9rem;
+	  padding: 0.5rem;
+	  width: 100%;
+	  text-align: center;
+	  border-bottom: 1px solid #ddd;
+	}
+	header nav a:last-child {
+	  border-bottom: none;
+	}
+  }
+  

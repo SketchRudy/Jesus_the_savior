@@ -3,7 +3,8 @@
     Author: Anonymous
     Date: 01-11-2025
     Description: This website is a digital space for Jesus the Savior MBC.
-    Created as a surprise to celebrate the church's mission. */
+    Created as a surprise to celebrate the church's mission.
+*/
 
 /* ==================================
    Basic Reset & Base Styles
@@ -12,9 +13,9 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
 	font-family: 'Poppins', sans-serif;
 	background: linear-gradient(135deg, #fef9e7, #f4ecd8);
 	display: flex;
@@ -22,12 +23,12 @@
 	justify-content: center;
 	min-height: 100vh;
 	color: #333;
-  }
-  
-  /* ==================================
-	 Container
-  ================================== */
-  .container {
+}
+
+/* ==================================
+   Container Styles
+================================== */
+.container {
 	text-align: center;
 	padding: 2rem;
 	border: 2px solid #cbb967;
@@ -36,52 +37,52 @@
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 	max-width: 600px;
 	margin: 2rem;
-  }
-  
-  /* ==================================
-	 Headings & Construction Section
-  ================================== */
-  h1 {
+}
+
+/* ==================================
+   Headings & Construction Section
+================================== */
+h1 {
 	font-size: 2.8rem;
 	margin-bottom: 1rem;
-  }
-  
-  .construction {
+}
+
+.construction {
 	margin: 1rem 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 0.5rem;
-  }
-  
-  .construction i {
+}
+
+.construction i {
 	font-size: 2rem;
 	color: #cbb967;
-  }
-  
-  .under-construction {
+}
+
+.under-construction {
 	font-size: 1.8rem;
 	font-weight: 600;
 	color: #cbb967;
-  }
-  
-  /* ==================================
-	 Message Paragraph
-  ================================== */
-  .message {
+}
+
+/* ==================================
+   Message Paragraph
+================================== */
+.message {
 	font-size: 1.2rem;
 	margin: 1.5rem 0;
 	line-height: 1.5;
-  }
-  
-  /* ==================================
-	 Go Back Button
-  ================================== */
-  .go-back {
+}
+
+/* ==================================
+   Go Back Button
+================================== */
+.go-back {
 	margin-top: 2rem;
-  }
-  
-  .go-back button {
+}
+
+.go-back button {
 	background: #007bff;
 	color: #fff;
 	border: none;
@@ -90,18 +91,18 @@
 	font-size: 1rem;
 	cursor: pointer;
 	transition: background 0.3s ease;
-  }
-  
-  .go-back button:hover {
+}
+
+.go-back button:hover {
 	background: #0056b3;
-  }
-  
-  /* ==================================
-	 Responsive Styles
-  ================================== */
-  
-  /* For tablets and small screens */
-  @media (max-width: 768px) {
+}
+
+/* ==================================
+   Responsive Styles
+================================== */
+
+/* For tablets and small screens */
+@media (max-width: 768px) {
 	.container {
 	  max-width: 90%;
 	  padding: 1.5rem;
@@ -119,10 +120,10 @@
 	.message {
 	  font-size: 1.1rem;
 	}
-  }
-  
-  /* For very small devices (phones) */
-  @media (max-width: 480px) {
+}
+
+/* For very small devices (phones) */
+@media (max-width: 480px) {
 	h1 {
 	  font-size: 2rem;
 	}
@@ -143,5 +144,4 @@
 	  padding: 0.6rem 1.2rem;
 	  font-size: 0.9rem;
 	}
-  }
-  
+}
