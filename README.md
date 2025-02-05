@@ -29,7 +29,7 @@ This project is a fully responsive website for **Jesus the Savior MBC**. It was 
 - **Donation Page:** A dedicated page (in progress) to streamline contributions.
 - **Navigation:** A consistent header and footer across pages to ensure easy navigation.
 
-## Technologies Used
+## Sources/Languages Used
 
 - **HTML5:** Markup language used to structure each page.
 - **CSS3:** Styling for a responsive layout, animations, and custom designs.
