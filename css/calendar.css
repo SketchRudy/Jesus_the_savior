@@ -3,398 +3,613 @@
     Author: Anonymous
     Date: 01-11-2025
     Description: This website is a digital space for Jesus the Savior MBC.
-    Created as a surprise to celebrate the church's mission. */
+        		Created as a surprise to celebrate the church's mission.
+*/
 
 /* ==================================
-   General Reset & Base Styles
+   CSS Variables
 ================================== */
-* {
+:root {
+	--primary-bg-gradient: radial-gradient(circle, #fef9e7, #f4ecd8);
+	--primary-color: #333;
+	--accent-color: #cbb967;
+	--accent-hover: #b09b68;
+	--white: #fff;
+	--light-gray: #f4f4f4;
+	--footer-bg: #f5f5f5;
+	--shadow-light: rgba(0, 0, 0, 0.1);
+	--shadow-medium: rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ==================================
+	 Global Reset & Base Styles
+  ================================== */
+  * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
 	font-family: 'Poppins', sans-serif;
-	background: radial-gradient(circle, #fef9e7, #f4ecd8);
+	background: var(--primary-bg-gradient);
 	color: #333;
 	line-height: 1.6;
-}
-
-/* ==================================
+  }
+  
+  /* ==================================
 	 Header & Navigation
   ================================== */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    max-width: 2000px; /* Maximum width for the header */
-    margin: 0 auto;    /* Centers the header within the viewport */
-}
-
-
-header #logo img {
-	width: 200px;
-}
-
-nav {
+  header {
+	height: 135px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	background: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	position: sticky;
+	top: 0;
+	z-index: 900000;
+	width: 100%;
+	margin: 0 auto;
+  }
+  
+  header .logo {
+	position: relative;
+	left: -100px;
+	top: 46px;
+  }
+  
+  header .logo img {
+	max-height: 250px;
+	width: auto;
+	transition: transform 0.3s ease;
+  }
+  
+  header nav {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	gap: 35px;
+	margin-left: -300px;
+  }
+  
+  nav {
 	display: flex;
 	gap: 2rem;
-}
-
-nav a {
+	max-width: 1200px;
+  }
+  
+  nav a {
 	text-decoration: none;
 	color: #333;
 	font-weight: 500;
 	transition: color 0.3s;
-}
-
-nav a:hover,
-nav a.active-link {
-	color: #cbb967;
-}
-
-.user-actions .button-donate {
+  }
+  
+  nav a:hover,
+  nav a.active-link {
+	color: var(--accent-color);
+  }
+  
+  .user-actions {
+	position: relative;
+	right: 0;
+  }
+  
+  .user-actions .button-donate {
 	padding: 0.6em 1.5em;
 	border: none;
 	background: #111;
 	color: #fff;
 	border-radius: 10px;
 	cursor: pointer;
-}
-
-/* ==================================
+  }
+  
+  /* ==================================
 	 Calendar Hero Section
   ================================== */
-/* HERO SECTION */
-.hero {
+  .hero {
 	position: relative;
 	height: 60vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-
-}
-
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 50%; /* Start from the center */
-    transform: translateX(-50%); /* Center it horizontally */
-    width: 100%; /* Full width of the parent */
-    max-width: 2000px; /* Optional: restrict maximum width */
-    height: 30em;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.hero-content {
-    position: absolute;       /* Fixes the element relative to the viewport */
-    top: 0;                /* Positions it at the top of the screen (adjust if needed) */
-    left: 50%;             /* Centers it horizontally */
-    transform: translateX(-50%); /* Adjusts for horizontal centering */
-    text-align: center;
-    color: #fff;
-    z-index: 1000;         /* Ensure it stays on top of other content */
+  }
+  
+  .hero-overlay {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	height: 30em;
+	background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-content {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	color: #fff;
+	z-index: 1000;
 	margin-top: 160px;
-}
-
-.hero-content h1 {
+  }
+  
+  .hero-content h1 {
 	font-family: 'Playfair Display', serif;
 	font-size: 3.5rem;
 	margin-bottom: 0.5rem;
 	animation: fadeInDown 1s ease-out;
-}
-
-.hero-content p {
+  }
+  
+  .hero-content p {
 	font-size: 1.3rem;
 	animation: fadeInUp 1s ease-out;
-}
-
-/* ==================================
+  }
+  
+  /* ==================================
 	 Calendar Controls
   ================================== */
-.calendar-controls {
+  .calendar-controls {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 1rem;
 	padding: 1rem 2rem;
-	background: #fff;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.calendar-controls h2 {
+	background: var(--white);
+	box-shadow: 0 2px 5px var(--shadow-light);
+	margin: 1rem auto;
+	max-width: 900px;
+	border-radius: 10px;
+  }
+  
+  .calendar-controls h2 {
 	font-size: 2rem;
-	color: #333;
-}
-
-.nav-btn {
-	background: #cbb967;
-	color: #fff;
+	color: var(--primary-color);
+  }
+  
+  .nav-btn {
+	background: var(--accent-color);
+	color: var(--white);
 	border: none;
 	padding: 0.5rem 0.8rem;
 	font-size: 1.2rem;
 	border-radius: 5px;
 	cursor: pointer;
-	transition: background 0.3s;
-}
-
-.nav-btn:hover {
-	background: #b09b68;
-}
-
-/* ==================================
+	transition: background 0.3s, transform 0.3s;
+  }
+  
+  .nav-btn:hover {
+	background: var(--accent-hover);
+	transform: scale(1.05);
+  }
+  
+  /* ==================================
 	 Calendar Grid Section
   ================================== */
-.calendar-section {
-	padding: 2rem;
-}
 
-#calendar {
-	max-width: 900px;
-	margin: 0 auto;
-}
 
-.calendar-day.today {
-	background: #e0e0e0;
-	/* A light gray background */
-	border: 2px solid #cbb967;
-	/* Optional: a contrasting border */
-}
-
-.calendar-grid {
+  .calendar-grid {
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
-	gap: 1px;
+	gap: 2px; /* Reduced gap for better space usage */
 	background: #ddd;
-}
-
-.calendar-grid .calendar-day,
-.calendar-grid .calendar-day-name {
-	background: #fff;
-	padding: 0.75rem;
+  }
+  
+  .calendar-grid .calendar-day,
+  .calendar-grid .calendar-day-name {
+	background: var(--white);
+	padding: 0.5rem;
 	text-align: center;
-	min-height: 80px;
+	min-height: 80px; /* Ensures space for events */
 	position: relative;
-}
-
-.calendar-grid .calendar-day-name {
-	background: #f4f4f4;
-	font-weight: 600;
-	color: #555;
-}
-
-.calendar-day .date-number {
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	font-weight: 600;
-}
-
-.calendar-day .event {
-	background: #cbb967;
-	color: #fff;
-	font-size: 0.75rem;
-	padding: 0.2rem 0.4rem;
-	border-radius: 4px;
-	position: absolute;
-	bottom: 5px;
-	left: 5px;
-	width: calc(100% - 10px);
-	text-align: left;
 	transition: background 0.3s;
-}
+	word-wrap: break-word; /* Allows long text to wrap */
+	white-space: normal; /* Forces text to wrap */
+  }
+  
+  .calendar-grid .calendar-day .event {
+	background: var(--accent-color);
+	color: var(--white);
+	font-size: 0.8rem; /* Slightly smaller text for events */
+	padding: 0.2rem 0.3rem;
+	border-radius: 4px;
+	margin-top: 5px;
+	display: block;
+	text-align: center;
+	line-height: 1.2;
+  }
+  
+  .calendar-day .event:hover {
+	background: var(--accent-hover);
+  }
+  
+  .calendar-day {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start; /* Ensures events stack neatly */
+	padding: 0.3rem; /* Adjust padding to fit text */
+	min-height: auto; /* Dynamic height based on content */
+  }
+  
+  .calendar-day .date-number {
+	position: relative;
+	font-weight: bold;
+	margin-bottom: 5px; /* Space between date and events */
+  }
+  
+  #calendar {
+	max-width: 900px;
+	margin: 0 auto;
+	background: var(--white);
+	box-shadow: 0 2px 5px var(--shadow-light);
+	border-radius: 10px;
+	overflow: hidden;
+  }
+  
+  .calendar-grid .calendar-day:hover {
+	background: #f9f9f9;
+  }
+  
 
-.calendar-day .event:hover {
-	background: #b09b68;
-}
-
-/* ==================================
+  
+  .calendar-day.empty {
+	background: #fafafa;
+  }
+  
+  
+  .calendar-day .event:hover {
+	background: var(--accent-hover);
+  }
+  
+  .calendar-day.today {
+	background: #e0e0e0;
+	border: 2px solid var(--accent-color);
+  }
+  
+  /* ==================================
+	 Featured Events Section
+  ================================== */
+  .featured-events {
+	padding: 2rem;
+	background: var(--primary-bg-gradient);
+	text-align: center;
+  }
+  
+  .featured-events h2 {
+	font-size: 2.5rem;
+	margin-bottom: 1.5rem;
+	color: var(--primary-color);
+  }
+  
+  .events-container {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	flex-wrap: wrap;
+  }
+  
+  .event-card {
+	background: var(--white);
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 2px 5px var(--shadow-light);
+	width: 300px;
+	transition: transform 0.3s;
+  }
+  
+  .event-card:hover {
+	transform: translateY(-5px);
+  }
+  
+  .event-card img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+  }
+  
+  .card-content {
+	padding: 1rem;
+  }
+  
+  .card-content h3 {
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+  }
+  
+  .card-content p {
+	font-size: 1rem;
+	margin-bottom: 1rem;
+	color: #666;
+  }
+  
+  .btn {
+	text-decoration: none;
+	background: var(--accent-color);
+	color: var(--white);
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	transition: background 0.3s;
+  }
+  
+  .btn:hover {
+	background: var(--accent-hover);
+  }
+  
+  /* ==================================
 	 Footer
   ================================== */
-footer {
+  footer {
 	border-top: 2px solid #ddd;
-	background: #f5f5f5;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	background: var(--footer-bg);
+	box-shadow: 0 2px 5px var(--shadow-medium);
 	padding: 1rem 40px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-}
-
-.footerContainer {
+  }
+  
+  .footerContainer {
 	width: 100%;
-}
-
-.socialIcons {
+  }
+  
+  .socialIcons {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 1rem;
-}
-
-.socialIcons a {
+  }
+  
+  .socialIcons a {
 	text-decoration: none;
 	padding: 10px;
-	background: #f5f5f5;
+	background: var(--footer-bg);
 	margin: 10px;
 	border-radius: 10px;
 	transition: transform 0.3s ease;
-}
-
-.socialIcons i {
+  }
+  
+  .socialIcons i {
 	font-size: 2em;
-	color: #000;
+	color: var(--primary-color);
 	opacity: 0.9;
-}
-
-.socialIcons a:hover {
+  }
+  
+  .socialIcons a:hover {
 	transform: translateY(-10px);
-}
-
-.footerNav {
-	margin: 30px 0;
-}
-
-.footerNav ul {
+  }
+  
+  .footerNav ul {
 	display: flex;
 	justify-content: center;
 	list-style: none;
-}
-
-.footerNav ul li a {
-	color: #000;
+	padding: 0;
+  }
+  
+  .footerNav ul li a {
+	color: var(--primary-color);
 	margin: 20px;
 	text-decoration: none;
 	font-size: 1.3em;
 	opacity: 0.7;
 	transition: opacity 0.5s;
-}
-
-.footerNav ul li a:hover {
+  }
+  
+  .footerNav ul li a:hover {
 	opacity: 1;
-}
-
-.footerBottom {
+  }
+  
+  .footerBottom {
 	text-align: center;
 	padding: 20px;
-}
-
-.footerBottom p {
+  }
+  
+  .footerBottom p {
 	color: #666;
-}
-
-
-/* ==================================
-	 Animations
+  }
+  
+  /* ==================================
+	 Animations & Keyframes
   ================================== */
-@keyframes fadeInDown {
+  @keyframes fadeInDown {
 	from {
-		opacity: 0;
-		transform: translateY(-30px);
+	  opacity: 0;
+	  transform: translateY(-30px);
 	}
-
 	to {
-		opacity: 1;
-		transform: translateY(0);
+	  opacity: 1;
+	  transform: translateY(0);
 	}
-}
-
-@keyframes fadeInUp {
+  }
+  
+  @keyframes fadeInUp {
 	from {
-		opacity: 0;
-		transform: translateY(30px);
+	  opacity: 0;
+	  transform: translateY(30px);
 	}
-
 	to {
-		opacity: 1;
-		transform: translateY(0);
+	  opacity: 1;
+	  transform: translateY(0);
 	}
-}
+  }
+  
+  @keyframes zoomIn {
+	from {
+	  opacity: 0;
+	  transform: scale(0.95);
+	}
+	to {
+	  opacity: 1;
+	  transform: scale(1);
+	}
+  }
+  
+  /* ==================================
+	 Responsive Media Queries
+  ================================== */
+  
+/* Responsive Media Query for Footer on Small Devices */
+@media (max-width: 480px) {
+	footer {
+	  padding: 1rem; /* Adjust padding for smaller screens */
+	}
+  
+	.socialIcons {
+	  display: flex; /* Ensure icons are side by side */
+	  justify-content: center; /* Center-align the icons */
+	  gap: 15px; /* Add spacing between icons */
+	  margin-bottom: 1rem; /* Ensure spacing from the navigation links */
+	}
+  	.socialIcons i {
+	font-size: 1.2em;
+  }
+	.socialIcons a {
+	  padding: 5px; /* Adjust padding for smaller buttons */
+	  text-align: center;
+	  font-size: 1.5rem; /* Ensure icons are visually clear */
+	}
+  
+	.footerNav ul {
+		flex-direction: column; /* Stack links vertically */
+		align-items: center; /* Center-align the links */
+		gap: 10px; /* Add space between stacked links */
+	  }
+  
+	.footerNav ul li a {
+	  font-size: 1.2rem; /* Adjust font size for smaller screens */
+	  text-decoration: none; /* Ensure links look clean */
+	  color: #000; /* Consistent text color */
+	  transition: color 0.3s ease; /* Add hover effect */
+	}
+  
+	.footerNav ul li a:hover {
+	  color: #cbb967; /* Highlight color on hover */
+	}
+  
+	.footerBottom {
+	  margin-top: 1rem; /* Add spacing above the copyright */
+	  text-align: center; /* Ensure text is centered */
+	  font-size: 0.7rem; /* Adjust font size for better readability */
+	}
+  }
 
-/* ==================================
-   RESPONSIVE STYLES
-================================== */
-
-/* For tablets and small screens */
-@media (max-width: 768px) {
+  /* For tablets and small screens (max-width: 768px) */
+  @media (max-width: 768px) {
 	header {
 	  flex-direction: column;
 	  padding: 0.5rem;
+	  height: auto;
+	  position: static;
 	}
-	
-	nav {
+	header .logo {
+	  position: static;
+	  margin-bottom: 0.5rem;
+	}
+	header nav {
 	  flex-direction: column;
 	  align-items: center;
-	  gap: 0.5rem;
-	  margin-top: 0.5rem;
+	  gap: 10px;
+	  margin-left: 0;
+	  width: 100%;
 	}
-	
-	nav a {
-	  font-size: 1.1rem;
+	header nav a {
+	  font-size: 1rem;
 	  padding: 0.5rem 1rem;
 	  width: 100%;
 	  text-align: center;
 	  border-bottom: 1px solid #ddd;
 	}
-	
-	nav a:last-child {
+	header nav a:last-child {
 	  border-bottom: none;
+	}
+	.user-actions {
+	  margin-top: 0.5rem;
 	}
 	
 	.calendar-controls {
 	  flex-direction: column;
-	  gap: 0.5rem;
+	  gap: 10px;
 	  padding: 1rem;
+	  text-align: center;
 	}
-	
 	.calendar-controls h2 {
 	  font-size: 1.8rem;
 	}
-	
-	.calendar-section {
-	  padding: 1.5rem;
+	#calendar {
+	  max-width: 100%;
+	  padding: 0.5rem;
 	}
-	
-	footer {
-	  padding: 1rem 20px;
+	.calendar-grid .calendar-day,
+	.calendar-grid .calendar-day-name {
+	  padding: 0.5rem;
+	  min-height: 60px;
 	}
   }
   
-  /* For very small devices (phones) */
-  @media (max-width: 480px) {
-	header .logo img {
-	  width: 150px;
+/* For iPhone screens (max-width: 480px) */
+@media (max-width: 480px) {
+	.calendar-grid {
+	  grid-template-columns: repeat(7, 1fr);
+	  gap: 1px; /* Minimal gap for more space */
 	}
-	
-	nav a {
-	  font-size: 1rem;
-	  padding: 0.4rem 0.8rem;
+  
+	.calendar-day,
+	.calendar-day-name {
+	  padding: 0.3rem; /* Adjust padding */
+	  font-size: 0.8rem; /* Smaller font for better fit */
 	}
-	
-	.hero-content h1 {
-	  font-size: 2.5rem;
-	}
-	
-	.hero-content p {
-	  font-size: 1.1rem;
-	  padding: 0 1rem;
-	}
-	
-	.calendar-controls h2 {
-	  font-size: 1.6rem;
-	}
-	
-	.footerNav ul li a {
-	  font-size: 1rem;
-	  margin: 10px;
+  
+	.calendar-day .event {
+	  font-size: 0.7rem; /* Adjusted font size */
+	  line-height: 1.2; /* Better spacing for wrapped text */
+	  padding: 0.1rem 0.2rem; /* Reduced padding */
 	}
   }
+
+	/* For very small devices (max-width: 480px)  */
+  @media (max-width: 480px) {
+	header {
+	  flex-direction: column;
+	  align-items: center;
+	  padding: 0.1rem;
+	  height: auto;
+	  position: relative;
+	}
+	header .logo {
+	  margin-bottom: -75px;
+	  left: 0;
+	  top: 0;
+	}
+	header .logo img {
+	  max-height: 200px;
+	  display: block;
+	  margin: 0 auto;
+	}
+	header nav {
+	  margin-top: -10px;
+	  flex-direction: column;
+	  align-items: center;
+	  width: 100%;
+	}
+	header nav a {
+	  font-size: 0.9rem;
+	  padding: 0.5rem;
+	  width: 100%;
+	  text-align: center;
+	  border-bottom: 1px solid #ddd;
+	}
+	header nav a:last-child {
+	  border-bottom: none;
+	}
+	.hero-content {
+	  margin-top: 10px; /* Adjust as desired */
+	}
+  }
+
+  
