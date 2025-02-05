@@ -420,6 +420,54 @@
 	 Responsive Styles
   ================================== */
   
+  /* ==================================
+	 Responsive Styles
+  ================================== */
+  
+  /* High-Resolution Monitors (e.g., 2560 x 1440) */
+  @media (min-width: 2560px) and (max-height: 1440px) {
+	header {
+	  padding: 2rem 10%;
+	}
+	.user-actions {
+	  position: relative;
+	  right: -230px;
+	}
+	header .logo {
+	  left: -335px;
+	  top: 50px;
+	}
+	nav {
+	  gap: 3rem;
+	}
+	nav a {
+	  font-size: 1.2rem;
+	}
+	.hero-content h1 {
+	  font-size: 4rem;
+	}
+	.hero-content p {
+	  font-size: 1.5rem;
+	}
+	.contact-container {
+	  max-width: 80%;
+	  margin: 4rem auto;
+	}
+	.contact-form,
+	.contact-info {
+	  padding: 2.5rem;
+	  font-size: 1.1rem;
+	}
+	.submit-button {
+	  padding: 1rem;
+	  font-size: 1.2rem;
+	}
+	footer {
+	  padding: 3rem 10%;
+	  font-size: 1.1rem;
+	}
+  }
+  
 /* Responsive Media Query for Footer on Small Devices */
 @media (max-width: 480px) {
 	footer {
