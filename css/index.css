@@ -52,6 +52,7 @@
 	width: 100%;
 	margin: 0 auto;
   }
+
   
   header .logo {
 	position: relative;
@@ -224,15 +225,18 @@
   }
   
   .script-title::after {
-	content: '';
-	position: absolute;
-	bottom: -10px;
-	left: 38%;
-	right: 49%;
-	height: 2px;
-	background: #444;
-	border-radius: 2px;
-  }
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%; /* Start at the center */
+    transform: translateX(-50%); /* Center the line */
+    height: 2px;
+    width: 20%; /* Extend the line to cover more width */
+    background: #444;
+    border-radius: 2px;
+}
+
+
   
   /* ==================================
 	 Services Section
@@ -625,7 +629,7 @@
 	.user-actions {
 	  margin-top: 0.5rem;
 	}
-  }
+
   
   /* Additional tweaks for very small devices (max-width: 480px) */
   @media (max-width: 480px) {
@@ -644,15 +648,20 @@
 	  font-size: 1.3rem;
 	  margin-right: 0.5rem;
 	}
-	
-
-
-
-
+}
 
 
 /* Responsive Media Query for Footer on Small Devices */
 @media (max-width: 480px) {
+	
+	.bubble::before {
+	  left: 0px;           /* Keep a slight offset */
+	}
+	
+	.bubble::after {
+	  right: 0px;
+	}
+
 	footer {
 	  padding: 1rem; /* Adjust padding for smaller screens */
 	}
@@ -694,9 +703,9 @@
 	  text-align: center; /* Ensure text is centered */
 	  font-size: 0.7rem; /* Adjust font size for better readability */
 	}
-  }
-  
 
+  
+  
 	/* Header and navigation adjustments */
 	header {
 	  padding: 0.1rem;
@@ -734,4 +743,5 @@
 	  margin-top: 30px;
 	}
   }
+}
   
