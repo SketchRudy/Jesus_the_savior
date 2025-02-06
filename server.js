@@ -14,9 +14,14 @@ app.use(bodyParser.json());
 
 const API_KEY = process.env.WEB3FORMS_API_KEY;
 
+// Debugging: Log API key (ONLY for local testing)
+console.log("Loaded API Key:", API_KEY ? "✅ Loaded" : "❌ Not Loaded");
+
 app.post("/send-message", async (req, res) => {
     try {
         const formData = { ...req.body, access_key: API_KEY };
+
+        console.log("Sending Form Data:", formData); // Debug log
 
         const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
@@ -25,6 +30,8 @@ app.post("/send-message", async (req, res) => {
         });
 
         const result = await response.json();
+        console.log("Web3Forms Response:", result); // Debug response
+
         res.json(result);
     } catch (error) {
         console.error("Error processing form:", error);
